@@ -27,7 +27,7 @@ app.config($routeProvider => {
         .when('/', {
             templateUrl: 'partials/userWelcome/welcome.html',
             controller: '',
-            resolve: {isAuth}
+            // resolve: {isAuth}
         })
         .when('/newUser', {
             templateUrl: 'partials/userWelcome/newUser.html',
@@ -41,58 +41,58 @@ app.config($routeProvider => {
             templateUrl: 'partials/home.html',
             controller: ''
         })
-        .when('/searchRecords', {
-            templateUrl: 'partials/searchRecords.html',
-            controller: ''
-        })
-        .when('/recordFamilyHistory', {
-            templateUrl: 'partials/record/recordFamilyHistory.html',
-            controller: ''
-        })
-        .when('/recordMajorIllness', {
-            templateUrl: 'partials/record/recordMajorIllness.html',
-            controller: ''
-        })
-        .when('/recordMedications', {
-            templateUrl: 'partials/record/recordMedications.html',
-            controller: ''
-        })
-        .when('/recordPatientInfo', {
-            templateUrl: 'partials/record/recordPatientInfo.html',
-            controller: ''
-        })
-        .when('/recordSurgicalProcedures', {
-            templateUrl: 'partials/record/recordSurgicalProcedures.html',
-            controller: ''
-        })
-        .when('/recordVaccinations', {
-            templateUrl: 'partials/record/recordVaccinations.html',
-            controller: ''
-        })
-        .when('/newRecordFamilyHistory', {
-            templateUrl: 'partials/recordNew/newRecordFamilyHistory.html',
-            controller: ''
-        })
-        .when('/newRecordMajorIllness', {
-            templateUrl: 'partials/recordNew/newRecordMajorIllness.html',
-            controller: ''
-        })
-        .when('/newRecordMedications', {
-            templateUrl: 'partials/recordNew/newRecordMedications.html',
-            controller: ''
-        })
-        .when('/newRecordPatientInfo', {
-            templateUrl: 'partials/recordNew/newRecordPatientInfo.html',
-            controller: ''
-        })
-        .when('/newRecordSurgicalProcedures', {
-            templateUrl: 'partials/recordNew/newRecordSurgicalProcedures.html',
-            controller: ''
-        })
-        .when('/newRecordVaccinations', {
-            templateUrl: 'partials/recordNew/newRecordVaccinations.html',
-            controller: ''
-        })
+        // .when('/searchRecords', {
+        //     templateUrl: 'partials/searchRecords.html',
+        //     controller: ''
+        // })
+        // .when('/recordFamilyHistory', {
+        //     templateUrl: 'partials/record/recordFamilyHistory.html',
+        //     controller: ''
+        // })
+        // .when('/recordMajorIllness', {
+        //     templateUrl: 'partials/record/recordMajorIllness.html',
+        //     controller: ''
+        // })
+        // .when('/recordMedications', {
+        //     templateUrl: 'partials/record/recordMedications.html',
+        //     controller: ''
+        // })
+        // .when('/recordPatientInfo', {
+        //     templateUrl: 'partials/record/recordPatientInfo.html',
+        //     controller: ''
+        // })
+        // .when('/recordSurgicalProcedures', {
+        //     templateUrl: 'partials/record/recordSurgicalProcedures.html',
+        //     controller: ''
+        // })
+        // .when('/recordVaccinations', {
+        //     templateUrl: 'partials/record/recordVaccinations.html',
+        //     controller: ''
+        // })
+        // .when('/newRecordFamilyHistory', {
+        //     templateUrl: 'partials/recordNew/newRecordFamilyHistory.html',
+        //     controller: ''
+        // })
+        // .when('/newRecordMajorIllness', {
+        //     templateUrl: 'partials/recordNew/newRecordMajorIllness.html',
+        //     controller: ''
+        // })
+        // .when('/newRecordMedications', {
+        //     templateUrl: 'partials/recordNew/newRecordMedications.html',
+        //     controller: ''
+        // })
+        // .when('/newRecordPatientInfo', {
+        //     templateUrl: 'partials/recordNew/newRecordPatientInfo.html',
+        //     controller: ''
+        // })
+        // .when('/newRecordSurgicalProcedures', {
+        //     templateUrl: 'partials/recordNew/newRecordSurgicalProcedures.html',
+        //     controller: ''
+        // })
+        // .when('/newRecordVaccinations', {
+        //     templateUrl: 'partials/recordNew/newRecordVaccinations.html',
+        //     controller: ''
+        // })
         // })
         // .when('/logout', {
         //     templateUrl: 'partials/welcomePage.html',
