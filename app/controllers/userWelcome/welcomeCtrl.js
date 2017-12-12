@@ -7,16 +7,18 @@
     login with google.
  */
 
-app.controller("welcomeCtrl", function($scope, $window, cardFactory, welcomeFactory, $location){
-    console.log("app welcomeController: ");
+app.controller("welcomeCtrl", function($scope, $window, welcomeFactory, $location){
+    
+    console.log("app welcomeController is doing something 1: ");
     
  
-    welcomeFactory.isAuthenticated();
+    // welcomeFactory.isAuthenticated();
     // cardFactory,makeArray();
     // cardFactory.getAllCards()
     //     .then( (allCards) => {
     //         console.log("allCards", allCards);
     //     })
 
-
+    // console.log("app welcomeController is doing something 2: ");
+    
 });
