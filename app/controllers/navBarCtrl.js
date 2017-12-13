@@ -6,7 +6,7 @@
     for instance, a user doesn't see the 'logout' button until they are logged in...
  */
 
-app.controller("navCtrl", function($scope, $window, $rootScope, cardFactory, welcomeFactory, $location){
+app.controller("navBarCtrl", function($scope, $window, $rootScope, userFactory, $location){
 
   let user = null;
 
@@ -14,33 +14,15 @@ app.controller("navCtrl", function($scope, $window, $rootScope, cardFactory, wel
   
       vm.account = {};
   
-      vm.logIn = () => welcomeFactory.logIn(vm.account)
-              .then($window.location.href = '#!/appHome');  
+      vm.logIn = () => userFactory.logIn(vm.account);
+            //   .then($window.location.href = '#!/home');};  
          
-      vm.loginGoogle = function(){
-          welcomeFactory.authWithProvider()
-              .then(result => {
-                  user = result.user.uid;
-                    console.log("navbar user", user);
-                  $location.path('/appHome');
-                  vm.$apply();
-              })     
-              .catch(error => console.log("google login error", error.message, error.code));
-      };
      
       vm.isLoggedIn = false;
       
-          vm.logOut = () => welcomeFactory.logOut();
+          vm.logOut = () => userFactory.logOut();
           
-            firebase.auth().onAuthStateChanged(function(user) {
-              if (user) {
-                vm.isLoggedIn = true;
-                vm.$apply();
-              } else {
-                vm.isLoggedIn = false;
-                $window.location.href = "#!/login";
-              }
-            });
+            
   });
 
 

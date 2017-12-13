@@ -2,14 +2,35 @@
 <!-- home page (on the left) // login (on the right)-->
 <!-- (v2 have home be drop down including blog, games, and whatnot) -->
 
-<nav ng-controller="welcomeCtrl">
+<!-- <nav ng-controller="welcomeCtrl">
     <div>
         <ul>
             <li><img class="logo-icon" src="images/logo.png"></li>    
-            <li><button ng-show="!isLoggedIn" ng-click="logIn()" class="btn btn-info">Login</button></li>
+            <li><button ng-show="!isLoggedIn" ng-click="logIn()" class="btn btn-info">Login</button>></li>
+            <li><textarea ng-show="!isLoggedIn" class="btn btn-info">Login</textarea></li>
+            <li><textarea ng-show="!isLoggedIn" class="btn btn-info">Password</textarea></li>
             <li><button ng-show="isLoggedIn" ng-click="logOut()">Logout</button></li>
         </ul>
     </div>
+</nav> -->
+
+<nav ng-controller="navBarCtrl">
+    <li><img class="logo-icon" src="images/logo.png"></li>    
+
+    <div class="form-group" ng-show="!isLoggedIn">
+        <label for="usr">E-Mail:</label>
+        <input type="email" class="form-control" id="usr">
+    </div>
+    <div class="form-group" ng-show="!isLoggedIn">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd">
+    </div> 
+    <div>
+        <li><button ng-show="!isLoggedIn" ng-click="logIn()" class="btn btn-info">Login</button></li>
+    </div>
+    <div>
+        <li><button ng-show="isLoggedIn" ng-click="logOut()">Logout</button></li>
+    </div>
 </nav>
 
- 
+<!-- navBarCtrl.js and userFactory.js -->
