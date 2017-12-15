@@ -1,4 +1,51 @@
-// ../../partials/home.html
+"use strict";
+
+app.factory("userFactory", function($q, $http){
+    
+    console.log("app userFactory is doing something 1: ");
+    
+   
+    let currentUser = null;
+
+    //        authenticate POST   /authenticate(.:format)            authentication#authenticate
+
+    const addUser = function(user){
+        let newObj = JSON.stringify(user);
+            
+        console.log("newObj:", newObj);
+
+            return $http.post("http://localhost:3000/authenticate", newObj)
+                .then(data => data)
+                // save the returned token to reuse until user logout
+                .catch(error => console.log("error @ userFactory addUser() ", error.message));
+    };
+
+
+
+
+
+   
+
+
+
+
+
+    const logoutUser = function(user){
+    };
+
+ 
+    
+    return {
+
+        // getCurrentUser,
+        addUser,
+        logoutUser
+        // register
+        // isAuthenticated,
+        
+    };
+
+});
 
 
 // ### HTTP request routes. ```rails routes```

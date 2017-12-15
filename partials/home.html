@@ -1,0 +1,41 @@
+<!-- Home will need:  -->
+<!-- -a search bar that route to corresponding record. -->
+<!-- -a drop down menu for new record types that route to corresponding partial. -->
+<!-- - -->
+
+<h3>Welcome to your Home Page</h3>
+<!-- Profile page link Button here -->
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <md-button class="md-raised" ng-click="goToProfile()">Profile</md-button>
+        
+    </section>
+
+
+
+    <form>
+        <form>
+            <!-- New Record function with drop down menu of record types that when clicked on take you to respective partial  -->
+            <div class="form-group">
+                <label>Due Date</label>
+                <input type="text" class="form-control" placeholder="1/12/18" ng-model="task.dueDate"/>
+            </div>
+        
+        </form>
+    </form>
+
+    <!-- Search Bar here for record search function -->
+<!-- 
+<div ng-app="MedRecordApp" ng-controller="homeCtrl">
+        
+        <select ng-model="selectedName" ng-options="x for x in names">
+        </select>
+        
+        </div>
+        
+        <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.names = ["Emil", "Tobias", "Linus"];
+        });
+        </script>
+         -->

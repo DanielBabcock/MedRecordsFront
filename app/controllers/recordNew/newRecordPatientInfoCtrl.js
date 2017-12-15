@@ -6,7 +6,7 @@
 
  */
 
-app.controller("editTaskCtrl", function($scope, todoFactory, $routeParams, $location){
+app.controller("newRecordPatientCtrl", function($scope, recordNewFactory, $routeParams, $location){
 
     const vm = $scope;
 
@@ -14,7 +14,6 @@ app.controller("editTaskCtrl", function($scope, todoFactory, $routeParams, $loca
     vm.title = "Edit Task";
     vm.submitButtonText ="Edit Item";
     vm.task = {
-
         assignedTo: "",
         dependencies: "",
         dueDate: "",
@@ -22,13 +21,13 @@ app.controller("editTaskCtrl", function($scope, todoFactory, $routeParams, $loca
         task: "",
         isCompleted: "",
         location: ""
-
     };
+
 
     // display the details of a given task in form.html
     // invoke from details view when the 'edit' button is clicked
     const showEditTask = function(){
-        todoFactory.getSingleTask($routeParams.itemId)
+        recordNewFactory.getSingleTask($routeParams.itemId)
             .then(data => {
                 console.log("data", data);
                 vm.task = data;
@@ -39,7 +38,7 @@ app.controller("editTaskCtrl", function($scope, todoFactory, $routeParams, $loca
     // edit task
     // using location to redirect
     vm.submitTask = function(){
-        todoFactory.editTask($routeParams.itemId, vm.task)
+        recordNewFactory.editTask($routeParams.itemId, vm.task)
             .then(data => $location.path('/task-list'));
     };
 
@@ -57,7 +56,6 @@ app.controller("editTaskCtrl", function($scope, todoFactory, $routeParams, $loca
     //     uid: user
     // };
 
-
     // call factory to add vm.task to db
     // set the href to '#!/task-list'
     // this redirects and applies a digest cycle 
@@ -65,8 +63,17 @@ app.controller("editTaskCtrl", function($scope, todoFactory, $routeParams, $loca
     // if you use $location.url, you will only see the new task 
     // once you refresh and force a digest cycle
     vm.submitTask = function(){
-        todoFactory.addTask(vm.task);
-            $window.location.href = "#!/task-list";
+        recordNewFactory.addTask(vm.task);
+            // $window.location.href = "#!/task-list";
     };
 
 });
+
+    // GET /todos 	List all todos
+    // POST /todos 	Create a new todo
+    // GET /todos/:id 	Get a todo
+    // PUT /todos/:id 	Update a todo
+    // DELETE /todos/:id 	Delete a todo and its items
+    // GET /todos/:id/items 	Get a todo item
+    // PUT /todos/:id/items 	Update a todo item
+    // DELETE /todos/:id/items 	Delete a todo item

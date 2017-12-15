@@ -2,14 +2,47 @@
 <!-- home page (on the left) // login (on the right)-->
 <!-- (v2 have home be drop down including blog, games, and whatnot) -->
 
-<nav ng-controller="navCtrl">
+<!-- <nav ng-controller="welcomeCtrl">
     <div>
         <ul>
             <li><img class="logo-icon" src="images/logo.png"></li>    
-            <li><button ng-show="!isLoggedIn" ng-click="loginGoogle()" class="btn btn-info">Login</button></li>
+            <li><button ng-show="!isLoggedIn" ng-click="logIn()" class="btn btn-info">Login</button>></li>
+            <li><textarea ng-show="!isLoggedIn" class="btn btn-info">Login</textarea></li>
+            <li><textarea ng-show="!isLoggedIn" class="btn btn-info">Password</textarea></li>
             <li><button ng-show="isLoggedIn" ng-click="logOut()">Logout</button></li>
         </ul>
     </div>
+</nav> -->
+
+<nav ng-controller="navBarCtrl">
+    <li><img class="logo-icon" src="images/logo.png"></li>    
+
+    <div class="form-group" ng-show="!isLoggedIn">
+        <label for="usr">E-Mail:</label>
+        <input type="email" class="form-control" id="usr" placeholder="example@mail.com" ng-model="authentication.email">
+    </div>
+    <div class="form-group" ng-show="!isLoggedIn">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd" placeholder="123123123" ng-model="authentication.password">
+    </div> 
+    <div>
+        <li><button ng-show="!isLoggedIn" ng-click="submitUser()" class="btn btn-info">Login</button></li>
+    </div>
+    <div>
+        <li><button ng-show="isLoggedIn" ng-click="logoutUser()">Logout</button></li>
+    </div>
 </nav>
 
- 
+<!-- <div class="form-group">
+    <label>Urgency</label>
+    <input type="text" class="form-control" placeholder="Low" ng-model="task.urgency"/>
+</div>
+<div class="form-group">
+    <label>Dependencies</label>
+    <input type="text" class="form-control" placeholder="sword, cat, blanket" ng-model="task.dependencies"/>
+</div>
+<div class="text-center">
+    <button class="btn btn-default" ng-click="submitTask()">{{submitButtonText}}</button>    
+</div> -->
+
+<!-- navBarCtrl.js and userFactory.js -->
