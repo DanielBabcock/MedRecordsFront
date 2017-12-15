@@ -16,17 +16,17 @@ app.config($routeProvider => {
     // which is a object specifying which template to display 
     // and which controller to instantiate
     $routeProvider
-        .when('/', {
-            templateUrl: 'partials/welcome.html',
-            controller: 'welcomeCtrl',
-            // resolve: {isAuth}
-        })
-        .when('/home', {
-            templateUrl: 'partials/home.html',
-            controller: 'homeCtrl'
-        })
+        // .when('/', {
+        //     templateUrl: 'partials/welcome.html',
+        //     controller: 'welcomeCtrl',
+        //     // resolve: {isAuth}
+        // })
+        // .when('/home', {
+        //     templateUrl: 'partials/home.html',
+        //     controller: 'homeCtrl'
+        // })
         // .when('/profile', {
-        //     templateUrl: 'partials/userWelcome/profile.html',
+        //     templateUrl: 'partials/profile.html',
         //     controller: 'profileCtrl'
         // })
         // .when('/searchRecords', {
@@ -58,9 +58,11 @@ app.config($routeProvider => {
         //     controller: 'recordVaccinationsCtrl'
         // })
         // .when('/newRecordFamilyHistory', {
-        //     templateUrl: 'partials/recordNew/newRecordFamilyHistory.html',
-        //     controller: 'newRecordFamilyHistoryCtrl'
-        // })
+        .when('/', {
+                
+            templateUrl: 'partials/recordNew/newRecordFamilyHistory.html',
+            controller: 'newRecordFamilyHistoryCtrl'
+        })
         // .when('/newRecordMajorIllness', {
         //     templateUrl: 'partials/recordNew/newRecordMajorIllness.html',
         //     controller: 'newRecordMajorIllnessCtrl'

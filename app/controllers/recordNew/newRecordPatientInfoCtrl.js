@@ -23,6 +23,7 @@ app.controller("newRecordPatientCtrl", function($scope, recordNewFactory, $route
         location: ""
     };
 
+
     // display the details of a given task in form.html
     // invoke from details view when the 'edit' button is clicked
     const showEditTask = function(){
@@ -67,3 +68,12 @@ app.controller("newRecordPatientCtrl", function($scope, recordNewFactory, $route
     };
 
 });
+
+    // GET /todos 	List all todos
+    // POST /todos 	Create a new todo
+    // GET /todos/:id 	Get a todo
+    // PUT /todos/:id 	Update a todo
+    // DELETE /todos/:id 	Delete a todo and its items
+    // GET /todos/:id/items 	Get a todo item
+    // PUT /todos/:id/items 	Update a todo item
+    // DELETE /todos/:id/items 	Delete a todo item
