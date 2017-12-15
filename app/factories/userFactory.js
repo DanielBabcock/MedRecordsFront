@@ -1,77 +1,57 @@
 "use strict";
 
 app.factory("userFactory", function($q, $http, $window){
+
     
     console.log("app userFactory is doing something 1: ");
     
    
     let currentUser = null;
+    const url = "http://localhost:3000";
 
+    //  authenticate POST   /authenticate(.:format)            authentication#authenticate
 
+    var token;
+    var current_user;
+    const get_current_user = function () {
+        return current_user;
+    };
+      // This will take the user's email and password before they'er hashed, send them to the api, get the token and store it.
+    const set_token = function (a) {
+        let data = JSON.stringify(a);
+        $http.post(`${url}/authenticate`, data)
+        .then((data) => {
+            token = data.data.auth_token;
+            console.log("token: ", token);
 
-    // const isAuthenticated = function (){
-    //     return new Promise ((resolve, reject) => {
-    //         auth().onAuthStateChanged(user => {
-    //             if (user){
-    //                 currentUser = user.uid;
-    //                 resolve(true);
-    //             }else {
-    //                 reject(false);
-    //             }
-    //         });
-    //     });
-    // };
-
-    // const getCurrentUser = function(){
-    //     return currentUser;
-    // };
-
-    //        authenticate POST   /authenticate(.:format)            authentication#authenticate
+            current_user = data.data.user_id;
+            console.log("current_user: ", current_user);
+            // console.log('set token data', current_user);
+        });
+    };
 
     const addUser = function(user){
         let newObj = JSON.stringify(user);
             
         console.log("newObj:", newObj);
 
-        // supposed to help stay logged in despite a refresh
-        // function init() {
-        //     if ($window.sessionStorage.currentUser) {
-        //         currentUser = JSON.parse($window.sessionStorage.currentUser);
-        //     }
-        //   }
-        //   init();
-
-            return $http.post("http://localhost:3000/authenticate", newObj)
-                .then(data => data)
-                // save the returned token to reuse until user logout
-                .catch(error => console.log("error @ userFactory addUser() ", error.message));
-
+        return $http.post("http://localhost:3000/authenticate", newObj)
+            // .then(data => console.log("data: ", data))
+            .then(data => console.log("data.data.auth_token: ", data.data.auth_token))
+            // save the returned token to reuse until user logout
+            .catch(error => console.log("error @ userFactory addUser() ", error.message));
     };
 
+ 
 
    
 
 
     const logoutUser = function(user){
         var deferred = $q.defer();
-      
-        $http({
-          method: "POST",
-          url: "http://127.0.0.1:8080/welcome",
-          headers: {
-            "access_token": currentUser.accessToken
-          }
-        }).then(function(result) {
-          $window.sessionStorage.currentUser = null;
-        //   currentUser = null;
-          deferred.resolve(result);
-        }, function(error) {
-          deferred.reject(error);
-        });
-      
         return deferred.promise;
-      };
-        // };
+    };
+        
 
 
 
@@ -88,6 +68,26 @@ app.factory("userFactory", function($q, $http, $window){
 
 });
 
+
+
+// **********  NOTES BELOW THIS LINE:  :**************************************************************************************************************
+
+// $http({
+        //   method: "POST",
+        //   url: "http://127.0.0.1:8080/welcome",
+        //   headers: {
+        //     "access_token": currentUser.accessToken
+        //   }
+        // }).then(function(result) {
+        //   $window.sessionStorage.currentUser = null;
+        // //   currentUser = null;
+        //   deferred.resolve(result);
+        // }, function(error) {
+        //   deferred.reject(error);
+        // });
+      
+     
+        // };
 
 // ### HTTP request routes. ```rails routes```
 // Prefix Verb   URI Pattern                        Controller#Action
