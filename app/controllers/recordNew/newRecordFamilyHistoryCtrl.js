@@ -1,9 +1,6 @@
 "use strict";
-
 /*
-    
     handle data and provide functionality to edit a task
-
  */
 
 app.controller("newRecordFamilyHistoryCtrl", function($scope, recordNewFactory, $window, $routeParams, $location, $rootScope){
@@ -37,7 +34,7 @@ app.controller("newRecordFamilyHistoryCtrl", function($scope, recordNewFactory, 
             stroke: "",                   
             alzheimersOrDementia: "",     
             osteoporosis: "",    
-            bleedingDisorder: true,         
+            bleedingDisorder: "",         
             // bleedingDisorder: ""  
             // uid: user,
             // isCompleted: false

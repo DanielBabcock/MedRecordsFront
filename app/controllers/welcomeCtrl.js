@@ -8,7 +8,7 @@
 
 app.controller("welcomeCtrl", function($scope, $window, userFactory, $location){
     
-    console.log("app welcomeController is doing something 1: ");
+    // console.log("app welcomeController is doing something 1: ");
     
     // const vm = $scope;
 

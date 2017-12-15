@@ -1,50 +1,47 @@
 "use strict";
 
 app.factory("userFactory", function($q, $http, $window){
-
-    
-    console.log("app userFactory is doing something 1: ");
-    
    
     let currentUser = null;
     const url = "http://localhost:3000";
 
     //  authenticate POST   /authenticate(.:format)            authentication#authenticate
+    // eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE0NjA2NTgxODZ9.xsSwcPC22IR71OBv6bU_OGCSyfE89DvEzWfDU0iybMA
 
     var token;
     var current_user;
-    const get_current_user = function () {
-        return current_user;
-    };
-      // This will take the user's email and password before they'er hashed, send them to the api, get the token and store it.
-    const set_token = function (a) {
-        let data = JSON.stringify(a);
-        $http.post(`${url}/authenticate`, data)
-        .then((data) => {
-            token = data.data.auth_token;
-            console.log("token: ", token);
+    // const token = data.data.auth_token;
 
-            current_user = data.data.user_id;
-            console.log("current_user: ", current_user);
-            // console.log('set token data', current_user);
-        });
-    };
+    // ********************************************************************************
+    // *********************test code start***********************************************************
+
+
+    // *********************test code end***********************************************************
+    // ********************************************************************************
 
     const addUser = function(user){
-        let newObj = JSON.stringify(user);
-            
-        console.log("newObj:", newObj);
-
-        return $http.post("http://localhost:3000/authenticate", newObj)
-            // .then(data => console.log("data: ", data))
-            .then(data => console.log("data.data.auth_token: ", data.data.auth_token))
-            // save the returned token to reuse until user logout
-            .catch(error => console.log("error @ userFactory addUser() ", error.message));
+        console.log("userfact 1: ");
+        return $q((resolve, regect)=>{
+            // let newObj = JSON.stringify(user);
+            $http.post(`${url}/authenticate`, user)
+            .then((data)=>{
+                token = data.data.auth_token;
+                console.log("userfact 2: ", token);
+            });             
+        });
+       
+        
     };
+        // console.log("newObj:", newObj);
+        // current_user = data.data.user_id
 
+        // return $http.post(`${url}/authenticate`, newObj)
  
+        //     .then(data => console.log("data.data.auth_token: ", data.data.auth_token))
+        //     .catch(error => console.log("error @ userFactory addUser() ", error.message));
+    
 
-   
+
 
 
     const logoutUser = function(user){
@@ -52,17 +49,12 @@ app.factory("userFactory", function($q, $http, $window){
         return deferred.promise;
     };
         
-
-
-
-    
     return {
-
-        // getCurrentUser,
+        
         addUser,
         logoutUser
         // register
-        // isAuthenticated,
+        // isAuthenticated
         
     };
 
@@ -72,22 +64,7 @@ app.factory("userFactory", function($q, $http, $window){
 
 // **********  NOTES BELOW THIS LINE:  :**************************************************************************************************************
 
-// $http({
-        //   method: "POST",
-        //   url: "http://127.0.0.1:8080/welcome",
-        //   headers: {
-        //     "access_token": currentUser.accessToken
-        //   }
-        // }).then(function(result) {
-        //   $window.sessionStorage.currentUser = null;
-        // //   currentUser = null;
-        //   deferred.resolve(result);
-        // }, function(error) {
-        //   deferred.reject(error);
-        // });
-      
-     
-        // };
+
 
 // ### HTTP request routes. ```rails routes```
 // Prefix Verb   URI Pattern                        Controller#Action
