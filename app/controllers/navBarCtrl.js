@@ -12,26 +12,27 @@ app.controller("navBarCtrl", function($scope, $window, $rootScope, userFactory, 
 
     const vm = $scope;
     
-        vm.account = {};
-    
-    //   vm.logIn = () => userFactory.logIn(vm.account)
-    //           .then($window.location.href = '#!/home');  
+    vm.account = {};
               
+        // userFactory.isAuthenticated();
+
+        vm.authentication = {
+            email: "",
+            password: ""
+        };
+
 
         vm.submitUser = function(){
+            console.log("userCtrl 1: ");
             userFactory.addUser(vm.authentication);
-                // .then($window.location.href = '#!/home');
-                
-                console.log("movement @ navBarCtrl submitUser(): ");
-                // $window.location.href = "#!/home";
-                $window.location.href = "#!/newRecordFamilyHistory";
+         console.log("vm.auth: ", vm.authentication);
+
+                $window.location.href = "#!/home";
                 
         };
          
 
         vm.isLoggedIn = false;
             vm.logoutUser = () => userFactory.logoutUser();
-
-          
   
         });
