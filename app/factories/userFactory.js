@@ -1,11 +1,30 @@
 "use strict";
 
-app.factory("userFactory", function($q, $http){
+app.factory("userFactory", function($q, $http, $window){
     
     console.log("app userFactory is doing something 1: ");
     
    
     let currentUser = null;
+
+
+
+    // const isAuthenticated = function (){
+    //     return new Promise ((resolve, reject) => {
+    //         auth().onAuthStateChanged(user => {
+    //             if (user){
+    //                 currentUser = user.uid;
+    //                 resolve(true);
+    //             }else {
+    //                 reject(false);
+    //             }
+    //         });
+    //     });
+    // };
+
+    // const getCurrentUser = function(){
+    //     return currentUser;
+    // };
 
     //        authenticate POST   /authenticate(.:format)            authentication#authenticate
 
@@ -14,26 +33,48 @@ app.factory("userFactory", function($q, $http){
             
         console.log("newObj:", newObj);
 
+        // supposed to help stay logged in despite a refresh
+        // function init() {
+        //     if ($window.sessionStorage.currentUser) {
+        //         currentUser = JSON.parse($window.sessionStorage.currentUser);
+        //     }
+        //   }
+        //   init();
+
             return $http.post("http://localhost:3000/authenticate", newObj)
                 .then(data => data)
                 // save the returned token to reuse until user logout
                 .catch(error => console.log("error @ userFactory addUser() ", error.message));
+
     };
-
-
-
 
 
    
 
 
-
-
-
     const logoutUser = function(user){
-    };
+        var deferred = $q.defer();
+      
+        $http({
+          method: "POST",
+          url: "http://127.0.0.1:8080/welcome",
+          headers: {
+            "access_token": currentUser.accessToken
+          }
+        }).then(function(result) {
+          $window.sessionStorage.currentUser = null;
+        //   currentUser = null;
+          deferred.resolve(result);
+        }, function(error) {
+          deferred.reject(error);
+        });
+      
+        return deferred.promise;
+      };
+        // };
 
- 
+
+
     
     return {
 

@@ -28,9 +28,23 @@ app.controller("navBarCtrl", function($scope, $window, $rootScope, userFactory, 
                 
         };
          
-      
+
         vm.isLoggedIn = false;
             vm.logoutUser = () => userFactory.logoutUser();
+
+
+        // auth().
+        // onAuthStateChanged(function(user) {
+        //     if (user) {
+        //         vm.isLoggedIn = true;
+        //         vm.$apply();
+        //     } else {
+        //         vm.isLoggedIn = false;
+        //         $window.location.href = "#!/login";
+        //     }
+        //     });
+        
+
           
   });
 

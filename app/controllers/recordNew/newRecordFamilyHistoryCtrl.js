@@ -12,7 +12,7 @@ app.controller("newRecordFamilyHistoryCtrl", function($scope, recordNewFactory, 
 
     // const user = userFactory.getCurrentUser();
 
-    const recordType = "family_histories";
+    const recordType = "family_histories/:id";
         // vm.selectedFormType = vm.newRecordFamilyHistory;
         // gathers data from form to send to db
         vm.record = {

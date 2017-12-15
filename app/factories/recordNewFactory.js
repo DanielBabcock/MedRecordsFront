@@ -15,12 +15,14 @@ app.factory("recordNewFactory", function($q, $http){
 
 // NOTES: ANGULARTOJOSN:::::   https://docs.angularjs.org/api/ng/function/angular.toJson
 
-const url = "http://localhost:3000";
+const url = "http://localhost:3000/family_histories/:id";
 
 
     const addRecord = function(obj, recordType){
         let newObj = angular.toJson(obj);
-        return $http.post(`${url}/${recordType}`, newObj);
+        // return $http.post(`${url}/${recordType}`, newObj);
+        return $http.post(`${url}`, newObj);
+
             // .then(data => data)
             // .catch(error => console.log("error", error.message));
     };
