@@ -21,6 +21,8 @@ const url = "http://localhost:3000";
     const addRecord = function(obj, recordType){
         let newObj = angular.toJson(obj);
         return $http.post(`${url}/${recordType}`, newObj);
+        // return $http.post(`${url}`, newObj);
+
             // .then(data => data)
             // .catch(error => console.log("error", error.message));
     };

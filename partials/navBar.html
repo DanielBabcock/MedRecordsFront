@@ -2,47 +2,35 @@
 <!-- home page (on the left) // login (on the right)-->
 <!-- (v2 have home be drop down including blog, games, and whatnot) -->
 
-<!-- <nav ng-controller="welcomeCtrl">
+<!-- <nav ng-controller="navBarCtrl">
     <div>
         <ul>
             <li><img class="logo-icon" src="images/logo.png"></li>    
-            <li><button ng-show="!isLoggedIn" ng-click="logIn()" class="btn btn-info">Login</button>></li>
-            <li><textarea ng-show="!isLoggedIn" class="btn btn-info">Login</textarea></li>
-            <li><textarea ng-show="!isLoggedIn" class="btn btn-info">Password</textarea></li>
-            <li><button ng-show="isLoggedIn" ng-click="logOut()">Logout</button></li>
+            <li><button ng-show="!isLoggedIn" ng-click="submitUser()" class="btn btn-info">Login</button>></li>
+            E-Mail: example@mail.com
+            <li><textarea ng-show="!isLoggedIn" class="btn btn-info" ng-model="authentication.email" placeholder="example@mail.com"></textarea></li>
+            Password: 123123123
+            <li><textarea ng-show="!isLoggedIn" class="btn btn-info" ng-model="authentication.password" placeholder="123123123"></textarea></li>
+            <li><button ng-show="isLoggedIn" ng-click="logoutUser()">Logout</button></li>
         </ul>
     </div>
 </nav> -->
 
-<nav ng-controller="navBarCtrl">
+<nav class="navbar navbar-default" ng-controller="navBarCtrl">
     <li><img class="logo-icon" src="images/logo.png"></li>    
 
     <div class="form-group" ng-show="!isLoggedIn">
-        <label for="usr">E-Mail:</label>
+        <label for="usr">E-Mail: example@mail.com</label>
         <input type="email" class="form-control" id="usr" placeholder="example@mail.com" ng-model="authentication.email">
     </div>
     <div class="form-group" ng-show="!isLoggedIn">
-        <label for="pwd">Password:</label>
+        <label for="pwd">Password: 123123123</label>
         <input type="password" class="form-control" id="pwd" placeholder="123123123" ng-model="authentication.password">
     </div> 
-    <div>
-        <li><button ng-show="!isLoggedIn" ng-click="submitUser()" class="btn btn-info">Login</button></li>
-    </div>
-    <div>
-        <li><button ng-show="isLoggedIn" ng-click="logoutUser()">Logout</button></li>
-    </div>
+        <ul>
+            <li><button ng-show="!isLoggedIn" ng-click="submitUser()" class="btn btn-info">Login</button></li>
+            <li><button ng-show="isLoggedIn" ng-click="logoutUser()">Logout</button></li>
+        </ul>
+
 </nav>
 
-<!-- <div class="form-group">
-    <label>Urgency</label>
-    <input type="text" class="form-control" placeholder="Low" ng-model="task.urgency"/>
-</div>
-<div class="form-group">
-    <label>Dependencies</label>
-    <input type="text" class="form-control" placeholder="sword, cat, blanket" ng-model="task.dependencies"/>
-</div>
-<div class="text-center">
-    <button class="btn btn-default" ng-click="submitTask()">{{submitButtonText}}</button>    
-</div> -->
-
-<!-- navBarCtrl.js and userFactory.js -->

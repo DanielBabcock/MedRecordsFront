@@ -16,11 +16,11 @@ app.config($routeProvider => {
     // which is a object specifying which template to display 
     // and which controller to instantiate
     $routeProvider
-        // .when('/', {
-        //     templateUrl: 'partials/welcome.html',
-        //     controller: 'welcomeCtrl',
-        //     // resolve: {isAuth}
-        // })
+        .when('/', {
+            templateUrl: 'partials/welcome.html',
+            controller: 'welcomeCtrl',
+            // resolve: {isAuth}
+        })
         // .when('/home', {
         //     templateUrl: 'partials/home.html',
         //     controller: 'homeCtrl'
@@ -58,7 +58,7 @@ app.config($routeProvider => {
         //     controller: 'recordVaccinationsCtrl'
         // })
         // .when('/newRecordFamilyHistory', {
-        .when('/', {
+        .when('newRecordFamilyHistory', {
                 
             templateUrl: 'partials/recordNew/newRecordFamilyHistory.html',
             controller: 'newRecordFamilyHistoryCtrl'
