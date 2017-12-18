@@ -8,7 +8,8 @@
 
 // app.controller("newRecordPatientCtrl", function($scope, recordNewFactory, $routeParams, $location){
 
-//     const vm = $scope;
+    // const vm = $scope;
+    // const url = "http://localhost:3000";
 
 // });
 
@@ -23,7 +24,7 @@
 
 //     vaccinations GET    /vaccinations(.:format)            vaccinations#index
 //     POST   /vaccinations(.:format)            vaccinations#create
-// vaccination GET    /vaccinations/:id(.:format)        vaccinations#show
+//     vaccination GET    /vaccinations/:id(.:format)        vaccinations#show
 //     PATCH  /vaccinations/:id(.:format)        vaccinations#update
 //     PUT    /vaccinations/:id(.:format)        vaccinations#update
 //     DELETE /vaccinations/:id(.:format)        vaccinations#destroy

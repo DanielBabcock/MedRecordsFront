@@ -25,10 +25,8 @@ app.controller("navBarCtrl", function($scope, $window, $rootScope, userFactory, 
         vm.submitUser = function(){
             console.log("userCtrl 1: ");
             userFactory.addUser(vm.authentication);
-         console.log("vm.auth: ", vm.authentication);
-
+            console.log("vm.auth: ", vm.authentication);
                 $window.location.href = "#!/home";
-                
         };
          
 

@@ -6,7 +6,8 @@
 app.controller("newRecordFamilyHistoryCtrl", function($scope, recordNewFactory, $window, $routeParams, $location, $rootScope){
 
     const vm = $scope;
-
+    const url = "http://localhost:3000";
+    
     // const user = userFactory.getCurrentUser();
 
     const recordType = "family_histories/";

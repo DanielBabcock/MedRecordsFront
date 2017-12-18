@@ -8,7 +8,8 @@
 
 // app.controller("newRecordPatientCtrl", function($scope, recordNewFactory, $routeParams, $location){
 
-//     const vm = $scope;
+    // const vm = $scope;
+    // const url = "http://localhost:3000";
 
 // });
 

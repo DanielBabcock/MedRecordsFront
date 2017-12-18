@@ -7,7 +7,7 @@
 */
 
 
-app.factory("recordNewFactory", function($q, $http){
+app.factory("recordNewFactory", function($q, $http, $scope){
 
     // I want this const   selectedFormType   to allow for the following functions to work for whichever form type is selected, otherwise I have t write a factory for every form.
 
@@ -16,7 +16,7 @@ app.factory("recordNewFactory", function($q, $http){
 // NOTES: ANGULARTOJOSN:::::   https://docs.angularjs.org/api/ng/function/angular.toJson
 
 const url = "http://localhost:3000";
-
+const vm = $scope;
 
     const addRecord = function(obj, recordType){
         let newObj = angular.toJson(obj);

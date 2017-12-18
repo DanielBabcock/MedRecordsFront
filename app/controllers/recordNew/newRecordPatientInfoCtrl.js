@@ -9,7 +9,9 @@
 app.controller("newRecordPatientCtrl", function($scope, recordNewFactory, $routeParams, $location){
 
     const vm = $scope;
+    const url = "http://localhost:3000";
 
+    
     // bind a few values to scope
     vm.title = "Edit Task";
     vm.submitButtonText ="Edit Item";
