@@ -1,14 +1,14 @@
 "use strict";
 
 
-app.controller("homeCtrl", function($scope, $window, homeFactory){
+app.controller("homeCtrl", function($scope, $window, homeFactory, recordNewFactory){
 
     const vm = $scope;
     const url = "http://localhost:3000";
 
     // ******************************************************************
     // ****************SEARCH FOR RECORDS********************************
-    // ******************************************************************
+    // ******************STRETCH GOAL************************************
     // searchRecs
     // vm.searchRecs = function(){
     //     $window.location.href = "#!/";
@@ -24,39 +24,41 @@ app.controller("homeCtrl", function($scope, $window, homeFactory){
     // };
 
 
-    // ******************************************************************
+    // ******************new FamRecord first*****************************
     // ****************CREATE NEW RECORDS********************************
-    // ******************************************************************
+    // ****************STRETCH GOAL**************************************
 
 
-    // newFamRecord()
+    // **********newFamRecord()**********
+
+
     vm.newFamRecord = function(){
-        homeFactory.newFamilyRecord();
+        recordNewFactory.addRecord();
         console.log("newFamRecord in homeCtrl fired: ");
-        // $window.location.href = "#!/newRecordFamilyHistory";
+        $window.location.href = "#!/newRecordFamilyHistory";
     };
 
-    // newIllRecord()
+    // **********newIllRecord()***********
     // vm.newIllRecord = function(){
     //     $window.location.href = "#!/newRecordMajorIllness";
     // };
 
-    // // newMedRecord()
+    // // **********newMedRecord()**********
     // vm.newMedRecord = function(){
     //     $window.location.href = "#!/newRecordMedications";
     // };
 
-    // //     newPatInfoRecord()
+    // //    ********** newPatInfoRecord()**********
     // vm.newPatInfoRecord = function(){
     //     $window.location.href = "#!/newRecordPatientInfo";
     // };
 
-    // //     newSurgRecord()
+    // //   **********  newSurgRecord()**********
     // vm.newSurgRecord = function(){
     //     $window.location.href = "#!/newRecordSurgicalProcedures";
     // };
 
-    // //     newVaxRecord()
+    // //   **********  newVaxRecord()**********
     // vm.newVaxRecord = function(){
     //     $window.location.href = "#!/newRecordVaccinations";
     // };
