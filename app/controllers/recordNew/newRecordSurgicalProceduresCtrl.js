@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 
 // /*
     
@@ -8,8 +8,18 @@
 
 // app.controller("newRecordPatientCtrl", function($scope, recordNewFactory, $routeParams, $location){
 
-//     const vm = $scope;
+    const vm = $scope;
+    const url = "http://localhost:3000";
 
+      // let recordType = "";
+
+    // const newFamilyRecord = function(){
+    //     var postAction = "family_histories";
+    //     var patchAction = "family_histories/:id";
+    //     var deleteAction = "family_histories/:id";
+    //     var getAction = "family_histories/:id";
+    //     // };
+    
 // });
 
     // GET /todos 	List all todos

@@ -18,13 +18,13 @@ app.config($routeProvider => {
     $routeProvider
         .when('/', {
             templateUrl: 'partials/welcome.html',
-            controller: 'welcomeCtrl',
+            controller: 'welcomeCtrl'
             // resolve: {isAuth}
         })
-        // .when('/home', {
-        //     templateUrl: 'partials/home.html',
-        //     controller: 'homeCtrl'
-        // })
+        .when('/home', {
+            templateUrl: 'partials/home.html',
+            controller: 'homeCtrl'
+        })
         // .when('/profile', {
         //     templateUrl: 'partials/profile.html',
         //     controller: 'profileCtrl'
@@ -57,12 +57,11 @@ app.config($routeProvider => {
         //     templateUrl: 'partials/record/recordVaccinations.html',
         //     controller: 'recordVaccinationsCtrl'
         // })
-        // .when('/newRecordFamilyHistory', {
-        .when('newRecordFamilyHistory', {
-                
+        .when('/newRecordFamilyHistory', {
             templateUrl: 'partials/recordNew/newRecordFamilyHistory.html',
             controller: 'newRecordFamilyHistoryCtrl'
         })
+        
         // .when('/newRecordMajorIllness', {
         //     templateUrl: 'partials/recordNew/newRecordMajorIllness.html',
         //     controller: 'newRecordMajorIllnessCtrl'
@@ -95,4 +94,3 @@ app.config($routeProvider => {
         .otherwise('/');
 
 });
-

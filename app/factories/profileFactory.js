@@ -1,4 +1,4 @@
-// // ../../partials/userWelcome/profile.html
+// // // ../../partials/recordNew/......all htmls....
 
 // "use strict";
 
@@ -6,65 +6,57 @@
 //     provide the basic crud interactions with firebase
 // */
 
-// app.factory("profileFactory", function($q, $http){
 
+// app.factory("recordNewFactory", function($q, $http){
 
-//     // helper function to process the firebase object
-//     // into an array with it's ugly id assigned as its local id
-//     // const makeArray = function(object){
-//     //     return Object.keys(object).map(key => {
-//     //         object[key].id = key;
-//     //         return object[key];
-//     //     });
-//     // };
+//     // I want this const   selectedFormType   to allow for the following functions to work for whichever form type is selected, otherwise I have t write a factory for every form.
 
-//     // call firebase for all the items
-//     // firebase returns an object of objects,
-//     // fo we pass that to makeArray, a helper defined above
-//     const getAllTasks = function(user){
-//         return $q((resolve, reject)=>{
-//             $http.get(`${url}/items.json?orderBy="uid"&equalTo="${user}"`)
-//                 .then(items => resolve(makeArray(items.data)))
-//                 .catch(error => reject(error));
-//         });
+// // const selectedFormType = {};
+
+// // NOTES: ANGULARTOJOSN:::::   https://docs.angularjs.org/api/ng/function/angular.toJson
+
+// const url = "http://localhost:3000";
+
+//     const addRecord = function(obj, recordType){
+//         let newObj = angular.toJson(obj);
+//         return $http.post(`${url}/${recordType}`, newObj);
+//         // return $http.post(`${url}`, newObj);
+
+//             // .then(data => data)
+//             // .catch(error => console.log("error", error.message));
 //     };
 
-//     // just using $http is fine here
-//     const addTask = function(obj){
-//         let newObj = JSON.stringify(obj);
-//         return $http.post(`${url}/items.json`, newObj)
-//             .then(data => data)
-//             .catch(error => console.log("error", error.message));
-//     };
-
-//     // takes an item's id and a an object containing the property to update
-//     const editTask = function(id, obj) {
+//     const editRecord = function(id, obj) {
 //         return $q((resolve, reject)=>{
-//             let newObj = JSON.stringify(obj);
+//             let newObj = angular.toJson(obj);
 //             $http.patch(`${url}/items/${id}.json`, newObj)
 //                 .then(data=> resolve(data))
 //                 .catch(error => reject(error));
 //         });
 //     };
 
-//     // takes an id and deletes the corresponding task from the database
-//     const deleteTask = function(id){
+//     const deleteRecord = function(id){
 //         return $q((resolve,reject)=>{
-//             $http.delete(`${url}/items/${id}.json`)
-//                 .then(response => resolve(response))
-//                 .catch(error => reject(error));
+//             $http.delete(`${url}/items/${id}.json`);
+//             //     .then(response => resolve(response))
+//             //     .catch(error => reject(error));
 //         });
 //     };
 
+//     const getIndivRecord = function(itemId){
+//         return $q((resolve,reject)=> {
+//             $http.get(`${url}/items/${itemId}.json`);
+//             //     .then(item => resolve(item.data))
+//             //     .catch(error => reject(error));
+//         });
+//     };
 
-//     // returning methods defined above
 //     return {
 
-//         getAllTasks,
-//         addTask,
-//         editTask,
-//         deleteTask,
-//         getSingleTask
+//         addRecord,
+//         editRecord,
+//         deleteRecord,
+//         getIndivRecord
 //     };
 
 // });
@@ -115,7 +107,7 @@
 // //                     DELETE /items/:id(.:format)               items#destroy
 // //        authenticate POST   /authenticate(.:format)            authentication#authenticate
 
-       
+//     //    example
 // // GET /todos 	List all todos
 // // POST /todos 	Create a new todo
 // // GET /todos/:id 	Get a todo

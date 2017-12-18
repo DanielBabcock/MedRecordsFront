@@ -4,12 +4,21 @@
  */
 
 app.controller("newRecordFamilyHistoryCtrl", function($scope, recordNewFactory, $window, $routeParams, $location, $rootScope){
-
+    
     const vm = $scope;
-
+    const url = "http://localhost:3000";
+    
     // const user = userFactory.getCurrentUser();
 
-    const recordType = "family_histories/";
+    // let recordType = "";
+
+    // Get and Post
+    const getPostAll = "family_histories/";
+    // Patch, Delete, and Get a record
+    const patchDeleteGetIndiv = "family_histories/:id";
+    
+
+
         // vm.selectedFormType = vm.newRecordFamilyHistory;
         // gathers data from form to send to db
         vm.record = {
@@ -37,13 +46,13 @@ app.controller("newRecordFamilyHistoryCtrl", function($scope, recordNewFactory, 
             bleedingDisorder: "",         
             // bleedingDisorder: ""  
             // uid: user,
-            // isCompleted: false
+            isCompleted: false
         };
 
        
 
         vm.submitNewRecordFamilyHistory = function(){
-            recordNewFactory.addRecord(vm.record, recordType);
+            recordNewFactory.addRecord(vm.record, getPostAll);
                 $window.location.href = "#!/newRecordFamilyHistory";
                 console.log("submitNewRecordFamilyHistory fired at newRecordFamilyHistoryCtrl");
         };

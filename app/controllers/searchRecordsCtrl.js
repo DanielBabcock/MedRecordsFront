@@ -7,6 +7,10 @@
 
 // app.controller("listCtrl", function($scope, $rootScope, todoFactory, userFactory, filterFactory){
 
+
+    // const vm = $scope;
+    // const url = "http://localhost:3000";
+
 //     // this is probably not a good idea.
 //     // the idea, though is to have this available
 //     // in the scope of the navBar and the list
