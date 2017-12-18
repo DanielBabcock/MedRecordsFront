@@ -1,27 +1,32 @@
-// // ../../partials/recordNew/......all htmls....
 
 "use strict";
 
-/*
-    provide the basic crud interactions with firebase
-*/
+app.factory("recordNewFactory", function($q, $http){
 
-
-app.factory("recordNewFactory", function($q, $http, $scope){
-
-    // I want this const   selectedFormType   to allow for the following functions to work for whichever form type is selected, otherwise I have t write a factory for every form.
+// I want this const   selectedFormType   to allow for the following functions to work for whichever form type is selected, otherwise I have t write a factory for every form.
 
 // const selectedFormType = {};
 
 // NOTES: ANGULARTOJOSN:::::   https://docs.angularjs.org/api/ng/function/angular.toJson
 
 const url = "http://localhost:3000";
-const vm = $scope;
+// let postAction = "";
+// let patchAction = "";
+// let deleteAction = "";
+// let getAction = "";
 
-    const addRecord = function(obj, recordType){
+let recordType = "";
+     // Get and Post
+
+
+    // const newFamilyRecord = function(){
+    //     // addRecord(getPostAll);
+    //     };
+
+
+    const addRecord = function(obj, getPostAll){
         let newObj = angular.toJson(obj);
-        return $http.post(`${url}/${recordType}`, newObj);
-        // return $http.post(`${url}`, newObj);
+        return $http.post(`${url}/${getPostAll}`, newObj);
 
             // .then(data => data)
             // .catch(error => console.log("error", error.message));
@@ -30,7 +35,7 @@ const vm = $scope;
     const editRecord = function(id, obj) {
         return $q((resolve, reject)=>{
             let newObj = angular.toJson(obj);
-            $http.patch(`${url}/items/${id}.json`, newObj)
+            $http.patch(`${url}/${patchDeleteGetIndiv}.json`, newObj)
                 .then(data=> resolve(data))
                 .catch(error => reject(error));
         });
@@ -38,7 +43,7 @@ const vm = $scope;
 
     const deleteRecord = function(id){
         return $q((resolve,reject)=>{
-            $http.delete(`${url}/items/${id}.json`);
+            $http.delete(`${url}/${patchDeleteGetIndiv}.json`);
             //     .then(response => resolve(response))
             //     .catch(error => reject(error));
         });
@@ -46,14 +51,14 @@ const vm = $scope;
 
     const getIndivRecord = function(itemId){
         return $q((resolve,reject)=> {
-            $http.get(`${url}/items/${itemId}.json`);
+            $http.get(`${url}/${patchDeleteGetIndiv}.json`);
             //     .then(item => resolve(item.data))
             //     .catch(error => reject(error));
         });
     };
 
     return {
-
+        // newFamilyRecord,
         addRecord,
         editRecord,
         deleteRecord,

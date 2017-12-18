@@ -2,40 +2,38 @@
 <!-- -a search bar that route to corresponding record. -->
 <!-- -a drop down menu for new record types that route to corresponding partial. -->
 <!-- - -->
-<div ng-app="myApp" ng-controller="myCtrl">
+<div ng-app="MedRecordApp" ng-controller="homeCtrl">
     <h3>Welcome to your Home Page</h3>
 
     <!-- Search Bar here for record search function -->
-    <label>Search for records:</label>
+    <!-- STRETCH GOAL, user can see all records in profile -->
+    <!-- <label>Search for records:</label>
     <input type="text" placeholder="type keyword here:">
-    <button ng-click="searchRecs()">Search </button>
+    <button ng-click="searchRecs()">Search </button> -->
 
 
-    <!-- Profile page link Button here -->
-    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-        <!-- <md-button class="md-raised" ng-click="goToProfile()">Profile</md-button> -->
-        <label>Go to your profile: </label>
+    <!-- AFTER NEW FAMILY RECORD AND FAMILY RECORD WORKS,Profile page link Button here -->
+    <!-- <section layout="row" layout-sm="column" layout-align="center center" layout-wrap> -->
+        <!-- <label>Go to your profile: </label>
         <button type="button" ng-click="goToProfile()">Profile: </button> 
 
-    </section>
+    </section> -->
 
     <br>
     <br>
 
-    <!-- Upgrade to drop down menu later -->
+    <!-- STRETCH GOAL, get this working and then, Upgrade to drop down menu -->
     <div class="form-group">
 
         <label>Create a new record: </label>
         <ul>
-        <!-- <input type="button" class="form-control" placeholder="Family History" ng-click="newFamRecord()"/> -->
-            <li><button type="button" ng-click="newIllRecord()">Major Illness: </button></li>
+            <!-- <li><button type="button" ng-click="newIllRecord()">Major Illness: </button></li> -->
             <li><button type="button" ng-click="newFamRecord()">Family History: </button></li> 
-            <li><button type="button" ng-click="newMedRecord()">Medications: </button></li> 
-            <li><button type="button" ng-click="newPatInfoRecord()">Patient Info: </button></li> 
-            <li><button type="button" ng-click="newSurgRecord()">Surgical Procedures </button></li> 
-            <li><button type="button" ng-click="newVaxRecord()">Vaccinations: </button></li> 
+            <!-- <li><button type="button" ng-click="newMedRecord()">Medications: </button></li>  -->
+            <!-- <li><button type="button" ng-click="newPatInfoRecord()">Patient Info: </button></li>  -->
+            <!-- <li><button type="button" ng-click="newSurgRecord()">Surgical Procedures </button></li>  -->
+            <!-- <li><button type="button" ng-click="newVaxRecord()">Vaccinations: </button></li>  -->
         </ul>
-
 
     </div>
         
