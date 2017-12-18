@@ -1,15 +1,21 @@
 "use strict";
 
-app.factory("homeFactory", function($q, $http, $window, $scope){
+app.factory("homeFactory", function($q, $http, $window){
 
     // const vm = $scope;
     const url = "http://localhost:3000";
 
 
     // newFamilyRecord(){
-    //     // $window.location.href = "#!/newRecordFamilyHistory";
+    //     $window.location.href = "#!/newRecordFamilyHistory";
 
     // }
+
+    return {
+
+        // newFamilyRecord
+        
+    };
 
 });
 // ../../partials/home.html
