@@ -58,11 +58,10 @@ app.config($routeProvider => {
         //     controller: 'recordVaccinationsCtrl'
         // })
         .when('/newRecordFamilyHistory', {
-        // .when('newRecordFamilyHistory', {
-                
             templateUrl: 'partials/recordNew/newRecordFamilyHistory.html',
             controller: 'newRecordFamilyHistoryCtrl'
         })
+        
         // .when('/newRecordMajorIllness', {
         //     templateUrl: 'partials/recordNew/newRecordMajorIllness.html',
         //     controller: 'newRecordMajorIllnessCtrl'
@@ -95,4 +94,3 @@ app.config($routeProvider => {
         .otherwise('/');
 
 });
-
