@@ -2,7 +2,7 @@
 // registering the app
 // first param is the name of the app
 // second param is array for projects dependencies 
-const app = angular.module('MedRecordApp', ["ngRoute"]);
+const app = angular.module('MedRecordApp', ["ngRoute", "ngCookies"]);
 
 // const isAuth = (welcomeFactory) => welcomeFactory.isAuthenticated();
 

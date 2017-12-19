@@ -1,22 +1,6 @@
-<!-- Top Navbar contains "Logo" left "User Profile" center and "Logout" right-->
-<!-- home page (on the left) // login (on the right)-->
-<!-- (v2 have home be drop down including blog, games, and whatnot) -->
-
-<!-- <nav ng-controller="navBarCtrl">
-    <div>
-        <ul>
-            <li><img class="logo-icon" src="images/logo.png"></li>    
-            <li><button ng-show="!isLoggedIn" ng-click="submitUser()" class="btn btn-info">Login</button>></li>
-            E-Mail: example@mail.com
-            <li><textarea ng-show="!isLoggedIn" class="btn btn-info" ng-model="authentication.email" placeholder="example@mail.com"></textarea></li>
-            Password: 123123123
-            <li><textarea ng-show="!isLoggedIn" class="btn btn-info" ng-model="authentication.password" placeholder="123123123"></textarea></li>
-            <li><button ng-show="isLoggedIn" ng-click="logoutUser()">Logout</button></li>
-        </ul>
-    </div>
-</nav> -->
 
 <nav class="navbar navbar-default" ng-controller="navBarCtrl">
+    
     <li><img class="logo-icon" src="images/logo.png"></li>    
 
     <div class="form-group" ng-show="!isLoggedIn">

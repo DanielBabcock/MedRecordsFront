@@ -10,29 +10,22 @@ app.factory("recordNewFactory", function($q, $http){
 // NOTES: ANGULARTOJOSN:::::   https://docs.angularjs.org/api/ng/function/angular.toJson
 
 const url = "http://localhost:3000";
-// let postAction = "";
-// let patchAction = "";
-// let deleteAction = "";
-// let getAction = "";
-
-let recordType = "";
-     // Get and Post
 
 
-    // const newFamilyRecord = function(){
-    //     // addRecord(getPostAll);
-    //     };
+// let recordType = "";
 
 
     const addRecord = function(obj, getPostAll){
         let newObj = angular.toJson(obj);
+        
+        // return $http.post(`${url}/family_history`, newObj);
         return $http.post(`${url}/${getPostAll}`, newObj);
 
             // .then(data => data)
             // .catch(error => console.log("error", error.message));
     };
 
-    const editRecord = function(id, obj) {
+    const editRecord = function(id, patchDeleteGetIndiv, obj) {
         return $q((resolve, reject)=>{
             let newObj = angular.toJson(obj);
             $http.patch(`${url}/${patchDeleteGetIndiv}.json`, newObj)
@@ -41,7 +34,7 @@ let recordType = "";
         });
     };
 
-    const deleteRecord = function(id){
+    const deleteRecord = function(id, patchDeleteGetIndiv){
         return $q((resolve,reject)=>{
             $http.delete(`${url}/${patchDeleteGetIndiv}.json`);
             //     .then(response => resolve(response))
@@ -49,7 +42,7 @@ let recordType = "";
         });
     };
 
-    const getIndivRecord = function(itemId){
+    const getIndivRecord = function(itemId, patchDeleteGetIndiv){
         return $q((resolve,reject)=> {
             $http.get(`${url}/${patchDeleteGetIndiv}.json`);
             //     .then(item => resolve(item.data))
@@ -58,7 +51,6 @@ let recordType = "";
     };
 
     return {
-        // newFamilyRecord,
         addRecord,
         editRecord,
         deleteRecord,
