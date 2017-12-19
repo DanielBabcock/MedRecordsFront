@@ -11,6 +11,8 @@
     // const vm = $scope;
     // const url = "http://localhost:3000";
 
+    // submitNewRecordMajorIllness()
+    
       // let recordType = "";
 
     // const newFamilyRecord = function(){

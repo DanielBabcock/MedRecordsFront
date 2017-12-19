@@ -7,32 +7,39 @@ app.factory("userFactory", function($q, $http, $window, $cookies){
 
     //  authenticate POST   /authenticate(.:format)            authentication#authenticate
     // eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE0NjA2NTgxODZ9.xsSwcPC22IR71OBv6bU_OGCSyfE89DvEzWfDU0iybMA
+// send key value pair of key = token and value = hash in header of every request.
+
 
     var token;
     var current_user;
     var ck = $cookies;
     // const token = data.data.auth_token;
-
+    let tok = null;
     // ********************************************************************************
     // *********************test code start***********************************************************
-
+    // "Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE0NjA2NTgxODZ9.xsSwcPC22IR71OBv6bU_OGCSyfE89DvEzWfDU0iybMA" http://localhost:3000/items
+    // []
     // *********************test code end***********************************************************
     // ********************************************************************************
+    const tokentok = function(){
+        console.log("tokentok in userFact: ", tok);
 
-    const addUser = function(user){
+        return tok;
+    };
+
+    const addUser = function(user, token){
         console.log("userfact 1: ");
         return $q((resolve, regect)=>{
-            // let newObj = JSON.stringify(user);
             $http.post(`${url}/authenticate`, user)
             .then((data)=>{
                 token = data.data.auth_token;
-                console.log("userfact 2: ", token);
+                tok = data.data.auth_token;
+                console.log("userfact tokentok: ", tokentok());
             });             
         });
-       
-        
     };
 
+    
 
     // ********************************************************************************
     // ***********************COOKIES*********************************************************
@@ -64,6 +71,11 @@ app.factory("userFactory", function($q, $http, $window, $cookies){
         return allCookies;
 
     };
+
+    // ********************************************************************************
+    // ***********************COOKIES*********************************************************
+
+
 
     //   ************test code
 
@@ -98,9 +110,10 @@ app.factory("userFactory", function($q, $http, $window, $cookies){
     };
         
     return {
+        tokentok,
         addUser,
-        getCookies,
-        setCookies,
+        // getCookies,
+        // setCookies,
         logoutUser
         // register
         // isAuthenticated

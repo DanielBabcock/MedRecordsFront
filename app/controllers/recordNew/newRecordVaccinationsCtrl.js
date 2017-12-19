@@ -1,11 +1,5 @@
 // "use strict";
 
-// /*
-    
-//     handle data and provide functionality to edit a task
-
-//  */
-
 // app.controller("newRecordPatientCtrl", function($scope, recordNewFactory, $routeParams, $location){
 
     // const vm = $scope;
@@ -20,7 +14,14 @@
     //     var getAction = "family_histories/:id";
     //     // };
 
+    // submitNewRecordVaccinations()
+
 // });
+
+
+
+
+
 
     // GET /todos 	List all todos
     // POST /todos 	Create a new todo
