@@ -30,7 +30,36 @@ app.controller("navBarCtrl", function($scope, $window, $rootScope, userFactory, 
         };
          
 
-        vm.isLoggedIn = false;
-            vm.logoutUser = () => userFactory.logoutUser();
-  
+        // vm.isLoggedIn = false;
+
+        vm.logoutUser = () => userFactory.logoutUser();
+            if (user) {
+                vm.isLoggedIn = true;
+                vm.$apply();
+              } else {
+                vm.isLoggedIn = false;
+                $window.location.href = "#!/login";
+              }
         });
+
+        // scope.login = function() {
+        //     // configuration object
+        //     var config = { /* ... */ }
+          
+        //     $http(config)
+        //     .success(function(data, status, headers, config) {
+        //       if (data.status) {
+        //         // succefull login
+        //         User.isLogged = true;
+        //         User.username = data.username;
+        //       }
+        //       else {
+        //         User.isLogged = false;
+        //         User.username = '';
+        //       }
+        //     })
+        //     .error(function(data, status, headers, config) {
+        //       User.isLogged = false;
+        //       User.username = '';
+        //     });
+        //   }

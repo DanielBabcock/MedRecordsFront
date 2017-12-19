@@ -13,9 +13,10 @@ app.controller("newRecordFamilyHistoryCtrl", function($scope, recordNewFactory, 
     // let recordType = "";
 
     // Get and Post
-    const getPostAll = "family_histories/";
+    const getPostAll = "family_histories";
     // Patch, Delete, and Get a record
     const patchDeleteGetIndiv = "family_histories/:id";
+    // const patchDeleteGetIndiv = "family_histories/";
     
 
 

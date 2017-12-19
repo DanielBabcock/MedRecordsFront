@@ -33,7 +33,7 @@ app.controller("homeCtrl", function($scope, $window, homeFactory, recordNewFacto
 
 
     vm.newFamRecord = function(){
-        recordNewFactory.addRecord();
+        // recordNewFactory.addRecord();
         console.log("newFamRecord in homeCtrl fired: ");
         $window.location.href = "#!/newRecordFamilyHistory";
     };

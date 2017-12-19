@@ -1,6 +1,6 @@
 "use strict";
 
-app.factory("userFactory", function($q, $http, $window){
+app.factory("userFactory", function($q, $http, $window, $cookies){
    
     let currentUser = null;
     const url = "http://localhost:3000";
@@ -10,11 +10,11 @@ app.factory("userFactory", function($q, $http, $window){
 
     var token;
     var current_user;
+    var ck = $cookies;
     // const token = data.data.auth_token;
 
     // ********************************************************************************
     // *********************test code start***********************************************************
-
 
     // *********************test code end***********************************************************
     // ********************************************************************************
@@ -32,32 +32,79 @@ app.factory("userFactory", function($q, $http, $window){
        
         
     };
-        // console.log("newObj:", newObj);
-        // current_user = data.data.user_id
 
-        // return $http.post(`${url}/authenticate`, newObj)
- 
-        //     .then(data => console.log("data.data.auth_token: ", data.data.auth_token))
-        //     .catch(error => console.log("error @ userFactory addUser() ", error.message));
+
+    // ********************************************************************************
+    // ***********************COOKIES*********************************************************
+
+
+    const setCookies = function(){
+        let newCookie = ck.put('auth_token', token);
+        let userCookie = ck.put('current_user', current_user);
+        
+        console.log(" setcookies newcookie: ", newCookie);
+        console.log(" setcookies userCookie: ", userCookie);
+
+        return newCookie, userCookie;
+    };
+
+    const getCookies = function(){
+        // get zie cookies
+        let cookieUserAuth = ck.get('auth_token');
+        let cookieUserID = ck.get('current_user');
+        // set global vars
+        current_user = cookieUserID;
+        token = cookieUserAuth;
+        // put both in object to be returned
+        let allCookies = {
+            "user_id": cookieUserID,
+            "user_auth": cookieUserAuth
+        };
+        console.log(" getCookies allCookies: ", allCookies);
+        return allCookies;
+
+    };
+
+    //   ************test code
+
+    // const add_new_message_post = function (a, b) {
+    //     return $q((resolve, reject) => {
+    //       let data = JSON.stringify(a);
+    //       console.log('stringified data', a);
     
+    //       $http.post(`${url}/technologies/${b}/messageboards`, a, {
+    //         headers: { 'Authorization': `${get_cookies()}` }
+    //       })
+    //         .then((data) => {
+    //           resolve(data);
+    //         })
+    //         .catch((error) => {
+    //           reject(error);
+    //         });
+    //     });
+    //   };
+
+    //   ************test code
 
 
 
 
+
+    // ********************************************************************************
+    // ***********************LOGOUT*********************************************************
     const logoutUser = function(user){
         var deferred = $q.defer();
         return deferred.promise;
     };
         
     return {
-        
         addUser,
+        getCookies,
+        setCookies,
         logoutUser
         // register
         // isAuthenticated
-        
     };
-
 });
 
 
