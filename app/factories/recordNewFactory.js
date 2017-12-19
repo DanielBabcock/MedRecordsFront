@@ -1,29 +1,44 @@
 
 "use strict";
 
-app.factory("recordNewFactory", function($q, $http){
-
+app.factory("recordNewFactory", function($q, $http, userFactory){
 // I want this const   selectedFormType   to allow for the following functions to work for whichever form type is selected, otherwise I have t write a factory for every form.
-
 // const selectedFormType = {};
-
 // NOTES: ANGULARTOJOSN:::::   https://docs.angularjs.org/api/ng/function/angular.toJson
-
 const url = "http://localhost:3000";
-
-
+// let currentToken = [];
 // let recordType = "";
 
+      // "Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE0NjA2NTgxODZ9.xsSwcPC22IR71OBv6bU_OGCSyfE89DvEzWfDU0iybMA" http://localhost:3000/items
+    // []
 
-    const addRecord = function(obj, getPostAll){
+    // const getToken = function(token){
+    // };
+
+    const addRecord = function(obj, getPostAll, tokentok, record){
         let newObj = angular.toJson(obj);
-        
-        // return $http.post(`${url}/family_history`, newObj);
-        return $http.post(`${url}/${getPostAll}`, newObj);
+
+        console.log("tok in recordNewfacory, in addRecord function above return: ", tokentok);
+            return $q((resolve, reject)=>{
+                $http({
+                method: 'POST', 
+                url: `${url}/${getPostAll}`, 
+                headers: {'Authorization': `${tokentok}`},
+                data: {record: record}
+                });
+            // .json, newObj)
+                // .then((data) => {
+                //     record();
+                // }); 
+                //     // resolve(data))
+                // .catch(error => console.log("error", error.message))
+            // ;
+        });
+    };
 
             // .then(data => data)
             // .catch(error => console.log("error", error.message));
-    };
+    // });
 
     const editRecord = function(id, patchDeleteGetIndiv, obj) {
         return $q((resolve, reject)=>{
@@ -37,8 +52,8 @@ const url = "http://localhost:3000";
     const deleteRecord = function(id, patchDeleteGetIndiv){
         return $q((resolve,reject)=>{
             $http.delete(`${url}/${patchDeleteGetIndiv}.json`);
-            //     .then(response => resolve(response))
-            //     .catch(error => reject(error));
+                // .then(response => resolve(response))
+                // .catch(error => reject(error));
         });
     };
 

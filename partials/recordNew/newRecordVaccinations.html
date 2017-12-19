@@ -32,7 +32,7 @@ vaccine_expiration : date -->
                 </div>
                 <div class="form-group">
                         <label>Vaccination Date: </label>
-                        <input id="date" type="date" value="2017-06-01" class="form-control" ng-model="record.vaccinationDate"/>
+                        <input id="date" type="datetime-local" class="form-control" ng-model="record.vaccinationDate"/>
                 </div>
                 <div class="form-group">
                         <label>Vaccination Expiration: </label>
@@ -40,13 +40,13 @@ vaccine_expiration : date -->
                         <input id="date" type="datetime-local" name="vaxExp" class="form-control" ng-model="record.vaccineExpiration"/>
                     </div>
                
-                        <input id="date" type="datetime-local" name="vaxExp" class="form-control" ng-model="record.vaccineExpiration"/>
+                        <!-- <input id="date" type="datetime-local" name="vaxExp" class="form-control" ng-model="record.vaccineExpiration"/> -->
             
                 <!-- ************
                 Buttons
                 ************ -->
                 <div class="text-center">
-                    <button class="btn btn-default" ng-click="submitNewRecordFamilyHistory()">Save and Submit</button>    
+                    <button class="btn btn-default" ng-click="submitNewRecordVaccinations()">Save and Submit</button>    
                 </div>
             </form>
         </form>

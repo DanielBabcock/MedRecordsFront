@@ -3,11 +3,12 @@
     handle data and provide functionality to edit a task
  */
 
-app.controller("newRecordFamilyHistoryCtrl", function($scope, recordNewFactory, $window, $routeParams, $location, $rootScope){
+app.controller("newRecordFamilyHistoryCtrl", function($scope, recordNewFactory, userFactory, $window, $routeParams, $location, $rootScope){
     
     const vm = $scope;
     const url = "http://localhost:3000";
-    
+            
+
     // const user = userFactory.getCurrentUser();
 
     // let recordType = "";
@@ -52,8 +53,12 @@ app.controller("newRecordFamilyHistoryCtrl", function($scope, recordNewFactory, 
 
        
 
-        vm.submitNewRecordFamilyHistory = function(){
-            recordNewFactory.addRecord(vm.record, getPostAll);
+        vm.submitNewRecordFamilyHistory = function(record){
+            let tok = userFactory.tokentok();
+
+            console.log("tok in familyCtr; ", tok);
+            recordNewFactory.addRecord(record, getPostAll, tok);
+            
                 $window.location.href = "#!/newRecordFamilyHistory";
                 console.log("submitNewRecordFamilyHistory fired at newRecordFamilyHistoryCtrl");
         };
