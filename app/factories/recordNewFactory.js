@@ -15,30 +15,22 @@ const url = "http://localhost:3000";
     // const getToken = function(token){
     // };
 
-    const addRecord = function(obj, getPostAll, tokentok, record){
-        let newObj = angular.toJson(obj);
+    const addRecord = function(record, getPostAll, tokentok){
+        // let newObj = angular.toJson(record);
+        let newObj = record;
+        console.log("newObj in factory: ", newObj);
 
         console.log("tok in recordNewfacory, in addRecord function above return: ", tokentok);
             return $q((resolve, reject)=>{
                 $http({
                 method: 'POST', 
                 url: `${url}/${getPostAll}`, 
-                headers: {'Authorization': `${tokentok}`},
-                data: {record: record}
+                headers: {'Authorization': tokentok},
+                data: newObj
                 });
-            // .json, newObj)
-                // .then((data) => {
-                //     record();
-                // }); 
-                //     // resolve(data))
-                // .catch(error => console.log("error", error.message))
-            // ;
-        });
+            });
     };
 
-            // .then(data => data)
-            // .catch(error => console.log("error", error.message));
-    // });
 
     const editRecord = function(id, patchDeleteGetIndiv, obj) {
         return $q((resolve, reject)=>{

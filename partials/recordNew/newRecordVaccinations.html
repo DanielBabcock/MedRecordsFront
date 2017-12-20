@@ -9,14 +9,14 @@ vaccination_date : date
 vaccine_expiration : date -->
 
 
-<div ng-app="MedRecordApp" ng-controller="newRecordVaccinationsCtrl">
+<div class="form-group" ng-app="MedRecordApp" ng-controller="newRecordVaccinationsCtrl">
 
         <!-- newRecordFamilyHistoryCtrl -->
         <!-- ************
         Form Title 
         ************ -->
         <h3 >Vaccinations</h3>
-        <form>
+        <form name="main.addForm" class="form" ng-submit="submitNewRecordVaccinations()">
         <!-- <form ng-model="selectedFormType.newRecordFamilyHistory"> -->
             <!-- <div class="form-group">
                 <label>record Description</label>
@@ -45,9 +45,12 @@ vaccine_expiration : date -->
                 <!-- ************
                 Buttons
                 ************ -->
-                <div class="text-center">
-                    <button class="btn btn-default" ng-click="submitNewRecordVaccinations()">Save and Submit</button>    
+                <div class="col-xs-6">
+                    <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Submit New Vaccination Record</button>
                 </div>
+                <!-- <div class="text-center">
+                    <button class="btn btn-default" ng-submit="submitNewRecordVaccinations()">Save and Submit</button>    
+                </div> -->
             </form>
         </form>
     </div>

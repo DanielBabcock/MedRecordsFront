@@ -9,47 +9,44 @@ app.controller("newRecordFamilyHistoryCtrl", function($scope, recordNewFactory, 
     const url = "http://localhost:3000";
             
 
-    // const user = userFactory.getCurrentUser();
-
-    // let recordType = "";
-
     // Get and Post
-    const getPostAll = "family_histories";
+    let getPostAll = "family_histories";
+    // let getPostAll = "family_history";
+
     // Patch, Delete, and Get a record
-    const patchDeleteGetIndiv = "family_histories/:id";
+    let patchDeleteGetIndiv = "family_histories/:id";
     // const patchDeleteGetIndiv = "family_histories/";
-    
-
-
-        // vm.selectedFormType = vm.newRecordFamilyHistory;
-        // gathers data from form to send to db
-        vm.record = {
-            familyMemberRelation: "",   
-            prionDisease: "",            
-            cardiacDisease: "",          
-            cardiacEvent: "",            
-            cardiacEventAges: "",        
-            cardiacDeath: "",           
-            cardiacDeathAge: "",         
-            diabetes: "",                 
-            diabetesType: "",             
-            organDiseases: "",            
-            organDiseaseName: "",        
-            respiratoryDisease: "",       
-            respiratoryDiseaseNames: "",  
-            cancer: "",                   
-            cancerDeath: "",              
-            cancerTypes: "",              
-            cancerEventAge: "",          
-            highBloodPressure: "",       
-            stroke: "",                   
-            alzheimersOrDementia: "",     
-            osteoporosis: "",    
-            bleedingDisorder: "",         
-            // bleedingDisorder: ""  
-            // uid: user,
-            isCompleted: false
-        };
+    vm.record = {};
+        // gathers form data for database
+        // vm.record = { 
+        //     family_history:{
+        //         patient_id: "",
+        //         family_member_relation: "",   
+        //         prion_disease: "",            
+        //         cardiac_disease: "",          
+        //         cardiac_event: "",            
+        //         cardiac_event_ages: "",        
+        //         cardiac_death: "",     
+        //         cardiac_death_age: "",
+        //         diabetes: "",                 
+        //         diabetes_type: "",             
+        //         organ_diseases: "",            
+        //         organ_disease_name: "",        
+        //         respiratory_disease: "",       
+        //         respiratory_disease_names: "",  
+        //         cancer: "",                   
+        //         cancer_death: "",              
+        //         cancer_types: "",              
+        //         cancer_event_age: "",          
+        //         high_blood_pressure: "",       
+        //         stroke: "",                   
+        //         alzheimers_or_dementia: "",     
+        //         osteoporosis: "",    
+        //         bleeding_disorder: ""        
+        //         // uid: user,
+        //         // isCompleted: false
+        //     }
+        // };
 
        
 
@@ -57,7 +54,7 @@ app.controller("newRecordFamilyHistoryCtrl", function($scope, recordNewFactory, 
             let tok = userFactory.tokentok();
 
             console.log("tok in familyCtr; ", tok);
-            recordNewFactory.addRecord(record, getPostAll, tok);
+            recordNewFactory.addRecord(vm.record, getPostAll, tok);
             
                 $window.location.href = "#!/newRecordFamilyHistory";
                 console.log("submitNewRecordFamilyHistory fired at newRecordFamilyHistoryCtrl");
@@ -65,14 +62,7 @@ app.controller("newRecordFamilyHistoryCtrl", function($scope, recordNewFactory, 
 
 });
 
-    // GET /todos 	List all todos
-    // POST /todos 	Create a new todo
-    // GET /todos/:id 	Get a todo
-    // PUT /todos/:id 	Update a todo
-    // DELETE /todos/:id 	Delete a todo and its items
-    // GET /todos/:id/items 	Get a todo item
-    // PUT /todos/:id/items 	Update a todo item
-    // DELETE /todos/:id/items 	Delete a todo item
+
 
 
 
