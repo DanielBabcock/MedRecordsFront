@@ -9,13 +9,13 @@
     <!-- STRETCH GOAL, user can see all records in profile -->
     <!-- <label>Search for records:</label>
     <input type="text" placeholder="type keyword here:">
-    <button ng-click="searchRecs()">Search </button> -->
+    <button ng-submit="searchRecs()">Search </button> -->
 
 
     <!-- AFTER NEW FAMILY RECORD AND FAMILY RECORD WORKS,Profile page link Button here -->
     <!-- <section layout="row" layout-sm="column" layout-align="center center" layout-wrap> -->
         <!-- <label>Go to your profile: </label>
-        <button type="button" ng-click="goToProfile()">Profile: </button> 
+        <button type="button" ng-submit="goToProfile()">Profile: </button> 
 
     </section> -->
 
@@ -24,17 +24,17 @@
 
     <!-- STRETCH GOAL, get this working and then, Upgrade to drop down menu -->
     <div class="form-group">
+        <form name="main.addForm" class="form" ng-submit="newFamRecord()">
 
-        <label>Create a new record: </label>
-        <ul>
-            <!-- <li><button type="button" ng-click="newIllRecord()">Major Illness: </button></li> -->
-            <li><button type="button" ng-click="newFamRecord()">Family History: </button></li> 
-            <!-- <li><button type="button" ng-click="newMedRecord()">Medications: </button></li>  -->
-            <!-- <li><button type="button" ng-click="newPatInfoRecord()">Patient Info: </button></li>  -->
-            <!-- <li><button type="button" ng-click="newSurgRecord()">Surgical Procedures </button></li>  -->
-            <!-- <li><button type="button" ng-click="newVaxRecord()">Vaccinations: </button></li>  -->
-        </ul>
+            <label>Create a new record: </label>
+            <div class="col-xs-6">
+                <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> New Family Record</button>
+            </div>
+            <!-- <ul> -->
+                <!-- <li><button type="button" ng-click="newFamRecord()">Family History: </button></li>  -->
 
+            <!-- </ul> -->
+        </form>
     </div>
         
    
@@ -43,4 +43,9 @@
 </div>
 
 
+            <!-- <li><button type="button" ng-submit="newIllRecord()">Major Illness: </button></li> -->
 
+            <!-- <li><button type="button" ng-submit="newMedRecord()">Medications: </button></li>  -->
+            <!-- <li><button type="button" ng-submit="newPatInfoRecord()">Patient Info: </button></li>  -->
+            <!-- <li><button type="button" ng-submit="newSurgRecord()">Surgical Procedures </button></li>  -->
+            <!-- <li><button type="button" ng-submit="newVaxRecord()">Vaccinations: </button></li>  -->

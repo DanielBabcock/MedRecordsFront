@@ -24,13 +24,9 @@ notes : string -->
         <!-- ************
         Form Title 
         ************ -->
+        
+        <form name="main.addForm" class="form" ng-submit="submitNewRecordSurgicalProcedures()">
         <h3 >Surgical Procedures</h3>
-        <form>
-        <!-- <form ng-model="selectedFormType.newRecordFamilyHistory"> -->
-            <!-- <div class="form-group">
-                <label>record Description</label>
-                <input type="text" class="form-control" placeholder="Some important record" ng-model="record.record"/>
-            </div> -->
             <!-- ************
             Fields to fill
             ************ -->
@@ -193,8 +189,11 @@ notes : string -->
                 <!-- ************
                 Buttons
                 ************ -->
-                <div class="text-center">
-                    <button class="btn btn-default" ng-click="submitNewRecordFamilyHistory()">Save and Submit</button>    
+                <!-- <div class="text-center">
+                    <button class="btn btn-default" ng-submit="submitNewRecordSurgicalProcedures()">Save and Submit</button>    
+                </div> -->
+                <div class="col-xs-6">
+                    <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Submit New Surgcal Procedure</button>
                 </div>
             </form>
         </form>
