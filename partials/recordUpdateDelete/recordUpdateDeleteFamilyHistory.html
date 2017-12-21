@@ -1,0 +1,56 @@
+<h1>Family Histories</h1>  
+hi
+<label>if you see me the ReadDelete page is loading</label>
+
+<div ng-controller="recordUpdateDeleteFamilyHistoryCtrl" ng-repeat="items in records | filter: searchText.search |filter: false:isCompleted">
+    <div class="panel panel-default" ng-hide="items.isCompleted">
+        <div class="panel-body">
+            <div class="col-xs-1"><input type="checkbox" ng-model="items.isCompleted" ng-change="toggleDoneRecord(items)"/></div>
+             <div class="col-xs-6"><a ng-href="#!/record/{{items.id}}">{{ items.record }}</a></div>
+             <label>if you see me the ReadDelete page is loading</label>
+
+             
+             <div class="col-xs-2">{{record.family_history.family_member_relation}}</div>
+             <div class="col-xs-2">{{record.family_history.prion_disease}}</div>
+             <div class="col-xs-2">{{record.family_history.cardiac_disease}}</div>
+             <div class="col-xs-2">{{record.family_history.cardiac_event}}</div>
+             <div class="col-xs-2">{{record.family_history.cardiac_event_ages}}</div>
+             <div class="col-xs-2">{{record.family_history.cardiac_death}}</div>
+             <div class="col-xs-2">{{record.family_history.cardiac_death_age}}</div>
+             <div class="col-xs-2">{{record.family_history.diabetes}}</div>
+             <div class="col-xs-2">{{record.family_history.diabetes_type}}</div>
+             <div class="col-xs-2">{{record.family_history.organ_diseases}}</div>
+             <div class="col-xs-2">{{record.family_history.organ_disease_name}}</div>
+             <div class="col-xs-2">{{record.family_history.respiratory_disease}}</div>
+             <div class="col-xs-2">{{record.family_history.respiratory_disease_names}}</div>
+             <div class="col-xs-2">{{record.family_history.cancer}}</div>
+             <div class="col-xs-2">{{record.family_history.cancer_death}}</div>
+             <div class="col-xs-2">{{record.family_history.cancer_types}}</div>
+             <div class="col-xs-2">{{record.family_history.cancer_event_age}}</div>
+             <div class="col-xs-2">{{record.family_history.high_blood_pressure}}</div>
+             <div class="col-xs-2">{{record.family_history.stroke}}</div>
+             <div class="col-xs-2">{{record.family_history.alzheimers_or_dementia}}</div>
+             <div class="col-xs-2">{{record.family_history.osteoporosis}}</div>
+             <div class="col-xs-2">{{record.family_history.bleeding_disorder}}</div>
+      
+            <div class="col-xs-1"><button ng-click="deleteRecord(items.id)" class="btn btn-danger">X</button></div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default btn" ng-click="edit($index);"><i class="glyphicon glyphicon-pencil"></i></button>  
+                <button type="button" class="btn btn-default btn" ng-click="delete();"><i class="glyphicon glyphicon-trash"></i></button> 
+            </div>
+                <!-- <td ng-hide="a">  
+                {{stu.StudentEmail}}  
+                </td>  
+                <td>  
+                    <span ng-hide="a" ng-click="a=!a">Edit</span>  
+                    <span ng-show="a" ng-click="a=!a">Cancel</span>  
+                    <span ng-show="a" ng-click="UpdateStudent(stu)">Update</span>  
+                    <span ng-click="deleteStudent(stu,$index)">Delete</span>  
+                </td> -->
+        </div>
+    </div>
+</div>
+
+<!-- items = thingy
+record = task
+records = tasks -->

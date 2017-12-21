@@ -1,7 +1,7 @@
 "use strict";
 
 
-app.controller("homeCtrl", function($scope, $window, homeFactory, recordFactory){
+app.controller("homeCtrl", function($scope, $window, homeFactory, recordFactory, userFactory){
 
     const vm = $scope;
     const url = "http://localhost:3000";
@@ -17,11 +17,20 @@ app.controller("homeCtrl", function($scope, $window, homeFactory, recordFactory)
     //     $window.location.href = "#!/";
     // };
     vm.famHistRecord = function(){
+        let tok = userFactory.tokentok();  
+        // Get and Post
+        let getPostAll = "family_histories";
+        // Patch, Delete, and Get a record
+        let patchDeleteGetIndiv = "family_histories/:id";
+       
+        recordFactory.getIndivRecord(patchDeleteGetIndiv, tok);{
+
         console.log("famHistRecord in homeCtrl fired: ");
-        $window.location.href = "#!/recordViewCrud";
-    };
+        $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
+    }
+};
 
-
+    
     // ******************************************************************
     // ****************GO TO PROFILE*************************************
     // ******************************************************************
@@ -41,8 +50,10 @@ app.controller("homeCtrl", function($scope, $window, homeFactory, recordFactory)
 
     vm.newFamRecord = function(){
         // recordFactory.addRecord();
+        
         console.log("newFamRecord in homeCtrl fired: ");
         $window.location.href = "#!/newRecordFamilyHistory";
+        
     };
 
     // **********newIllRecord()***********

@@ -1,7 +1,7 @@
 "use strict";
 // functions that on delete or edit  calls factory to to perform that action
 
-app.controller("recordReadUpdateCtrl", function($scope, recordFactory, userFactory, $window, $routeParams, $location){
+app.controller("recordUpdateDeleteFamilyHistoryCtrl", function($scope, recordFactory, userFactory, $window, $routeParams, $location){
 
     const vm = $scope;
     const url = "http://localhost:3000";
@@ -15,29 +15,35 @@ app.controller("recordReadUpdateCtrl", function($scope, recordFactory, userFacto
     let patchDeleteGetIndiv = "family_histories/:id";
     // const patchDeleteGetIndiv = "family_histories/";
 
+    const getRecord = function(){
+
+    };
+
 // ************functions to view each type of record and each needs to pass token, record, ************************
     // display the details of a given task in form.html
     // invoke from details view when the 'edit' button is clicked
-    const showUpdateRec = function(){
-        recordFactory.getIndivRecord($routeParams.itemId)
-            .then(data => {
-                console.log("data", data);
-                vm.record = data;
-                vm.record.id = $routeParams.itemId;
-            });
-    };
+//     const showUpdateRec = function(){
+//         recordFactory.getIndivRecord($routeParams.itemId)
+//             .then(data => {
+//                 console.log("data", data);
+//                 vm.record = data;
+//                 vm.record.id = $routeParams.itemId;
+//             });
+//     };
 
-    // edit task
-    // using location to redirect
-    vm.submitRec = function(){
-        recordFactory.editRecord($routeParams.itemId, vm.task)
-            .then(data => $location.path('/record-list'));
-    };
+//     // edit task
+//     // using location to redirect
+//     vm.submitRec = function(){
+//         recordFactory.editRecord($routeParams.itemId, vm.task)
+//             .then(data => $location.path('/record-list'));
+//     };
 
-    showUpdateRec();
+//     showUpdateRec();
 
 
 });
+
+
 // ************END OF FUNCTIONS HERE ************************
 
 

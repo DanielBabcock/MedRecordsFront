@@ -18,31 +18,32 @@
                 </div>
             </div>
         </div>
-    <!-- end ng-app -->
     </div> 
-
+    
+    <!-- BEGINNING of dependencies -->
     <script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="./lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./lib/node_modules/angular/angular.min.js"></script>
     <script type="text/javascript" src="./lib/node_modules/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="./lib/node_modules/angular-cookies/angular-cookies.min.js"></script>
-    <!-- app -->
+    <!-- END of dependencies -->
+
+    <!-- APP.js -->
     <script src="app/app.js"></script>
 
-    <!-- factories -->
+    <!-- BEGINNING of factories -->
     <script src="app/factories/homeFactory.js"></script>
     <script src="app/factories/recordFactory.js"></script>
     <script src="app/factories/userFactory.js"></script>
     <script src="app/factories/filterFactory.js"></script>
+    <!-- END of factories -->
 
 
-    <!-- controllers -->
+    <!-- BEGINNING of Controllers -->
     <script src="app/controllers/homeCtrl.js"></script>
     <script src="app/controllers/navBarUserCtrl.js"></script>
     <script src="app/controllers/welcomeCtrl.js"></script>
-    <script src="app/controllers/recordReadUpdateCtrl.js"></script>
-    <script src="app/controllers/recordReadDeleteCtrl.js"></script>
-    
+        
         <!-- controllers/recordNew -->
     <script src="app/controllers/recordNew/newRecordFamilyHistoryCtrl.js"></script>
     <!-- <script src="app/controllers/recordNew/newRecordMajorIllnessCtrl.js"></script> -->
@@ -51,9 +52,14 @@
     <!-- <script src="app/controllers/recordNew/newRecordSurgicalProceduresCtrl.js"></script> -->
     <!-- <script src="app/controllers/recordNew/newRecordVaccinationsCtrl.js"></script> -->
     
-    
-    
-
+        <!-- controllers/recordUpdateDelete -->
+    <script src="app/controllers/recordUpdateDelete/recordUpdateDeleteFamilyHistoryCtrl.js"></script>
+    <!-- <script src="app/controllers/recordUpdateDelete/recordUpdateDeleteMajorIllnessCtrl.js"></script> -->
+    <!-- <script src="app/controllers/recordUpdateDelete/recordUpdateDeleteMedicationsCtrl.js"></script> -->
+    <!-- <script src="app/controllers/recordUpdateDelete/recordUpdateDeletePatientInfoCtrl.js"></script> -->
+    <!-- <script src="app/controllers/recordUpdateDelete/recordUpdateDeleteSurgicalProceduresCtrl.js"></script> -->
+    <!-- <script src="app/controllers/recordUpdateDelete/recordUpdateDeleteVaccinationsCtrl.js"></script> -->
+    <!-- END of Controllers -->
 
 </body>
 </html>
