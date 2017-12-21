@@ -1,18 +1,25 @@
 "use strict";
 
 
-app.controller("homeCtrl", function($scope, $window, homeFactory, recordNewFactory){
+app.controller("homeCtrl", function($scope, $window, homeFactory, recordFactory){
 
     const vm = $scope;
     const url = "http://localhost:3000";
 
+// This Ctrl is only for redirecting to other partials.....
+
     // ******************************************************************
     // ****************SEARCH FOR RECORDS********************************
-    // ******************STRETCH GOAL************************************
+    // ********STRETCH GOAL is drop menu, for now just link buttons******
+    // ******************************************************************
     // searchRecs
     // vm.searchRecs = function(){
     //     $window.location.href = "#!/";
     // };
+    vm.famHistRecord = function(){
+        console.log("famHistRecord in homeCtrl fired: ");
+        $window.location.href = "#!/recordViewCrud";
+    };
 
 
     // ******************************************************************
@@ -33,7 +40,7 @@ app.controller("homeCtrl", function($scope, $window, homeFactory, recordNewFacto
 
 
     vm.newFamRecord = function(){
-        // recordNewFactory.addRecord();
+        // recordFactory.addRecord();
         console.log("newFamRecord in homeCtrl fired: ");
         $window.location.href = "#!/newRecordFamilyHistory";
     };

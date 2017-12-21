@@ -1,21 +1,14 @@
-// ../../partials/searchRecords.html
-// "use strict";
+"use strict";
+// functions that on delete or edit  calls factory to to perform that action
 
-// /*
-    
-//     the sole purpose of this factory is to enable communication between the navbar controller and the list controller
-//     they will need this data to communicate the ng-model "searchText" in the navbar ctrl
-//     and the filter in the list ctrl
-    
-//  */
+app.controller("recordViewCrudCtrl", function($scope, recordFactory, userFactory, $window, $routeParams, $location){
 
-// app.factory("filterFactory", function(){
-//     return {
-//         search: ""
-//     };
-// });
+    const vm = $scope;
+    const url = "http://localhost:3000";
 
+// functions to view each type of record and each needs to pass url/token, record, 
 
+});
 // ### HTTP request routes. ```rails routes```
 // Prefix Verb   URI Pattern                        Controller#Action
 //    family_histories GET    /family_histories(.:format)        family_histories#index
@@ -62,12 +55,3 @@
 //                     DELETE /items/:id(.:format)               items#destroy
 //        authenticate POST   /authenticate(.:format)            authentication#authenticate
 
-       
-// GET /todos 	List all todos
-// POST /todos 	Create a new todo
-// GET /todos/:id 	Get a todo
-// PUT /todos/:id 	Update a todo
-// DELETE /todos/:id 	Delete a todo and its items
-// GET /todos/:id/items 	Get a todo item
-// PUT /todos/:id/items 	Update a todo item
-// DELETE /todos/:id/items 	Delete a todo item

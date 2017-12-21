@@ -6,7 +6,7 @@
 
  */
 
-app.controller("newRecordPatientCtrl", function($scope, recordNewFactory, $routeParams, $location){
+app.controller("newRecordPatientCtrl", function($scope, recordFactory, $routeParams, $location){
 
     const vm = $scope;
     const url = "http://localhost:3000";
@@ -38,7 +38,7 @@ app.controller("newRecordPatientCtrl", function($scope, recordNewFactory, $route
     // display the details of a given task in form.html
     // invoke from details view when the 'edit' button is clicked
     const showEditTask = function(){
-        recordNewFactory.getSingleTask($routeParams.itemId)
+        recordFactory.getSingleTask($routeParams.itemId)
             .then(data => {
                 console.log("data", data);
                 vm.task = data;
@@ -49,7 +49,7 @@ app.controller("newRecordPatientCtrl", function($scope, recordNewFactory, $route
     // edit task
     // using location to redirect
     vm.submitTask = function(){
-        recordNewFactory.editTask($routeParams.itemId, vm.task)
+        recordFactory.editTask($routeParams.itemId, vm.task)
             .then(data => $location.path('/task-list'));
     };
 
@@ -74,7 +74,7 @@ app.controller("newRecordPatientCtrl", function($scope, recordNewFactory, $route
     // if you use $location.url, you will only see the new task 
     // once you refresh and force a digest cycle
     vm.submitTask = function(){
-        recordNewFactory.addTask(vm.task);
+        recordFactory.addTask(vm.task);
             // $window.location.href = "#!/task-list";
     };
 

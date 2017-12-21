@@ -1,8 +1,80 @@
-// ../../partials/record/.............all......
-
 "use strict";
 
+app.factory("recordFactory", function($q, $http, userFactory){
 
+const url = "http://localhost:3000";
+
+    const addRecord = function(record, getPostAll, tokentok){
+        // let newObj = angular.toJson(record);
+        let newObj = record;
+        console.log("newObj in factory: ", newObj);
+
+        console.log("tok in recordNewfacory, in addRecord function above return: ", tokentok);
+            return $q((resolve, reject)=>{
+                $http({
+                method: 'POST', 
+                url: `${url}/${getPostAll}`, 
+                headers: {'Authorization': tokentok},
+                data: newObj
+                });
+            });
+    };
+
+
+    const editRecord = function(record, patchDeleteGetIndiv, tokentok) {
+        let newObj = record;
+        return $q((resolve, reject)=>{
+            $http({
+                method: 'PATCH', 
+                url: `${url}/${patchDeleteGetIndiv}`, 
+                headers: {'Authorization': tokentok},
+                data: newObj
+                });
+            // let newObj = angular.toJson(obj);
+            // $http.patch(`${url}/${patchDeleteGetIndiv}.json`, newObj)
+            //     .then(data=> resolve(data))
+            //     .catch(error => reject(error));
+        });
+    };
+
+    const deleteRecord = function(record, patchDeleteGetIndiv, tokentok){
+        let newObj = record;
+        return $q((resolve,reject)=>{
+            $http({
+                method: 'DELETE', 
+                url: `${url}/${patchDeleteGetIndiv}`, 
+                headers: {'Authorization': tokentok},
+                data: newObj
+                });
+            
+            // $http.delete(`${url}/${patchDeleteGetIndiv}.json`);
+                // .then(response => resolve(response))
+                // .catch(error => reject(error));
+        });
+    };
+
+    const getIndivRecord = function(record, patchDeleteGetIndiv, tokentok){
+        let newObj = record;
+        return $q((resolve,reject)=> {
+            $http({
+                method: 'GET', 
+                url: `${url}/${patchDeleteGetIndiv}`, 
+                headers: {'Authorization': tokentok}
+                // data: newObj
+                })
+                .then(item => resolve(item.data))
+                .catch(error => reject(error));
+        });
+    };
+
+    return {
+        addRecord,
+        editRecord,
+        deleteRecord,
+        getIndivRecord
+    };
+
+});
 
 // ### HTTP request routes. ```rails routes```
 // Prefix Verb   URI Pattern                        Controller#Action
@@ -50,12 +122,3 @@
 //                     DELETE /items/:id(.:format)               items#destroy
 //        authenticate POST   /authenticate(.:format)            authentication#authenticate
 
-       
-// GET /todos 	List all todos
-// POST /todos 	Create a new todo
-// GET /todos/:id 	Get a todo
-// PUT /todos/:id 	Update a todo
-// DELETE /todos/:id 	Delete a todo and its items
-// GET /todos/:id/items 	Get a todo item
-// PUT /todos/:id/items 	Update a todo item
-// DELETE /todos/:id/items 	Delete a todo item
