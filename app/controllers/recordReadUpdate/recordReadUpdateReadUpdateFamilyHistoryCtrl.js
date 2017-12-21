@@ -1,14 +1,57 @@
 "use strict";
 // functions that on delete or edit  calls factory to to perform that action
 
-app.controller("recordViewCrudCtrl", function($scope, recordFactory, userFactory, $window, $routeParams, $location){
+app.controller("recordReadUpdateCtrl", function($scope, recordFactory, userFactory, $window, $routeParams, $location){
 
     const vm = $scope;
     const url = "http://localhost:3000";
+    
+    // ************HOLDS DATA FROM THE FORM:************
+    vm.record = {};
 
-// functions to view each type of record and each needs to pass url/token, record, 
+    // Get and Post
+    let getPostAll = "family_histories";
+    // Patch, Delete, and Get a record
+    let patchDeleteGetIndiv = "family_histories/:id";
+    // const patchDeleteGetIndiv = "family_histories/";
+
+// ************functions to view each type of record and each needs to pass token, record, ************************
+    // display the details of a given task in form.html
+    // invoke from details view when the 'edit' button is clicked
+    const showUpdateRec = function(){
+        recordFactory.getIndivRecord($routeParams.itemId)
+            .then(data => {
+                console.log("data", data);
+                vm.record = data;
+                vm.record.id = $routeParams.itemId;
+            });
+    };
+
+    // edit task
+    // using location to redirect
+    vm.submitRec = function(){
+        recordFactory.editRecord($routeParams.itemId, vm.task)
+            .then(data => $location.path('/record-list'));
+    };
+
+    showUpdateRec();
+
 
 });
+// ************END OF FUNCTIONS HERE ************************
+
+
+// ************NOTES BELOW HERE************************
+ // vm.upRecord = function(record){
+    //     let tok = userFactory.tokentok();
+    //     let patchDeleteGetIndiv = "family_histories/:id";
+    //     // console.log("tok in familyCtr; ", tok);
+    //     recordFactory.updateRecord(vm.record, patchDeleteGetIndiv, tok);
+        
+    //         $window.location.href = "#!/recordUpdateDelete";
+    //         // console.log("submitNewRecordFamilyHistory fired at newRecordFamilyHistoryCtrl");
+    // };
+
 // ### HTTP request routes. ```rails routes```
 // Prefix Verb   URI Pattern                        Controller#Action
 //    family_histories GET    /family_histories(.:format)        family_histories#index

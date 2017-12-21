@@ -1,40 +1,29 @@
-// "use strict";
+"use strict";
 
-// app.controller("newRecordPatientCtrl", function($scope, recordFactory, $routeParams, $location){
 
-    // const vm = $scope;
-    // const url = "http://localhost:3000";
+// app.controller("newRecordFamilyHistoryCtrl", function($scope, recordFactory, userFactory, $window, $routeParams, $location, $rootScope){
+    
+//     const vm = $scope;
+//     const url = "http://localhost:3000";
 
-      // let recordType = "";
+//     // Get and Post
+//     let getPostAll = "family_histories";
 
-    // const newFamilyRecord = function(){
-    //     var postAction = "family_histories";
-    //     var patchAction = "family_histories/:id";
-    //     var deleteAction = "family_histories/:id";
-    //     var getAction = "family_histories/:id";
-    //     // };
+//     // Patch, Delete, and Get a record
+//     let patchDeleteGetIndiv = "family_histories/:id";
+//     // const patchDeleteGetIndiv = "family_histories/";
 
-    // submitNewRecordVaccinations()
+//     // HOLDS DATA FROM THE FORM:
+//     vm.record = {};
 
+//     // SUBMITS NEW DATA TO DB FROM NEW RECORD FORM
+//         vm.submitNewRecordFamilyHistory = function(record){
+//             let tok = userFactory.tokentok();
+
+//             // console.log("tok in familyCtr; ", tok);
+//             recordFactory.addRecord(vm.record, getPostAll, tok);
+            
+//                 $window.location.href = "#!/home";
+//                 // console.log("submitNewRecordFamilyHistory fired at newRecordFamilyHistoryCtrl");
+//         };
 // });
-
-
-
-
-
-
-    // GET /todos 	List all todos
-    // POST /todos 	Create a new todo
-    // GET /todos/:id 	Get a todo
-    // PUT /todos/:id 	Update a todo
-    // DELETE /todos/:id 	Delete a todo and its items
-    // GET /todos/:id/items 	Get a todo item
-    // PUT /todos/:id/items 	Update a todo item
-    // DELETE /todos/:id/items 	Delete a todo item
-
-//     vaccinations GET    /vaccinations(.:format)            vaccinations#index
-//     POST   /vaccinations(.:format)            vaccinations#create
-//     vaccination GET    /vaccinations/:id(.:format)        vaccinations#show
-//     PATCH  /vaccinations/:id(.:format)        vaccinations#update
-//     PUT    /vaccinations/:id(.:format)        vaccinations#update
-//     DELETE /vaccinations/:id(.:format)        vaccinations#destroy

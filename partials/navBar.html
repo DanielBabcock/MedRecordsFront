@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-default" ng-controller="navBarCtrl">
+<nav class="navbar navbar-default" ng-controller="navBarUserCtrl">
     <!-- <div class="form-group" ng-app="MedRecordApp"> -->
         <form 
             <li><img class="logo-icon" src="images/logo.png"></li>    
@@ -16,6 +16,13 @@
                     <li><button ng-show="!isLoggedIn" ng-click="submitUser()" class="btn btn-info">Login</button></li>
                     <li><button ng-show="isLoggedIn" ng-click="logoutUser()">Logout</button></li>
                 </ul>
+                <!-- demonstration of two controllers sharing a factory -->
+            <div class="navbar-form navbar-left input-group" ng-show="isLoggedIn">
+                <div class="input-group" ng-show="showSearch">
+                <span class="input-group-addon glyphicon glyphicon-search" id="basic-addon1"></span>
+                <input type="text" class="form-control" placeholder="Search" ng-model="searchText.search">
+                </div>
+            </div>
         </form>
         <button type="button" ng-click="home()">Home Page </button> 
 
