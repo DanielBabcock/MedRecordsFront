@@ -1,0 +1,111 @@
+<!-- api specific field info plus save button, goes the new record upon save -->
+
+<!-- form for::::::: -->
+<!-- 
+Field: MajorIllness
+Columns: 
+patient_id : hash
+
+
+
+
+
+<div ng-app="MedRecordApp" ng-controller="newRecordFamilyHistoryCtrl">
+
+         newRecordMajorIllnessCtrl -->
+        <!-- ************
+        Form Title 
+        ************ -->
+        <h3 >Major Illness</h3>
+        <form>
+ 
+            <!-- ************
+            Fields to fill
+            ************ -->
+            <form>
+                    <!-- illness_name : string -->
+                <div class="form-group">
+                    <label>Illness Name: </label>
+                    <input type="text" class="form-control" placeholder="Malaria" ng-model="record.illnessName"/>
+                </div>
+                <!-- illness_start_date : date -->
+                <div class="form-group">
+                    <label>Illness Start Date: </label>
+                    <input id="date" type="datetime-local" name="illnessStartDate" class="form-control" ng-model="record.illnessStartDate"/>
+
+                </div>
+                <!-- illness_end_date : date -->
+                <div class="form-group">
+                    <label>Illness End Date: </label>
+                    <input id="date" type="datetime-local" name="illnessEndDate" class="form-control" ng-model="record.illnessEndDate"/>
+
+
+
+
+
+
+
+                    
+                </div>
+                <!-- care_giver_name : string -->
+                <div class="form-group">
+                    <label>Cardiac Death: </label>
+                    <input type="text" class="form-control" placeholder="34" ng-model="record.cardiacDeathAge"/>
+
+                </div>
+                <!-- illness_notes : string -->
+                <div class="form-group">
+                    <label>Cardiac Death Age: </label>
+                    <input type="text" class="form-control" placeholder="34" ng-model="record.cardiacDeathAge"/>
+                </div>
+                <!-- medication_name : string -->
+                <div class="form-group">
+                    <label>Diabetes: </label>
+                    <input type="text" class="form-control" placeholder="34" ng-model="record.cardiacDeathAge"/>
+
+                </div>
+                <!-- medication_purpose : string -->
+                <div class="form-group">
+                    <label>Diabetes Type: </label>
+                    <input type="text" class="form-control" placeholder="2" ng-model="record.diabetesType"/>
+                </div>
+                <!-- medication_dose : string -->
+                <div class="form-group">
+                    <label>Organ Diseases: </label>
+                    <input type="text" class="form-control" placeholder="34" ng-model="record.cardiacDeathAge"/>
+
+                </div>
+                <!-- medication_frequency : string -->
+                <div class="form-group">
+                    <label>Organ Disease Name: </label>
+                    <input type="text" class="form-control" placeholder="Cirrhosis of Liver" ng-model="record.organDiseaseName"/>
+                </div>
+                <!-- medication_start_date: date -->
+                <div class="form-group">
+                    <label>Respiratory Disease: </label>
+                    <input id="date" type="datetime-local" name="illnessEndDate" class="form-control" ng-model="record.illnessEndDate"/>
+
+                </div>
+                <!-- medication_end_date: date -->
+                <div class="form-group">
+                    <label>Respiratory Disease Names: </label>
+                    <input id="date" type="datetime-local" name="illnessEndDate" class="form-control" ng-model="record.illnessEndDate"/>
+                </div>
+                <!-- treatment_notes : string --> -->
+                <div class="form-group">
+                    <label>Cancer: </label>
+                    <input type="text" class="form-control" placeholder="Cirrhosis of Liver" ng-model="record.organDiseaseName"/>
+
+                </div>
+    
+                
+                    <!-- ************
+                    Buttons
+                    ************ -->
+                <div class="text-center">
+                    <button class="btn btn-default" ng-submit="submitNewRecordMajorIllness()">Save and Submit</button>    
+                </div>
+            </form>
+        </form>
+    </div>
+    
