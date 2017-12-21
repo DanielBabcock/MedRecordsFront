@@ -20,7 +20,10 @@ app.controller("navBarCtrl", function($scope, $window, $rootScope, userFactory, 
             email: "",
             password: ""
         };
-
+            // Goes back to Home Page
+        vm.home = function(){
+            $window.location.href = "#!/home";
+        };
 
         vm.submitUser = function(){
             console.log("userCtrl 1: ");

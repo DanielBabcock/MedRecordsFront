@@ -1,71 +1,79 @@
+<h2>Record</h2>
+<div class="col-xs-12">
 
-"use strict";
+    <h3>{{record.record}}</h3>
 
-app.factory("recordNewFactory", function($q, $http, userFactory){
-// I want this const   selectedFormType   to allow for the following functions to work for whichever form type is selected, otherwise I have t write a factory for every form.
-// const selectedFormType = {};
-// NOTES: ANGULARTOJOSN:::::   https://docs.angularjs.org/api/ng/function/angular.toJson
-const url = "http://localhost:3000";
-// let currentToken = [];
-// let recordType = "";
+    <ul class="list-group" id="familyHistory">
+        <li class="list-group-item">{{record.family_history.family_member_relation}}</li>
+        <li class="list-group-item">{{record.family_history.prion_disease}}</li>
+        <li class="list-group-item">{{record.family_history.cardiac_disease}}</li>
+        <li class="list-group-item">{{record.family_history.cardiac_event}}</li>
+        <li class="list-group-item">{{record.family_history.cardiac_event_ages}}</li>
+        <li class="list-group-item">{{record.family_history.cardiac_death}}</li>
+        <li class="list-group-item">{{record.family_history.cardiac_death_age}}</li>
+        <li class="list-group-item">{{record.family_history.diabetes}}</li>
+        <li class="list-group-item">{{record.family_history.diabetes_type}}</li>
+        <li class="list-group-item">{{record.family_history.organ_diseases}}</li>
+        <li class="list-group-item">{{record.family_history.organ_disease_name}}</li>
+        <li class="list-group-item">{{record.family_history.respiratory_disease}}</li>
+        <li class="list-group-item">{{record.family_history.respiratory_disease_names}}</li>
+        <li class="list-group-item">{{record.family_history.cancer}}</li>
+        <li class="list-group-item">{{record.family_history.cancer_death}}</li>
+        <li class="list-group-item">{{record.family_history.cancer_types}}</li>
+        <li class="list-group-item">{{record.family_history.cancer_event_age}}</li>
+        <li class="list-group-item">{{record.family_history.high_blood_pressure}}</li>
+        <li class="list-group-item">{{record.family_history.stroke}}</li>
+        <li class="list-group-item">{{record.family_history.alzheimers_or_dementia}}</li>
+        <li class="list-group-item">{{record.family_history.osteoporosis}}</li>
+        <li class="list-group-item">{{record.family_history.bleeding_disorder}}</li>
+    </ul>
+    
+    <!-- <ul class="list-group" id="majorIllness">
+        <li class="list-group-item">{{record.major_illness.}}</li>
+    </ul> -->
+    
+    <!-- <ul class="list-group" id="medications">
+            <li class="list-group-item">{{record.medication.}}</li>
+    </ul> -->
 
-      // "Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE0NjA2NTgxODZ9.xsSwcPC22IR71OBv6bU_OGCSyfE89DvEzWfDU0iybMA" http://localhost:3000/items
-    // []
+    <!-- <ul class="list-group" id="patientInfo">
+            <li class="list-group-item">{{record.patient_info.}}</li>
+    </ul>     -->
+    
+    <!-- <ul class="list-group" id="surgicalProcedures">
+            <li class="list-group-item">{{record.surgical_procedure.}}</li>
+    </ul>     -->
+    
+    <!-- <ul class="list-group" id="vaccinations">
+            <li class="list-group-item">{{record.vaccination.}}</li>
+    </ul>     -->
+    
 
-    // const getToken = function(token){
-    // };
+        <!-- <li class="list-group-item">{{record.family_history.}}</li> -->
+        <!-- <li class="list-group-item"><strong>Completed: </strong>{{record.isCompleted ? "yes" : "no"}}</li> -->
+    
 
-    const addRecord = function(record, getPostAll, tokentok){
-        // let newObj = angular.toJson(record);
-        let newObj = record;
-        console.log("newObj in factory: ", newObj);
-
-        console.log("tok in recordNewfacory, in addRecord function above return: ", tokentok);
-            return $q((resolve, reject)=>{
-                $http({
-                method: 'POST', 
-                url: `${url}/${getPostAll}`, 
-                headers: {'Authorization': tokentok},
-                data: newObj
-                });
-            });
-    };
+    <button class="btn btn-info"><a ng-href="#!/record/{{record.id}}/edit">Edit</a></button>
+</div>
 
 
-    const editRecord = function(id, patchDeleteGetIndiv, obj) {
-        return $q((resolve, reject)=>{
-            let newObj = angular.toJson(obj);
-            $http.patch(`${url}/${patchDeleteGetIndiv}.json`, newObj)
-                .then(data=> resolve(data))
-                .catch(error => reject(error));
-        });
-    };
 
-    const deleteRecord = function(id, patchDeleteGetIndiv){
-        return $q((resolve,reject)=>{
-            $http.delete(`${url}/${patchDeleteGetIndiv}.json`);
-                // .then(response => resolve(response))
-                // .catch(error => reject(error));
-        });
-    };
+<!-- <div ng-repeat="thingy in records | filter: searchText.search |filter: false:isCompleted">
+        <div class="panel panel-default" ng-hide="thingy.isCompleted">
+            <div class="panel-body">
+                <div class="col-xs-1"><input type="checkbox" ng-model="thingy.isCompleted" ng-change="toggleDonerecord(thingy)"/></div>
+                 <div class="col-xs-6"><a ng-href="#!/record/{{thingy.id}}">{{ thingy.record }}</a></div>
+                <div class="col-xs-2">{{thingy.dueDate}}</div>
+                <div class="col-xs-2">{{thingy.assignedTo}}</div>            
+                <div class="col-xs-1"><button ng-click="deleterecord(thingy.id)" class="btn btn-danger">X</button></div>
+            </div>
+        </div>
+</div> -->
 
-    const getIndivRecord = function(itemId, patchDeleteGetIndiv){
-        return $q((resolve,reject)=> {
-            $http.get(`${url}/${patchDeleteGetIndiv}.json`);
-            //     .then(item => resolve(item.data))
-            //     .catch(error => reject(error));
-        });
-    };
 
-    return {
-        addRecord,
-        editRecord,
-        deleteRecord,
-        getIndivRecord
-    };
 
-});
 
+<!-- 
 // ### HTTP request routes. ```rails routes```
 // Prefix Verb   URI Pattern                        Controller#Action
 //    family_histories GET    /family_histories(.:format)        family_histories#index
@@ -111,13 +119,4 @@ const url = "http://localhost:3000";
 //                     PUT    /items/:id(.:format)               items#update
 //                     DELETE /items/:id(.:format)               items#destroy
 //        authenticate POST   /authenticate(.:format)            authentication#authenticate
-
-    //    example
-// GET /todos 	List all todos
-// POST /todos 	Create a new todo
-// GET /todos/:id 	Get a todo
-// PUT /todos/:id 	Update a todo
-// DELETE /todos/:id 	Delete a todo and its items
-// GET /todos/:id/items 	Get a todo item
-// PUT /todos/:id/items 	Update a todo item
-// DELETE /todos/:id/items 	Delete a todo item
+ -->

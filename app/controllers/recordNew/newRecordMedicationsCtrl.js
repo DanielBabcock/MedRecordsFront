@@ -6,7 +6,7 @@
 
 //  */
 
-// app.controller("newRecordPatientCtrl", function($scope, recordNewFactory, $routeParams, $location){
+// app.controller("newRecordPatientCtrl", function($scope, recordFactory, $routeParams, $location){
 
     // const vm = $scope;
     // const url = "http://localhost:3000";
