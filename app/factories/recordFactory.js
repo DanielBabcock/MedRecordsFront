@@ -59,6 +59,7 @@ const url = "http://localhost:3000";
             $http({
                 method: 'GET', 
                 url: `${url}/${patchDeleteGetIndiv}`, 
+                // url: `${url}/${patchDeleteGetIndiv}`, 
                 headers: {'Authorization': tokentok}
                 // data: newObj
                 })
