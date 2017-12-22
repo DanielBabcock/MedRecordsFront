@@ -17,17 +17,19 @@ app.controller("homeCtrl", function($scope, $window, homeFactory, recordFactory,
     //     $window.location.href = "#!/";
     // };
     vm.famHistRecord = function(){
-        let tok = userFactory.tokentok();  
-        // Get and Post
-        let getPostAll = "family_histories";
-        // Patch, Delete, and Get a record
-        let patchDeleteGetIndiv = "family_histories/:id";
+        // let tok = userFactory.tokentok();  
+        // // Get and Post
+        // let getPostAll = "family_histories";
        
-        recordFactory.getIndivRecord(patchDeleteGetIndiv, tok);{
+        // recordFactory.getIndivRecord(getPostAll, tok)
+        // .then(data => {
+        //     console.log("data: ", data);
+        // vm.records = data;
+        // });
 
-        console.log("famHistRecord in homeCtrl fired: ");
+        // console.log("famHistRecord in homeCtrl fired: ");
         $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
-    }
+    
 };
 
     

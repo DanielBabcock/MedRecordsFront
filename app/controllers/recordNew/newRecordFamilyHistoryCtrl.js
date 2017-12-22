@@ -10,7 +10,7 @@ app.controller("newRecordFamilyHistoryCtrl", function($scope, recordFactory, use
     let getPostAll = "family_histories";
 
     // Patch, Delete, and Get a record
-    let patchDeleteGetIndiv = "family_histories/:id";
+    // let patchDeleteGetIndiv = "family_histories/";
     // const patchDeleteGetIndiv = "family_histories/";
 
     // HOLDS DATA FROM THE FORM:

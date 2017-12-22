@@ -53,14 +53,16 @@ const url = "http://localhost:3000";
         });
     };
 
-    const getIndivRecord = function(record, patchDeleteGetIndiv, tokentok){
-        let newObj = record;
+    const getIndivRecord = function(getPostAll, tok){
+        // let newObj = record;
+        console.log(" getpostall:", getPostAll);
+        console.log("url: ", url);
         return $q((resolve,reject)=> {
             $http({
                 method: 'GET', 
-                url: `${url}/${patchDeleteGetIndiv}`, 
+                url: `${url}/${getPostAll}`, 
                 // url: `${url}/${patchDeleteGetIndiv}`, 
-                headers: {'Authorization': tokentok}
+                headers: {'Authorization': tok}
                 // data: newObj
                 })
                 .then(item => resolve(item.data))
