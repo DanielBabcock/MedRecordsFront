@@ -1,34 +1,48 @@
-<h2>Record</h2>
+<h2>Records</h2>
 <div ng-controller="recordUpdateDeleteFamilyHistoryCtrl" class="col-xs-12">
 
-    <label>if you see me the ReadUpdate page is loading</label>
     <div ng-repeat="record in records">
         <ul class="list-group" id="familyHistory">
-                <!-- <li class="list-group-item">{{record.id}}</li> -->
 
-            <li class="list-group-item">{{record.family_member_relation}}</li>
-            <li class="list-group-item">{{record.prion_disease}}</li>
-            <li class="list-group-item">{{record.cardiac_disease}}</li>
-            <li class="list-group-item">{{record.cardiac_event}}</li>
-            <li class="list-group-item">{{record.cardiac_event_ages}}</li>
-            <li class="list-group-item">{{record.cardiac_death}}</li>
-            <li class="list-group-item">{{record.cardiac_death_age}}</li>
-            <li class="list-group-item">{{record.diabetes}}</li>
-            <li class="list-group-item">{{record.diabetes_type}}</li>
-            <li class="list-group-item">{{record.organ_diseases}}</li>
-            <li class="list-group-item">{{record.organ_disease_name}}</li>
-            <li class="list-group-item">{{record.respiratory_disease}}</li>
-            <li class="list-group-item">{{record.respiratory_disease_names}}</li>
-            <li class="list-group-item">{{record.cancer}}</li>
-            <li class="list-group-item">{{record.cancer_death}}</li>
-            <li class="list-group-item">{{record.cancer_types}}</li>
-            <li class="list-group-item">{{record.cancer_event_age}}</li>
-            <li class="list-group-item">{{record.high_blood_pressure}}</li>
-            <li class="list-group-item">{{record.stroke}}</li>
-            <li class="list-group-item">{{record.alzheimers_or_dementia}}</li>
-            <li class="list-group-item">{{record.osteoporosis}}</li>
-            <li class="list-group-item">{{record.bleeding_disorder}}</li>
+            <li class="list-group-item"><strong>Family Member:</strong> {{record.family_member_relation}}</li>
+            <li class="list-group-item">Prion Disease: {{record.prion_disease}}</li>
+            <li class="list-group-item">Cardiac Disease: {{record.cardiac_disease}}</li>
+            <li class="list-group-item">Cardiac Event: {{record.cardiac_event}}</li>
+            <li class="list-group-item">Cardiac Event Age: {{record.cardiac_event_ages}}</li>
+            <li class="list-group-item">Cardiac Death: {{record.cardiac_death}}</li>
+            <li class="list-group-item">Cardiac Death Age: {{record.cardiac_death_age}}</li>
+            <li class="list-group-item">Diabetes: {{record.diabetes}}</li>
+            <li class="list-group-item">Diabetes Type: {{record.diabetes_type}}</li>
+            <li class="list-group-item">Organ Diseases: {{record.organ_diseases}}</li>
+            <li class="list-group-item">Organ Disease Name: {{record.organ_disease_name}}</li>
+            <li class="list-group-item">Respiratory Disease: {{record.respiratory_disease}}</li>
+            <li class="list-group-item">Respiratory Disease Names: {{record.respiratory_disease_names}}</li>
+            <li class="list-group-item">Cancer: {{record.cancer}}</li>
+            <li class="list-group-item">Cancer Death: {{record.cancer_death}}</li>
+            <li class="list-group-item">Cancer Types: {{record.cancer_types}}</li>
+            <li class="list-group-item">Cancer Event Age: {{record.cancer_event_age}}</li>
+            <li class="list-group-item">High Blood Pressure: {{record.high_blood_pressure}}</li>
+            <li class="list-group-item">Stroke: {{record.stroke}}</li>
+            <li class="list-group-item">Alzheimers or Dementia: {{record.alzheimers_or_dementia}}</li>
+            <li class="list-group-item">Osteoporosis: {{record.osteoporosis}}</li>
+            <li class="list-group-item">Bleeding Disorder: {{record.bleeding_disorder}}</li></li>
+            
+            <div class="col-xs-12">
+                <button class="btn btn-primary" ng-click="edRecord()">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    Edit: {{record.family_member_relation}}
+                </button>
+            </div>
+            
+            <div class="col-xs-12">
+                    <button class="btn btn-primary" ng-click="delRecord()">
+                        <span class="glyphicon glyphicon-trash"></span>
+                        Delete: {{record.family_member_relation}}
+                    </button>
+            </div>
+            
         </ul>
+        
     </div>
     <!-- <ul class="list-group" id="majorIllness">
         <li class="list-group-item">{{record.major_illness.}}</li>
@@ -54,7 +68,6 @@
         <!-- <li class="list-group-item">{{record.}}</li> -->
         <!-- <li class="list-group-item"><strong>Completed: </strong>{{record.isCompleted ? "yes" : "no"}}</li> -->
     
-    <!-- <button class="btn btn-info"><a ng-href="#!/record/{{record.id}}/edit">Edit</a></button> -->
 
 </div>
 

@@ -4,65 +4,71 @@ app.factory("recordFactory", function($q, $http, userFactory){
 
 const url = "http://localhost:3000";
 
-    const addRecord = function(record, getPostAll, tokentok){
+    const addRecord = function(record, recordType,tokentok){
         // let newObj = angular.toJson(record);
         let newObj = record;
         console.log("newObj in factory: ", newObj);
 
-        console.log("tok in recordNewfacory, in addRecord function above return: ", tokentok);
+        // console.log("tok in recordNewfacory, in addRecord function above return: ", tokentok);
             return $q((resolve, reject)=>{
                 $http({
                 method: 'POST', 
-                url: `${url}/${getPostAll}`, 
+                url: `${url}/${recordType}`, 
                 headers: {'Authorization': tokentok},
-                data: newObj
+                data: newObj,
                 });
             });
     };
 
 
-    const editRecord = function(record, patchDeleteGetIndiv, tokentok) {
+    const editRecord = function(record, recordType, tokentok) {
         let newObj = record;
+        console.log("editRecord in record factory: ");
         return $q((resolve, reject)=>{
             $http({
                 method: 'PATCH', 
-                url: `${url}/${patchDeleteGetIndiv}`, 
+                url: `${url}/${recordType}`, 
                 headers: {'Authorization': tokentok},
                 data: newObj
                 });
+
             // let newObj = angular.toJson(obj);
-            // $http.patch(`${url}/${patchDeleteGetIndiv}.json`, newObj)
+            // $http.patch(`${url}/${recordType}.json`, newObj)
             //     .then(data=> resolve(data))
             //     .catch(error => reject(error));
         });
     };
 
-    const deleteRecord = function(record, patchDeleteGetIndiv, tokentok){
+    const deleteRecord = function(record, recordType, tokentok){
         let newObj = record;
+        console.log("deleteRecord in record factory: ");
+
         return $q((resolve,reject)=>{
             $http({
                 method: 'DELETE', 
-                url: `${url}/${patchDeleteGetIndiv}`, 
+                url: `${url}/${recordType}`,
+                // ${id}, 
                 headers: {'Authorization': tokentok},
                 data: newObj
                 });
-            
-            // $http.delete(`${url}/${patchDeleteGetIndiv}.json`);
+            console.log("deleteRecord in record factory: ");
+            // $http.delete(`${url}/${recordType}.json`);
                 // .then(response => resolve(response))
                 // .catch(error => reject(error));
         });
     };
 
-    const getIndivRecord = function(getPostAll, tok){
+    const getRecord = function(recordType, tok){
         // let newObj = record;
-        console.log(" getpostall:", getPostAll);
-        console.log("url: ", url);
+        console.log("recordType @ getRecord in recordFactory:", recordType);
+        console.log("url @ getRecord in recordFactory: ", url);
+        console.log("tok @ getRecord in recordFactory: ", tok);
+        
         return $q((resolve,reject)=> {
             $http({
                 method: 'GET', 
-                url: `${url}/${getPostAll}`, 
-                // url: `${url}/${patchDeleteGetIndiv}`, 
-                headers: {'Authorization': tok}
+                url: `${url}/${recordType}`, 
+                headers: {'Authorization': tok},
                 // data: newObj
                 })
                 .then(item => resolve(item.data))
@@ -74,7 +80,7 @@ const url = "http://localhost:3000";
         addRecord,
         editRecord,
         deleteRecord,
-        getIndivRecord
+        getRecord
     };
 
 });

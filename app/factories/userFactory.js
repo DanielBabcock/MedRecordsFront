@@ -22,19 +22,19 @@ app.factory("userFactory", function($q, $http, $window, $cookies){
     // *********************test code end***********************************************************
     // ********************************************************************************
     const tokentok = function(){
-        console.log("tokentok in userFact: ", tok);
+        // console.log("tokentok in userFact: ", tok);
 
         return tok;
     };
 
     const addUser = function(user, token){
-        console.log("userfact 1: ");
+        // console.log("userfact 1: ");
         return $q((resolve, regect)=>{
             $http.post(`${url}/authenticate`, user)
             .then((data)=>{
                 token = data.data.auth_token;
                 tok = data.data.auth_token;
-                console.log("userfact tokentok: ", tokentok());
+                // console.log("userfact tokentok: ", tokentok());
             });             
         });
     };
