@@ -12,12 +12,25 @@ app.controller("recordUpdateDeleteFamilyHistoryCtrl", function($scope, recordFac
     // Get and Post
     let getPostAll = "family_histories";
     // Patch, Delete, and Get a record
-    let patchDeleteGetIndiv = "family_histories/:id";
-    // const patchDeleteGetIndiv = "family_histories/";
+
 
     const getRecord = function(){
+        let tok = userFactory.tokentok();  
+        // Get and Post
+        let getPostAll = "family_histories";
+       
+        recordFactory.getIndivRecord(getPostAll, tok)
+        .then(data => {
+            console.log("data in getRecord: ", data);
+        vm.records = data;
+        });
+
+        console.log("getRecord in recordUpdateDeleteFamilyHistoryCtrl fired: ");
+        // $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
 
     };
+
+    getRecord();
 
 // ************functions to view each type of record and each needs to pass token, record, ************************
     // display the details of a given task in form.html

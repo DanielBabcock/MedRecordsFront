@@ -11,9 +11,11 @@
             <!-- ************
             Fields to fill
             ************ -->
+            <!-- <div ng-repeat="record in records" ng-controller="recordUpdateDeleteFamilyHistoryCtrl"> -->
             <form>
                 <div class="form-group">
                     <label>Family Member Relation: </label>
+                    <!-- <li class="list-group-item">{{record.family_member_relation}}</li> -->
                     <input type="text" class="form-control" placeholder="Mother" ng-model="record.family_history.family_member_relation"/>
                 </div>
     
@@ -132,6 +134,7 @@
                     <input type="radio" name="bleedingDisorder" ng-model="record.family_history.bleeding_disorder" ng-value="true"/> True
                     <input type="radio" name="bleedingDisorder" ng-model="record.family_history.bleeding_disorder" ng-value="false"/>  False
                 </div>
+                <!-- </div> -->
                 <!-- ************
                 Buttons
                 ************ -->
