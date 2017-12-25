@@ -29,11 +29,11 @@ app.controller("navBarUserCtrl", function($scope, $window, $rootScope, userFacto
         };
 
         vm.submitUser = function(){
-            console.log("userCtrl 1: ");
+            // console.log("userCtrl 1: ");
             userFactory.addUser(vm.authentication);
             // userFactory.setCookies();
             // userFactory.getCookies();
-            console.log("vm.auth: ", vm.authentication);
+            // console.log("vm.auth: ", vm.authentication);
                 $window.location.href = "#!/home";
         };
          

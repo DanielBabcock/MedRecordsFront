@@ -4,32 +4,23 @@
 app.controller("homeCtrl", function($scope, $window, homeFactory, recordFactory, userFactory){
 
     const vm = $scope;
-    const url = "http://localhost:3000";
+    // const url = "http://localhost:3000";
 
 // This Ctrl is only for redirecting to other partials.....
 
     // ******************************************************************
     // ****************SEARCH FOR RECORDS********************************
+    // *****************FOR NOW,,, buttons*******************************
     // ********STRETCH GOAL is drop menu, for now just link buttons******
     // ******************************************************************
+    
     // searchRecs
     // vm.searchRecs = function(){
     //     $window.location.href = "#!/";
     // };
-    vm.famHistRecord = function(){
-        // let tok = userFactory.tokentok();  
-        // // Get and Post
-        // let getPostAll = "family_histories";
-       
-        // recordFactory.getIndivRecord(getPostAll, tok)
-        // .then(data => {
-        //     console.log("data: ", data);
-        // vm.records = data;
-        // });
 
-        // console.log("famHistRecord in homeCtrl fired: ");
+    vm.famHistRecord = function(){
         $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
-    
 };
 
     
@@ -52,10 +43,8 @@ app.controller("homeCtrl", function($scope, $window, homeFactory, recordFactory,
 
     vm.newFamRecord = function(){
         // recordFactory.addRecord();
-        
-        console.log("newFamRecord in homeCtrl fired: ");
+        // console.log("newFamRecord in homeCtrl fired: ");
         $window.location.href = "#!/newRecordFamilyHistory";
-        
     };
 
     // **********newIllRecord()***********

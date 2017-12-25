@@ -11,10 +11,10 @@
             <!-- ************
             Fields to fill
             ************ -->
-            <!-- <div ng-repeat="record in records" ng-controller="recordUpdateDeleteFamilyHistoryCtrl"> -->
+            <!-- <div ng-repeat="record in records" ng-controller="newRecordFamilyHistoryCtrl"> -->
             <form>
                 <div class="form-group">
-                    <label>Family Member Relation: </label>
+                    <strong><label>Family Member Relation: </label> 
                     <!-- <li class="list-group-item">{{record.family_member_relation}}</li> -->
                     <input type="text" class="form-control" placeholder="Mother" ng-model="record.family_history.family_member_relation"/>
                 </div>
@@ -136,13 +136,11 @@
                 </div>
                 <!-- </div> -->
                 <!-- ************
-                Buttons
+                Button
                 ************ -->
-                <!-- <div class="text-center">
-                    <button class="btn btn-default" ng-submit="submitNewRecordFamilyHistory()">Save and Submit</button>    
-                </div> -->
                 <div class="col-xs-6">
-                    <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Submit New Family Record</button>
+                    <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Submit New Family Record
+                    </button>
                 </div>
             </form>
     </form>

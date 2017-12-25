@@ -7,11 +7,11 @@ app.controller("newRecordFamilyHistoryCtrl", function($scope, recordFactory, use
     const url = "http://localhost:3000";
 
     // Get and Post
-    let getPostAll = "family_histories";
+    let recordType = "family_histories";
 
     // Patch, Delete, and Get a record
-    // let patchDeleteGetIndiv = "family_histories/";
-    // const patchDeleteGetIndiv = "family_histories/";
+    // let recordType = "family_histories/";
+    // const recordType = "family_histories/";
 
     // HOLDS DATA FROM THE FORM:
     vm.record = {};
@@ -20,10 +20,12 @@ app.controller("newRecordFamilyHistoryCtrl", function($scope, recordFactory, use
         vm.submitNewRecordFamilyHistory = function(record){
             let tok = userFactory.tokentok();
 
-            // console.log("tok in familyCtr; ", tok);
-            recordFactory.addRecord(vm.record, getPostAll, tok);
+            console.log("tok in familyCtr; ", tok);
+            recordFactory.addRecord(vm.record, recordType, tok);
             
-                $window.location.href = "#!/home";
+                $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
                 // console.log("submitNewRecordFamilyHistory fired at newRecordFamilyHistoryCtrl");
         };
+
+ 
 });

@@ -8,7 +8,5 @@
 
 app.controller("welcomeCtrl", function($scope, $window, userFactory, $location){
     
-
-
     
 });
