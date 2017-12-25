@@ -10,6 +10,7 @@ app.controller("recordUpdateDeleteFamilyHistoryCtrl", function($scope, recordFac
     // ************HOLDS DATA FROM THE FORM:************
 
     let recordType = "family_histories";
+    let recordID = vm.record.id;
 
     const gRecord = function(){
         let tok = userFactory.tokentok();  
@@ -33,10 +34,10 @@ app.controller("recordUpdateDeleteFamilyHistoryCtrl", function($scope, recordFac
 
     vm.edRecord = function(){
         // console.log("editRecord button in recordUpdateDeleteFamilyHistoryCtrl fired: ");
-        // let tok = userFactory.tokentok();  
+        let tok = userFactory.tokentok();  
         let recordType = "family_histories";
 
-        recordFactory.editRecord(recordType);
+        recordFactory.editRecord(recordType, recordID);
         $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
     };
 
@@ -46,7 +47,7 @@ app.controller("recordUpdateDeleteFamilyHistoryCtrl", function($scope, recordFac
         // let id = ;
 
         // console.log("deleteRecord button in recordUpdateDeleteFamilyHistoryCtrl fired: ");
-        recordFactory.deleteRecord(recordType);
+        recordFactory.deleteRecord(recordType, recordID);
         $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
     };
 

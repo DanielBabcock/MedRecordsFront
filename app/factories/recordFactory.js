@@ -4,7 +4,7 @@ app.factory("recordFactory", function($q, $http, userFactory){
 
 const url = "http://localhost:3000";
 
-    const addRecord = function(record, recordType,tokentok){
+    const addRecord = function(record, recordType, tokentok){
         // let newObj = angular.toJson(record);
         let newObj = record;
         console.log("newObj in factory: ", newObj);
@@ -39,19 +39,19 @@ const url = "http://localhost:3000";
         });
     };
 
-    const deleteRecord = function(record, recordType, tokentok){
+    const deleteRecord = function(record, recordType, recordID, tokentok){
         let newObj = record;
         console.log("deleteRecord in record factory: ");
 
         return $q((resolve,reject)=>{
             $http({
                 method: 'DELETE', 
-                url: `${url}/${recordType}`,
+                url: `${url}/${recordType}/${recordID}`,
                 // ${id}, 
                 headers: {'Authorization': tokentok},
                 data: newObj
                 });
-            console.log("deleteRecord in record factory: ");
+            console.log("deleteRecord in record factory: ", tokentok);
             // $http.delete(`${url}/${recordType}.json`);
                 // .then(response => resolve(response))
                 // .catch(error => reject(error));
@@ -68,9 +68,11 @@ const url = "http://localhost:3000";
             $http({
                 method: 'GET', 
                 url: `${url}/${recordType}`, 
-                headers: {'Authorization': tok},
+                headers: {'Authorization': tok}
                 // data: newObj
-                })
+                // console.log("tok at get: ", tok)
+            })
+                
                 .then(item => resolve(item.data))
                 .catch(error => reject(error));
         });
