@@ -9,49 +9,33 @@ vaccination_date : date
 vaccine_expiration : date -->
 
 
-<div class="form-group" ng-app="MedRecordApp" ng-controller="newRecordVaccinationsCtrl">
+<h2>Records</h2>
+<div ng-controller="recordUpdateDeleteVaccinationsCtrl" class="col-xs-12">
 
-        <!-- newRecordFamilyHistoryCtrl -->
-        <!-- ************
-        Form Title 
-        ************ -->
-        <h3 >Vaccinations</h3>
-        <form name="main.addForm" class="form" ng-submit="submitNewRecordVaccinations()">
-        <!-- <form ng-model="selectedFormType.newRecordFamilyHistory"> -->
-            <!-- <div class="form-group">
-                <label>record Description</label>
-                <input type="text" class="form-control" placeholder="Some important record" ng-model="record.record"/>
-            </div> -->
-            <!-- ************
-            Fields to fill
-            ************ -->
-            <form>
-                <div class="form-group">
-                    <label>Vaccine Name: </label>
-                    <input type="text" class="form-control" placeholder="Yellow Fever" ng-model="record.vaccineName"/>
-                </div>
-                <div class="form-group">
-                        <label>Vaccination Date: </label>
-                        <input id="date" type="datetime-local" class="form-control" ng-model="record.vaccinationDate"/>
-                </div>
-                <div class="form-group">
-                        <label>Vaccination Expiration: </label>
-                        <!-- <input id="date" type="date" value="2017-06-01" class="form-control" ng-model="record.vaccineExpiration"/> -->
-                        <input id="date" type="datetime-local" name="vaxExp" class="form-control" ng-model="record.vaccineExpiration"/>
-                    </div>
-               
-                        <!-- <input id="date" type="datetime-local" name="vaxExp" class="form-control" ng-model="record.vaccineExpiration"/> -->
+    <div ng-repeat="record in records">
+        <ul class="list-group" id="vaccineHistory">
+
+            <li class="list-group-item"><strong>Vaccine Name:</strong> {{record.vaccine_name}}</li>
+            <li class="list-group-item">Vaccination Date: {{record.vaccination_date}}</li>
+            <li class="list-group-item">Vaccine Expiration: {{record.vaccine_expiration}}</li>
+            <li class="list-group-item"> Record ID: {{record.id}}</li>
+
             
-                <!-- ************
-                Buttons
-                ************ -->
-                <div class="col-xs-6">
-                    <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Submit New Vaccination Record</button>
-                </div>
-                <!-- <div class="text-center">
-                    <button class="btn btn-default" ng-submit="submitNewRecordVaccinations()">Save and Submit</button>    
-                </div> -->
-            </form>
-        </form>
+            <div class="col-xs-12">
+                <button class="btn btn-primary" ng-click="edRecord()">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    Edit: {{record.vaccine_name}}
+                </button>
+            </div>
+            
+            <div class="col-xs-12">
+                    <button class="btn btn-primary" ng-click="delRecord()">
+                        <span class="glyphicon glyphicon-trash"></span>
+                        Delete: {{record.vaccine_name}}
+                    </button>
+            </div>
+            
+        </ul>
+        
     </div>
-    
+</div>

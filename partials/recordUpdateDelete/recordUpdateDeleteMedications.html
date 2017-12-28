@@ -1,6 +1,9 @@
-<!-- api specific field info plus save button, goes the new record upon save -->
-<!-- form for::::::: -->
-<!-- Field: Medications
+<h2>Records</h2>
+<div ng-controller="recordUpdateDeleteMedicationsCtrl" class="col-xs-12">
+
+    <div ng-repeat="record in records">
+        <ul class="list-group" id="medicationHistory">
+            <!-- Field: Medications
 Columns: 
 patient_id
 medication_name : string
@@ -13,192 +16,34 @@ medication_end_date: date
 care_giver : string
 care_giver_title : string -->
 
-<div class="form-group" ng-app="MedRecordApp" ng-controller="newRecordMedicationsCtrl">
+            <li class="list-group-item"><strong>Patient ID:</strong> {{record.patient_id}}</li>
+            <li class="list-group-item">Medication Name: {{record.medication_name}}</li>
+            <li class="list-group-item">Current Use: {{record.current_use}}</li>
+            <li class="list-group-item">Medication Purpose: {{record.mediation_purpose}}</li>
+            <li class="list-group-item">Medication Dose Amount: {{record.medication_dose_amount}}</li>
+            <li class="list-group-item">Medication Dose Frequency: {{record.medication_dose_frequency}}</li>
+            <li class="list-group-item">Medication Start Date: {{record.medication_start_date}}</li>
+            <li class="list-group-item">Care Giver: {{record.care_giver}}</li>
+            <li class="list-group-item">Care Giver Title: {{record.care_giver_title}}</li>
+            
+            <li class="list-group-item"> Record ID: {{record.id}}</li>
 
-        <!-- newRecordFamilyHistoryCtrl -->
-        <!-- ************
-        Form Title 
-        ************ -->
+            
+            <div class="col-xs-12">
+                <button class="btn btn-primary" ng-click="edRecord()">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    Edit: {{record.medication_name}}
+                </button>
+            </div>
+            
+            <div class="col-xs-12">
+                    <button class="btn btn-primary" ng-click="delRecord()">
+                        <span class="glyphicon glyphicon-trash"></span>
+                        Delete: {{record.medication_name}}
+                    </button>
+            </div>
+            
+        </ul>
         
-        <form name="main.addForm" class="form" ng-submit="submitNewRecordMedications()">
-        <h3 >Medications/h3>
-            <!-- ************
-            Fields to fill
-            ************ -->
-            <form>
-                <div class="form-group">
-                    <label>Family Member Relation: </label>
-                    <input type="text" class="form-control" placeholder="Mother" ng-model="record.familyMemberRelation"/>
-                </div>
-                <!-- <div class="form-group">
-                    <label>Prion Diesease: </label>
-                    <input type="text" class="form-control" placeholder="True or False" ng-model="record.prionDisease"/>
-                </div> -->
-                <div class="form-group">
-                    <label>Prion Diesease: </label>
-                    <input type="radio" name="prionDisease" ng-model="record.prionDisease" ng-value="true"/> True
-                    <input type="radio" name="prionDisease" ng-model="record.prionDisease" ng-value="false"/>  False
-                </div>
-    
-    
-                <!-- <div class="form-group">
-                    <label>Cardiac Disease: </label>
-                    <input type="text" class="form-control" placeholder="True or False" ng-model="record.cardiacDisease"/>
-                </div> -->
-                <div class="form-group">
-                    <label>Cardiac Disease: </label>
-                    <input type="radio" name="cardiacDisease" ng-model="record.cardiacDisease" ng-value="true"/> True
-                    <input type="radio" name="cardiacDisease" ng-model="record.cardiacDisease" ng-value="false"/>  False
-                </div>
-    
-    
-                <!-- <div class="form-group">
-                    <label>Cardiac Event: </label>
-                    <input type="text" class="form-control" placeholder="True or False" ng-model="record.cardiacEvent"/>
-                </div> -->
-                <div class="form-group">
-                    <label>Cardiac Event: </label>
-                    <input type="radio" name="cardiacEvent" ng-model="record.cardiacEvent" ng-value="true"/> True
-                    <input type="radio" name="cardiacEvent" ng-model="record.cardiacEvent" ng-value="false"/>  False
-                </div>
-    
-    
-                <!-- <div class="form-group">
-                    <label>Cardiac Death: </label>
-                    <input type="text" class="form-control" placeholder="True or False" ng-model="record.cardiacDeath"/>
-                </div> -->
-                <div class="form-group">
-                    <label>Cardiac Death: </label>
-                    <input type="radio" name="cardiacDeath" ng-model="record.cardiacDeath" ng-value="true"/> True
-                    <input type="radio" name="cardiacDeath" ng-model="record.cardiacDeath" ng-value="false"/>  False
-                </div>
-    
-    
-                <div class="form-group">
-                    <label>Cardiac Death Age: </label>
-                    <input type="text" class="form-control" placeholder="34" ng-model="record.cardiacDeathAge"/>
-                </div>
-                <!-- <div class="form-group">
-                    <label>Diabetes: </label>
-                    <input type="text" class="form-control" placeholder="True or False" ng-model="record.diabetes"/>
-                </div> -->
-                <div class="form-group">
-                    <label>Diabetes: </label>
-                    <input type="radio" name="diabetes" ng-model="record.diabetes" ng-value="true"/> True
-                    <input type="radio" name="diabetes" ng-model="record.diabetes" ng-value="false"/>  False
-                </div>
-    
-    
-                <div class="form-group">
-                    <label>Diabetes Type: </label>
-                    <input type="text" class="form-control" placeholder="2" ng-model="record.diabetesType"/>
-                </div>
-    
-    
-                
-                <div class="form-group">
-                    <label>Organ Diseases: </label>
-                    <input type="radio" name="organDiseases" ng-model="record.organDiseases" ng-value="true"/> True
-                    <input type="radio" name="organDiseases" ng-model="record.organDiseases" ng-value="false"/>  False
-                </div>
-    
-                <div class="form-group">
-                    <label>Organ Disease Name: </label>
-                    <input type="text" class="form-control" placeholder="Cirrhosis of Liver" ng-model="record.organDiseaseName"/>
-                </div>
-                <!-- <div class="form-group">
-                    <label>Respiratory Disease: </label>
-                    <input type="text" class="form-control" placeholder="True or False" ng-model="record.respiratoryDisease"/>
-                </div> -->
-                <div class="form-group">
-                    <label>Respiratory Disease: </label>
-                    <input type="radio" name="respiratoryDisease" ng-model="record.respiratoryDisease" ng-value="true"/> True
-                    <input type="radio" name="respiratoryDisease" ng-model="record.respiratoryDisease" ng-value="false"/>  False
-                </div>
-    
-                <div class="form-group">
-                    <label>Respiratory Disease Names: </label>
-                    <input type="text" class="form-control" placeholder="Whooping Cough" ng-model="record.respiratoryDiseaseNames"/>
-                </div>
-                <!-- <div class="form-group">
-                    <label>Cancer: </label>
-                    <input type="text" class="form-control" placeholder="True or False" ng-model="record.cancer"/>
-                </div> -->
-                <div class="form-group">
-                    <label>Cancer: </label>
-                    <input type="radio" name="cancer" ng-model="record.cancer" ng-value="true"/> True
-                    <input type="radio" name="cancer" ng-model="record.cancer" ng-value="false"/>  False
-                </div>
-    
-                <!-- <div class="form-group">
-                    <label>Cancer Death: </label>
-                    <input type="text" class="form-control" placeholder="True or False" ng-model="record.cancerDeath"/>
-                </div> -->
-                <div class="form-group">
-                    <label>Cancer Death: </label>
-                    <input type="radio" name="cancerDeath" ng-model="record.cancerDeath" ng-value="true"/> True
-                    <input type="radio" name="cancerDeath" ng-model="record.cancerDeath" ng-value="false"/>  False
-                </div>
-    
-                <div class="form-group">
-                    <label>Cancer Types: </label>
-                    <input type="text" class="form-control" placeholder="Lung, Brain, ..." ng-model="record.cancerTypes"/>
-                </div>
-                <div class="form-group">
-                    <label>Cancer Event Age: </label>
-                    <input type="text" class="form-control" placeholder="25" ng-model="record.cancerEventAge"/>
-                </div>
-                <!-- <div class="form-group">
-                        <label>High Blood Pressure: </label>
-                        <input type="text" class="form-control" placeholder="True/False" ng-model="record.highBloodPressure"/>
-                </div> -->
-                <div class="form-group">
-                    <label>High Blood Pressure: </label>
-                    <input type="radio" name="highBloodPressure" ng-model="record.highBloodPressure" ng-value="true"/> True
-                    <input type="radio" name="highBloodPressure" ng-model="record.highBloodPressure" ng-value="false"/>  False
-                </div>
-    
-                <!-- <div class="form-group">
-                        <label>Stroke: </label>
-                        <input type="text" class="form-control" placeholder="True/False" ng-model="record.stroke"/>
-                </div> -->
-                <div class="form-group">
-                    <label>Stroke: </label>
-                    <input type="radio" name="stroke" ng-model="record.stroke" ng-value="true"/> True
-                    <input type="radio" name="stroke" ng-model="record.stroke" ng-value="false"/>  False
-                </div>
-    
-                <!-- <div class="form-group">
-                        <label>Alzheimers or Dementia: </label>
-                        <input type="text" class="form-control" placeholder="True/False" ng-model="record.alzheimersOrDementia"/>
-                </div> -->
-                <div class="form-group">
-                    <label>Alzheimers or Dementia: </label>
-                    <input type="radio" name="alzheimersOrDementia" ng-model="record.alzheimersOrDementia" ng-value="true"/> True
-                    <input type="radio" name="alzheimersOrDementia" ng-model="record.alzheimersOrDementia" ng-value="false"/>  False
-                </div>
-    
-                <div class="form-group">
-                    <label>Osteoporosis: </label>
-                    <input type="radio" name="osteoporosis" ng-model="record.osteoporosis" ng-value="true"/> True
-                    <input type="radio" name="osteoporosis" ng-model="record.osteoporosis" ng-value="false"/>  False
-                </div>
-                
-                <div class="form-group">
-                    <label>Bleeding Disorder: </label>
-                    <input type="radio" name="bleedingDisorder" ng-model="record.bleedingDisorder" ng-value="true"/> True
-                    <input type="radio" name="bleedingDisorder" ng-model="record.bleedingDisorder" ng-value="false"/>  False
-                </div>
-                <!-- ************
-                Buttons
-                ************ -->
-                <!-- <div class="text-center">
-                    <button class="btn btn-default" ng-submit="submitNewRecordMedications()">Save and Submit</button>    
-                </div> -->
-                <div class="col-xs-6">
-                    <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Submit New Medication Record</button>
-                </div>
-            </form>
-        </form>
     </div>
-    
+</div>

@@ -14,12 +14,12 @@
             <label>Visit Records</label>
                 <ul>
                     <li><button type="button" ng-click="famHistRecord()">Family History: </button></li> 
-                    <!-- <li><button type="button" ng-click="illRecord()">Major Illness: </button></li>  -->
+                    <li><button type="button" ng-click="illRecord()">Major Illness: </button></li> 
 
-                    <!-- <li><button type="button" ng-click="medsRecord()">Medications: </button></li>  -->
-                    <!-- <li><button type="button" ng-click="patInfoRecord()">Patient Info: </button></li>  -->
-                    <!-- <li><button type="button" ng-click="surgRecord()">Surgical Procedures </button></li>  -->
-                    <!-- <li><button type="button" ng-click="vaxRecord()">Vaccinations: </button></li>  -->
+                    <li><button type="button" ng-click="medsRecord()">Medications: </button></li> 
+                    <li><button type="button" ng-click="patInfoRecord()">Patient Info: </button></li> 
+                    <li><button type="button" ng-click="surgRecord()">Surgical Procedures </button></li> 
+                    <li><button type="button" ng-click="vaxRecord()">Vaccinations: </button></li> 
                 </ul>
         </div>    
 
@@ -46,23 +46,40 @@
         </form>
         <br>
         <!-- NEW Major Illness -->
+        <form name="main.addForm" class="form" ng-submit="newIllRecord()">
+            <div class="col-xs-6">
+                <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> New Illness </button>
+            </div>
+        </form>
 
         <br>
         <!-- NEW Meds -->
-
+        <form name="main.addForm" class="form" ng-submit="newMedRecord()">
+            <div class="col-xs-6">
+                <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> New Medication </button>
+            </div>
+        </form>
         <br>
         <!-- New Patient Inof -->
-
+        <form name="main.addForm" class="form" ng-submit="newPatInfoRecord()">
+            <div class="col-xs-6">
+                <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> New Patient Info</button>
+            </div>
+        </form>
         <br>
         <!-- NEW Surg Records -->
-
+        <form name="main.addForm" class="form" ng-submit="newSurgRecord()">
+            <div class="col-xs-6">
+                <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> New Surgery </button>
+            </div>
+        </form>
         <br>
         <!-- NEW VACCINATION RECORD -->
-        <!-- <form name="main.addForm" class="form" ng-submit="newVacRecord()">
+        <form name="main.addForm" class="form" ng-submit="newVaxRecord()">
             <div class="col-xs-6">
-                <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> New Vaccination Record</button>
+                <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> New Vaccination </button>
             </div>
-        </form> -->
+        </form>
         <br>
     </div>
         
