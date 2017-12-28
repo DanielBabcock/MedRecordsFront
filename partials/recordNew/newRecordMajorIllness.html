@@ -1,92 +1,78 @@
-<!-- api specific field info plus save button, goes the new record upon save -->
-
-<!-- form for::::::: -->
-<!-- 
-Field: MajorIllness
-Columns: 
-patient_id : hash
-
-
-
-
-
 <div ng-app="MedRecordApp" ng-controller="newRecordFamilyHistoryCtrl">
 
-         newRecordMajorIllnessCtrl -->
-        <form name="main.addForm" class="form" ng-submit="submitNewRecordMajorIllness()">
+    <form name="main.addForm" class="form" ng-submit="submitNewRecordMajorIllness()">
 
-        <h3 >Major Illness</h3>
-        
- 
-            <form>
-
-                <div class="form-group">
-                    <label>Illness Name: </label>
-                    <input type="text" class="form-control" placeholder="Malaria" ng-model="record.illnessName"/>
-                </div>
-
-                <div class="form-group">
-                    <label>Illness Start Date: </label>
-                    <input id="date" type="datetime-local" name="illnessStartDate" class="form-control" ng-model="record.illnessStartDate"/>
-                </div>
-
-                <div class="form-group">
-                    <label>Illness End Date: </label>
-                    <input id="date" type="datetime-local" name="illnessEndDate" class="form-control" ng-model="record.illnessEndDate"/>
-                </div>
-
-                <div class="form-group">
-                    <label>Care Giver Name: </label>
-                    <input type="text" class="form-control" placeholder="34" ng-model="record.care_giver_name"/>
-                </div>
-
-                <div class="form-group">
-                    <label>Illness Notes: </label>
-                    <input type="text" class="form-control" placeholder="34" ng-model="record.illness_notes"/>
-                </div>
-
-                <div class="form-group">
-                        <label> <div class="form-group">
-                    <label>Medication Name: </label>
-                    <input type="text" class="form-control" placeholder="34" ng-model="record.medication_name"/>
-
-                </div>: 
-                    <label>Medication Dose: </label>
-                    <input type="text" class="form-control" placeholder="34" ng-model="record.medication_dose"/>
-                </div>
-
-                <div class="form-group">
-                    <label>Medication Dose: </label>
-                    <input type="text" class="form-control" placeholder="2" ng-model="record.medication_purpose"/>
-                </div>
-
-                <div class="form-group">
-                    <label>Medication Frequency: </label>
-                    <input type="text" class="form-control" placeholder="34" ng-model="record.medication_frequency"/>
-
-                </div>
-
-                <div class="form-group">
-                    <label>Medication Start Date: </label>
-                    <input type="text" class="form-control" placeholder="Cirrhosis of Liver" ng-model="record.medication_start_date"/>
-                </div>
-                
-                <div class="form-group">
-                    <label>Medication End Date: </label>
-                    <input id="date" type="datetime-local" name="illnessEndDate" class="form-control" ng-model="record.medication_end_date"/>
-
-                </div>
-
-                <div class="form-group">
-                    <label>Treatment Notes: </label>
-                    <input id="date" type="datetime-local" name="illnessEndDate" class="form-control" ng-model="record.treatment_notes"/>
-                </div>
+    <h3 >Major Illness</h3>
     
-                <div class="col-xs-6">
-                    <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Submit New Medication Record</button>
-                </div>
-                
-            </form>
+
+        <form>
+
+            <div class="form-group">
+                <label>Illness Name: </label>
+                <input type="text" class="form-control" placeholder="Malaria" ng-model="record.illnessName"/>
+            </div>
+
+            <div class="form-group">
+                <label>Illness Start Date: </label>
+                <input id="date" type="datetime-local" name="illnessStartDate" class="form-control" ng-model="record.illnessStartDate"/>
+            </div>
+
+            <div class="form-group">
+                <label>Illness End Date: </label>
+                <input id="date" type="datetime-local" name="illnessEndDate" class="form-control" ng-model="record.illnessEndDate"/>
+            </div>
+
+            <div class="form-group">
+                <label>Care Giver Name: </label>
+                <input type="text" class="form-control" placeholder="34" ng-model="record.care_giver_name"/>
+            </div>
+
+            <div class="form-group">
+                <label>Illness Notes: </label>
+                <input type="text" class="form-control" placeholder="34" ng-model="record.illness_notes"/>
+            </div>
+
+            <div class="form-group">
+                    <label> <div class="form-group">
+                <label>Medication Name: </label>
+                <input type="text" class="form-control" placeholder="34" ng-model="record.medication_name"/>
+
+            </div>: 
+                <label>Medication Dose: </label>
+                <input type="text" class="form-control" placeholder="34" ng-model="record.medication_dose"/>
+            </div>
+
+            <div class="form-group">
+                <label>Medication Dose: </label>
+                <input type="text" class="form-control" placeholder="2" ng-model="record.medication_purpose"/>
+            </div>
+
+            <div class="form-group">
+                <label>Medication Frequency: </label>
+                <input type="text" class="form-control" placeholder="34" ng-model="record.medication_frequency"/>
+
+            </div>
+
+            <div class="form-group">
+                <label>Medication Start Date: </label>
+                <input type="text" class="form-control" placeholder="Cirrhosis of Liver" ng-model="record.medication_start_date"/>
+            </div>
+            
+            <div class="form-group">
+                <label>Medication End Date: </label>
+                <input id="date" type="datetime-local" name="illnessEndDate" class="form-control" ng-model="record.medication_end_date"/>
+
+            </div>
+
+            <div class="form-group">
+                <label>Treatment Notes: </label>
+                <input id="date" type="datetime-local" name="illnessEndDate" class="form-control" ng-model="record.treatment_notes"/>
+            </div>
+
+            <div class="col-xs-6">
+                <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Submit New Medication Record</button>
+            </div>
+
         </form>
-    </div>
-    
+    </form>
+</div>

@@ -48,29 +48,29 @@ app.controller("homeCtrl", function($scope, $window, homeFactory, recordFactory,
     };
 
     // **********newIllRecord()***********
-    // vm.newIllRecord = function(){
-    //     $window.location.href = "#!/newRecordMajorIllness";
-    // };
+    vm.newIllRecord = function(){
+        $window.location.href = "#!/newRecordMajorIllness";
+    };
 
     // // **********newMedRecord()**********
-    // vm.newMedRecord = function(){
-    //     $window.location.href = "#!/newRecordMedications";
-    // };
+    vm.newMedRecord = function(){
+        $window.location.href = "#!/newRecordMedications";
+    };
 
     // //    ********** newPatInfoRecord()**********
-    // vm.newPatInfoRecord = function(){
-    //     $window.location.href = "#!/newRecordPatientInfo";
-    // };
+    vm.newPatInfoRecord = function(){
+        $window.location.href = "#!/newRecordPatientInfo";
+    };
 
     // //   **********  newSurgRecord()**********
-    // vm.newSurgRecord = function(){
-    //     $window.location.href = "#!/newRecordSurgicalProcedures";
-    // };
+    vm.newSurgRecord = function(){
+        $window.location.href = "#!/newRecordSurgicalProcedures";
+    };
 
     // //   **********  newVaxRecord()**********
-    // vm.newVaxRecord = function(){
-    //     $window.location.href = "#!/newRecordVaccinations";
-    // };
+    vm.newVaxRecord = function(){
+        $window.location.href = "#!/newRecordVaccinations";
+    };
 
 });
 

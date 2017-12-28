@@ -1,61 +1,61 @@
 <div class="form-group" ng-app="MedRecordApp" ng-controller="newRecordMedicationsCtrl">
         
-        <form name="main.addForm" class="form" ng-submit="submitNewRecordMedications()">
-        <h3 >Medications/h3>
-  
-            <form>
-             
-                <!-- medication_name : string -->
-                <div class="form-group">
-                    <label>Medication Name: </label>
-                    <input type="text" class="form-control" placeholder="Bupropion" ng-model="record.medication_name"/>
-                </div>
-                <!-- current_use : bool -->
-                <div class="form-group">
-                    <label>Current Use: </label>
-                    <input type="radio" name="currentUse" ng-model="record.current_use" ng-value="true"/> True
-                    <input type="radio" name="currentUse" ng-model="record.current_use" ng-value="false"/>  False
-                </div>
-                <!-- mediation_purpose: string -->
-                <div class="form-group">
-                    <label>Medication Purpose: </label>
-                    <input type="text" class="form-control" placeholder="Glaucoma" ng-model="record.mediation_purpose"/>
-                </div>
-                <!-- medication_dose_amount : string -->
-                <div class="form-group">
-                    <label>Medication Doseage: </label>
-                    <input type="text" class="form-control" placeholder="800mg" ng-model="record.medication_dose_amount"/>
-                </div>
-                <!-- medication_dose_frequency : string -->
-                <div class="form-group">
-                    <label>Medication Dose Frequency: </label>
-                    <input type="text" class="form-control" placeholder="3x per/day" ng-model="record.medication_dose_frequency"/>
-                </div>
-                <!-- medication_start_date: date -->
-                <div class="form-group">
-                        <label>Medication Start Date: </label>
-                        <input type="datetime-local" class="form-control" placeholder="2017/Dec/28" ng-model="record.medication_start_date"/>
-                </div>
-                <!-- medication_end_date: date -->
-                <div class="form-group">
-                    <label>Medication End Date: </label>
-                    <input type="datetime-local" class="form-control" placeholder="2017/Dec/28" ng-model="record.medication_end_date"/>
-                </div>
-                <!-- care_giver : string -->
-                <div class="form-group">
-                    <label>Care giver: </label>
-                    <input type="text" class="form-control" placeholder="John Doe" ng-model="record.care_giver"/>
-                </div>
-                <!-- care_giver_title : string -->
-                <div class="form-group">
-                    <label>Care Giver Title: </label>
-                    <input type="text" class="form-control" placeholder="RN" ng-model="record.care_giver_title"/>
-                </div>
-    
-                <div class="col-xs-6">
-                    <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Submit New Medication Record</button>
-                </div>
-            </form>
+    <form name="main.addForm" class="form" ng-submit="submitNewRecordMedications()">
+
+    <h3 >Medications</h3>
+
+        <form>
+            
+            <!-- medication_name : string -->
+            <div class="form-group">
+                <label>Medication Name: </label>
+                <input type="text" class="form-control" placeholder="Bupropion" ng-model="record.medication_name"/>
+            </div>
+            <!-- current_use : bool -->
+            <div class="form-group">
+                <label>Current Use: </label>
+                <input type="radio" name="currentUse" ng-model="record.current_use" ng-value="true"/> True
+                <input type="radio" name="currentUse" ng-model="record.current_use" ng-value="false"/>  False
+            </div>
+            <!-- mediation_purpose: string -->
+            <div class="form-group">
+                <label>Medication Purpose: </label>
+                <input type="text" class="form-control" placeholder="Glaucoma" ng-model="record.mediation_purpose"/>
+            </div>
+            <!-- medication_dose_amount : string -->
+            <div class="form-group">
+                <label>Medication Doseage: </label>
+                <input type="text" class="form-control" placeholder="800mg" ng-model="record.medication_dose_amount"/>
+            </div>
+            <!-- medication_dose_frequency : string -->
+            <div class="form-group">
+                <label>Medication Dose Frequency: </label>
+                <input type="text" class="form-control" placeholder="3x per/day" ng-model="record.medication_dose_frequency"/>
+            </div>
+            <!-- medication_start_date: date -->
+            <div class="form-group">
+                    <label>Medication Start Date: </label>
+                    <input type="datetime-local" class="form-control" placeholder="2017/Dec/28" ng-model="record.medication_start_date"/>
+            </div>
+            <!-- medication_end_date: date -->
+            <div class="form-group">
+                <label>Medication End Date: </label>
+                <input type="datetime-local" class="form-control" placeholder="2017/Dec/28" ng-model="record.medication_end_date"/>
+            </div>
+            <!-- care_giver : string -->
+            <div class="form-group">
+                <label>Care giver: </label>
+                <input type="text" class="form-control" placeholder="John Doe" ng-model="record.care_giver"/>
+            </div>
+            <!-- care_giver_title : string -->
+            <div class="form-group">
+                <label>Care Giver Title: </label>
+                <input type="text" class="form-control" placeholder="RN" ng-model="record.care_giver_title"/>
+            </div>
+
+            <div class="col-xs-6">
+                <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Submit New Medication Record</button>
+            </div>
         </form>
-    </div>
-    
+    </form>
+</div>
