@@ -46,7 +46,7 @@ app.controller("homeCtrl", function($scope, $window, homeFactory, recordFactory,
         // console.log("newFamRecord in homeCtrl fired: ");
         $window.location.href = "#!/newRecordFamilyHistory";
     };
-
+    
     // **********newIllRecord()***********
     vm.newIllRecord = function(){
         $window.location.href = "#!/newRecordMajorIllness";

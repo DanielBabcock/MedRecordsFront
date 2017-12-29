@@ -11,15 +11,17 @@ app.controller("newRecordVaccinationsCtrl", function($scope, recordFactory, user
 
     // HOLDS DATA FROM THE FORM:
     vm.record = {};
-
+    
     // SUBMITS NEW DATA TO DB FROM NEW RECORD FORM
-        vm.submitNewRecordVaccination = function(record){
+        vm.submitNewRecordVaccinations = function(record){
             let tok = userFactory.tokentok();
 
             // console.log("tok in familyCtr; ", tok);
             recordFactory.addRecord(vm.record, recordType,tok);
             
-                $window.location.href = "#!/recordUpdateDeleteVaccinations";
+                // $window.location.href = "#!/recordUpdateDeleteVaccinations";
+                $window.location.href = "#!/home";
+
                 // console.log("submitNewRecordFamilyHistory fired at newRecordFamilyHistoryCtrl");
         };
 });

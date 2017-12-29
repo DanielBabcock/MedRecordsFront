@@ -27,27 +27,49 @@ app.config($routeProvider => {
         })
         .when('/newRecordMedications', {
             templateUrl: 'partials/recordNew/newRecordMedications.html',
-            controller: 'newRecordMedicationsCtrl'
+            controller: 'newRecordMedicationsCtrl' 
         })
-        // ****recordUpdateDelete______
+        .when('/recordUpdateDeleteMedications', {
+            templateUrl: 'partials/recordNew/recordUpdateDeleteMedications.html',
+            controller: 'recordUpdateDeleteMedicationsCtrl' 
+        })
+        // ****recordUpdateDeletePatientInfo
 
         .when('/newRecordPatientInfo', {
             templateUrl: 'partials/recordNew/newRecordPatientInfo.html',
             controller: 'newRecordPatientInfoCtrl'
         })
-        // ****recordUpdateDelete______
+        .when('/recordUpdateDeletePatientInfo', {
+            templateUrl: 'partials/recordNew/recordUpdateDeletePatientInfo.html',
+            controller: 'recordUpdateDeletePatientInfoCtrl'
+        })
+        // ****recordUpdateDeleteSurgicalProcedures
 
         .when('/newRecordSurgicalProcedures', {
             templateUrl: 'partials/recordNew/newRecordSurgicalProcedures.html',
             controller: 'newRecordSurgicalProceduresCtrl'
         })
-        // ****recordUpdateDelete______
-
+        .when('/recordUpdateDeleteSurgicalProcedures', {
+            templateUrl: 'partials/recordNew/recordUpdateDeleteSurgicalProcedures.html',
+            controller: 'recordUpdateDeleteSurgicalProceduresCtrl'
+        })
+        .when('/newRecordMajorIllness', {
+            templateUrl: 'partials/recordNew/newRecordMajorIllness.html',
+            controller: 'newRecordMajorIllnessCtrl'
+        })
+        .when('/recordUpdateDeleteMajorIllness', {
+            templateUrl: 'partials/recordNew/recordUpdateDeleteMajorIllness.html',
+            controller: 'recordUpdateDeleteMajorIllnessCtrl'
+        })
         .when('/newRecordVaccinations', {
             templateUrl: 'partials/recordNew/newRecordVaccinations.html',
             controller: 'newRecordVaccinationsCtrl'
         })
-        // ****recordUpdateDelete______
+        .when('/recordUpdateDeleteVaccinations', {
+            templateUrl: 'partials/recordNew/recordUpdateDeleteVaccinations.html',
+            controller: 'recordUpdateDeleteVaccinationsCtrl'
+        })
+        
 
         // 
         .when('/logout', {

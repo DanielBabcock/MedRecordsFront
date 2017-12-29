@@ -4,22 +4,24 @@
 app.controller("newRecordMedicationsCtrl", function($scope, recordFactory, userFactory, $window, $routeParams, $location, $rootScope){
     
     const vm = $scope;
-    const url = "http://localhost:3000";
+    // const url = "http://localhost:3000";
 
     // Get and Post
     let recordType = "medications";
 
     // HOLDS DATA FROM THE FORM:
     vm.record = {};
-
+    
     // SUBMITS NEW DATA TO DB FROM NEW RECORD FORM
         vm.submitNewRecordMedications = function(record){
             let tok = userFactory.tokentok();
 
-            // console.log("tok in familyCtr; ", tok);
-            recordFactory.addRecord(vm.record, recordType,tok);
+            console.log("tok in newMedsCtr; ", tok);
+            recordFactory.addRecord(vm.record, recordType, tok);
             
-                $window.location.href = "#!/recordUpdateDeleteMedications";
+                // $window.location.href = "#!/recordUpdateDeleteMedications";
+                $window.location.href = "#!/home";
+
                 // console.log("submitNewRecordFamilyHistory fired at newRecordFamilyHistoryCtrl");
         };
 });
