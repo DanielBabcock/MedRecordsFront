@@ -11,7 +11,7 @@ app.controller("newRecordMajorIllnessCtrl", function($scope, recordFactory, user
 
     // HOLDS DATA FROM THE FORM:
     vm.record = {};
-
+    
     // SUBMITS NEW DATA TO DB FROM NEW RECORD FORM
         vm.submitNewRecordMajorIllness = function(record){
             let tok = userFactory.tokentok();
@@ -19,7 +19,9 @@ app.controller("newRecordMajorIllnessCtrl", function($scope, recordFactory, user
             // console.log("tok in familyCtr; ", tok);
             recordFactory.addRecord(vm.record, recordType,tok);
             
-                $window.location.href = "#!/recordUpdateDeleteMajorIllness";
+                // $window.location.href = "#!/recordUpdateDeleteMajorIllness";
+                $window.location.href = "#!/home";
+
                 // console.log("submitNewRecordFamilyHistory fired at newRecordFamilyHistoryCtrl");
         };
 });
