@@ -50,8 +50,7 @@ app.controller("recordUpdateDeleteFamilyHistoryCtrl", function($scope, recordFac
         recordFactory.deleteRecord(recordType, recordID);
         $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
     };
-
-    
+});
 
     // display the details of a given task in form.html
     // invoke from details view when the 'edit' button is clicked
@@ -116,7 +115,7 @@ app.controller("recordUpdateDeleteFamilyHistoryCtrl", function($scope, recordFac
 
 
 
-});
+
 
 
 // ************END OF FUNCTIONS HERE ************************

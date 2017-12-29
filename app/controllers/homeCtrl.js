@@ -19,9 +19,38 @@ app.controller("homeCtrl", function($scope, $window, homeFactory, recordFactory,
     //     $window.location.href = "#!/";
     // };
 
-    vm.famHistRecord = function(){
-        $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
-};
+        // **********recordUpdateDeleteFamilyHistory()**********
+
+        vm.famHistRecord = function(){
+            $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
+    };
+        // **********recordUpdateDeleteFamilyHistory()**********
+
+        vm.illRecord = function(){
+            $window.location.href = "#!/recordUpdateDeleteMajorIllness";
+    };
+        // **********recordUpdateDeleteFamilyHistory()**********
+
+        vm.medsRecord = function(){
+            $window.location.href = "#!/recordUpdateDeleteMedications";
+    };
+        // **********recordUpdateDeleteFamilyHistory()**********
+
+        vm.patInfoRecord = function(){
+            $window.location.href = "#!/recordUpdateDeletePatientInfo";
+    };
+        // **********recordUpdateDeleteFamilyHistory()**********
+
+        vm.surgRecord = function(){
+            $window.location.href = "#!/recordUpdateDeleteSurgicalProcedures";
+    };
+        // **********recordUpdateDeleteFamilyHistory()**********
+
+        vm.vaxRecord = function(){
+            $window.location.href = "#!/recordUpdateDeleteVaccinations";
+    };
+
+
 
     
     // ******************************************************************

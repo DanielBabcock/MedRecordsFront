@@ -30,7 +30,7 @@ app.config($routeProvider => {
             controller: 'newRecordMedicationsCtrl' 
         })
         .when('/recordUpdateDeleteMedications', {
-            templateUrl: 'partials/recordNew/recordUpdateDeleteMedications.html',
+            templateUrl: 'partials/recordUpdateDelete/recordUpdateDeleteMedications.html',
             controller: 'recordUpdateDeleteMedicationsCtrl' 
         })
         // ****recordUpdateDeletePatientInfo
@@ -40,7 +40,7 @@ app.config($routeProvider => {
             controller: 'newRecordPatientInfoCtrl'
         })
         .when('/recordUpdateDeletePatientInfo', {
-            templateUrl: 'partials/recordNew/recordUpdateDeletePatientInfo.html',
+            templateUrl: 'partials/recordUpdateDelete/recordUpdateDeletePatientInfo.html',
             controller: 'recordUpdateDeletePatientInfoCtrl'
         })
         // ****recordUpdateDeleteSurgicalProcedures
@@ -50,7 +50,7 @@ app.config($routeProvider => {
             controller: 'newRecordSurgicalProceduresCtrl'
         })
         .when('/recordUpdateDeleteSurgicalProcedures', {
-            templateUrl: 'partials/recordNew/recordUpdateDeleteSurgicalProcedures.html',
+            templateUrl: 'partials/recordUpdateDelete/recordUpdateDeleteSurgicalProcedures.html',
             controller: 'recordUpdateDeleteSurgicalProceduresCtrl'
         })
         .when('/newRecordMajorIllness', {
@@ -58,7 +58,7 @@ app.config($routeProvider => {
             controller: 'newRecordMajorIllnessCtrl'
         })
         .when('/recordUpdateDeleteMajorIllness', {
-            templateUrl: 'partials/recordNew/recordUpdateDeleteMajorIllness.html',
+            templateUrl: 'partials/recordUpdateDelete/recordUpdateDeleteMajorIllness.html',
             controller: 'recordUpdateDeleteMajorIllnessCtrl'
         })
         .when('/newRecordVaccinations', {
@@ -66,7 +66,7 @@ app.config($routeProvider => {
             controller: 'newRecordVaccinationsCtrl'
         })
         .when('/recordUpdateDeleteVaccinations', {
-            templateUrl: 'partials/recordNew/recordUpdateDeleteVaccinations.html',
+            templateUrl: 'partials/recordUpdateDelete/recordUpdateDeleteVaccinations.html',
             controller: 'recordUpdateDeleteVaccinationsCtrl'
         })
         
