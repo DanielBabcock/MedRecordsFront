@@ -1,22 +1,101 @@
-// "use strict";
+"use strict";
 
-// /*
+app.controller("recordUpdateDeleteMedicationsCtrl", function($scope, recordFactory, userFactory, $window, $routeParams, $location){
+
+    const vm = $scope;
+    const url = "http://localhost:3000";
     
-//     handle data and provide functionality to edit a task
+    // ************HOLDS DATA FROM THE FORM:************
+    vm.record = {};
+    // ************HOLDS DATA FROM THE FORM:************
 
-//  */
+    let recordType = "medications";
+    let recordID = vm.record.id;
 
-// app.controller("newRecordPatientCtrl", function($scope, recordNewFactory, $routeParams, $location){
+    const gRecord = function(){
+        let recordType = "medications";
 
-//     const vm = $scope;
+        let tok = userFactory.tokentok();  
+       
+        recordFactory.getRecord(recordType, tok)
+        .then(data => {
+            console.log("data in getRecord: ", data);
+        vm.records = data;
+       
+        });
 
-// });
+        // $window.location.href = "#!/recordUpdateDeleteMedications";
+    };
 
-    // GET /todos 	List all todos
-    // POST /todos 	Create a new todo
-    // GET /todos/:id 	Get a todo
-    // PUT /todos/:id 	Update a todo
-    // DELETE /todos/:id 	Delete a todo and its items
-    // GET /todos/:id/items 	Get a todo item
-    // PUT /todos/:id/items 	Update a todo item
-    // DELETE /todos/:id/items 	Delete a todo item
+    gRecord();
+
+    vm.edRecord = function(){
+        let recordType = "medications";
+
+        let tok = userFactory.tokentok();  
+
+        recordFactory.editRecord(recordType, recordID);
+        $window.location.href = "#!/recordUpdateDeleteMedications";
+    };
+
+    vm.delRecord = function(){
+        let recordType = "medications";
+
+
+        recordFactory.deleteRecord(recordType, recordID);
+        $window.location.href = "#!/recordUpdateDeleteMedications";
+    };
+});
+
+
+// ************END OF FUNCTIONS HERE ************************
+
+
+// ************NOTES BELOW HERE************************
+
+
+// ### HTTP request routes. ```rails routes```
+// Prefix Verb   URI Pattern                        Controller#Action
+//    family_histories GET    /family_histories(.:format)        family_histories#index
+//                     POST   /family_histories(.:format)        family_histories#create
+//      family_history GET    /family_histories/:id(.:format)    family_histories#show
+//                     PATCH  /family_histories/:id(.:format)    family_histories#update
+//                     PUT    /family_histories/:id(.:format)    family_histories#update
+//                     DELETE /family_histories/:id(.:format)    family_histories#destroy
+// surgical_procedures GET    /surgical_procedures(.:format)     surgical_procedures#index
+//                     POST   /surgical_procedures(.:format)     surgical_procedures#create
+//  surgical_procedure GET    /surgical_procedures/:id(.:format) surgical_procedures#show
+//                     PATCH  /surgical_procedures/:id(.:format) surgical_procedures#update
+//                     PUT    /surgical_procedures/:id(.:format) surgical_procedures#update
+//                     DELETE /surgical_procedures/:id(.:format) surgical_procedures#destroy
+//     major_illnesses GET    /major_illnesses(.:format)         major_illnesses#index
+//                     POST   /major_illnesses(.:format)         major_illnesses#create
+//       major_illness GET    /major_illnesses/:id(.:format)     major_illnesses#show
+//                     PATCH  /major_illnesses/:id(.:format)     major_illnesses#update
+//                     PUT    /major_illnesses/:id(.:format)     major_illnesses#update
+//                     DELETE /major_illnesses/:id(.:format)     major_illnesses#destroy
+//         medications GET    /medications(.:format)             medications#index
+//                     POST   /medications(.:format)             medications#create
+//          medication GET    /medications/:id(.:format)         medications#show
+//                     PATCH  /medications/:id(.:format)         medications#update
+//                     PUT    /medications/:id(.:format)         medications#update
+//                     DELETE /medications/:id(.:format)         medications#destroy
+//        vaccinations GET    /vaccinations(.:format)            vaccinations#index
+//                     POST   /vaccinations(.:format)            vaccinations#create
+//         vaccination GET    /vaccinations/:id(.:format)        vaccinations#show
+//                     PATCH  /vaccinations/:id(.:format)        vaccinations#update
+//                     PUT    /vaccinations/:id(.:format)        vaccinations#update
+//                     DELETE /vaccinations/:id(.:format)        vaccinations#destroy
+//       patient_infos GET    /patient_infos(.:format)           patient_infos#index
+//                     POST   /patient_infos(.:format)           patient_infos#create
+//        patient_info GET    /patient_infos/:id(.:format)       patient_infos#show
+//                     PATCH  /patient_infos/:id(.:format)       patient_infos#update
+//                     PUT    /patient_infos/:id(.:format)       patient_infos#update
+//                     DELETE /patient_infos/:id(.:format)       patient_infos#destroy
+//               items GET    /items(.:format)                   items#index
+//                     POST   /items(.:format)                   items#create
+//                item GET    /items/:id(.:format)               items#show
+//                     PATCH  /items/:id(.:format)               items#update
+//                     PUT    /items/:id(.:format)               items#update
+//                     DELETE /items/:id(.:format)               items#destroy
+//        authenticate POST   /authenticate(.:format)            authentication#authenticate
