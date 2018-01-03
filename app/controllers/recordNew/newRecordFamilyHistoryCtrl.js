@@ -1,13 +1,13 @@
 "use strict";
 
 
-app.controller("newRecordSurgicalProceduresCtrl", function($scope, recordFactory, userFactory, $window, $routeParams, $location, $rootScope){
+app.controller("newRecordFamilyHistoryCtrl", function($scope, recordFactory, userFactory, $window, $routeParams, $location, $rootScope){
     
     const vm = $scope;
     const url = "http://localhost:3000";
 
     // Get and Post
-    let recordType = "surgical_procedures";
+    let recordType = "family_histories";
 
     // Patch, Delete, and Get a record
     // let recordType = "family_histories/";
@@ -17,13 +17,13 @@ app.controller("newRecordSurgicalProceduresCtrl", function($scope, recordFactory
     vm.record = {};
 
     // SUBMITS NEW DATA TO DB FROM NEW RECORD FORM
-        vm.submitNewRecordSurgicalProcedure = function(record){
+        vm.submitNewRecordFamilyHistory = function(record){
             let tok = userFactory.tokentok();
 
             console.log("tok in familyCtr; ", tok);
             recordFactory.addRecord(vm.record, recordType, tok);
             
-                $window.location.href = "#!/recordUpdateDeleteSurgicalProcedures";
+                $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
                 // console.log("submitNewRecordFamilyHistory fired at newRecordFamilyHistoryCtrl");
         };
 

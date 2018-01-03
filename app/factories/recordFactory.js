@@ -7,9 +7,9 @@ const url = "http://localhost:3000";
     const addRecord = function(record, recordType, tokentok){
         // let newObj = angular.toJson(record);
         let newObj = record;
-        console.log("newObj in factory: ", newObj);
+        // console.log("newObj in factory: ", newObj);
 
-        // console.log("tok in recordNewfacory, in addRecord function above return: ", tokentok);
+        
             return $q((resolve, reject)=>{
                 $http({
                 method: 'POST', 
@@ -21,15 +21,18 @@ const url = "http://localhost:3000";
     };
 
 
-    const editRecord = function(record, recordType, tokentok) {
-        let newObj = record;
-        console.log("editRecord in record factory: ");
+    const editRecord = function(recordType, recordID, tokentok) {
+        // let newObj = record;
+        // console.log("editRecord in record factory: ");
+
+        console.log("url in editRecord: ", url);
+        console.log("recordType in editRecord:", recordType); 
         return $q((resolve, reject)=>{
             $http({
                 method: 'PATCH', 
-                url: `${url}/${recordType}`, 
-                headers: {'Authorization': tokentok},
-                data: newObj
+                url: `${url}/${recordType}/${recordID}`, 
+                headers: {'Authorization': tokentok}
+                // data: newObj
                 });
 
             // let newObj = angular.toJson(obj);
@@ -39,30 +42,55 @@ const url = "http://localhost:3000";
         });
     };
 
-    const deleteRecord = function(record, recordType, recordID, tokentok){
-        let newObj = record;
+    const deleteRecord = function(recordType, recordID, tokentok){
+        // let newObj = record;
         console.log("deleteRecord in record factory: ");
 
-        return $q((resolve,reject)=>{
+        // return $q((resolve,reject)=>{
+        return $q((resolve, reject)=>{
+
+            console.log("recordID in delete @ record factory: ", recordID);
+            console.log("tokentok in delete @ record factory: ", tokentok);
+
             $http({
                 method: 'DELETE', 
                 url: `${url}/${recordType}/${recordID}`,
                 // ${id}, 
-                headers: {'Authorization': tokentok},
-                data: newObj
-                });
-            console.log("deleteRecord in record factory: ", tokentok);
+                headers: {'Authorization': tokentok}
+                // data: newObj
+                })
             // $http.delete(`${url}/${recordType}.json`);
-                // .then(response => resolve(response))
-                // .catch(error => reject(error));
+                .then((response) => {
+                    resolve(response);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
         });
     };
 
+    // const deleteBooks = function(id){
+    //     //console.log("item id", id);
+    //     return $q((resolve, reject) => {
+    //         $http.delete(`http://localhost:3000/user_books/${id}`, {headers:
+    //             {
+    //                 Authorization: `${userFactory.getTokenBack()}`,
+    //             },
+    //         })
+    //         .then((response) => {
+    //             resolve(response);
+    //         })
+    //         .catch((error) => {
+    //             reject(error);
+    //         });
+    //     });
+    // };
+
     const getRecord = function(recordType, tok){
         // let newObj = record;
-        console.log("recordType @ getRecord in recordFactory:", recordType);
-        console.log("url @ getRecord in recordFactory: ", url);
-        console.log("tok @ getRecord in recordFactory: ", tok);
+        // console.log("recordType @ getRecord in recordFactory:", recordType);
+        // console.log("url @ getRecord in recordFactory: ", url);
+        // console.log("tok @ getRecord in recordFactory: ", tok);
         
         return $q((resolve,reject)=> {
             $http({

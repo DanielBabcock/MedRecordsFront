@@ -38,12 +38,14 @@ app.controller("recordUpdateDeletePatientInfoCtrl", function($scope, recordFacto
         $window.location.href = "#!/recordUpdateDeletePatientInfo";
     };
 
-    vm.delRecord = function(){
+    vm.delRecord = function(recordId){
         let recordType = "patient_infos";
+        let tok = userFactory.tokentok();  
+        let recordID = recordId;
 
 
-
-        recordFactory.deleteRecord(recordType, recordID);
+        console.log("recordID: ", recordID);
+        recordFactory.deleteRecord(recordType, recordID, tok);
         $window.location.href = "#!/recordUpdateDeletePatientInfo";
     };
 });

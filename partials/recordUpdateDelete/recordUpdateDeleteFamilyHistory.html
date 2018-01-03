@@ -30,14 +30,14 @@
 
             
             <div class="col-xs-12">
-                <button class="btn btn-primary" ng-click="edRecord()">
+                <button class="btn btn-primary" ng-click="edRecord(record.id)">
                     <span class="glyphicon glyphicon-pencil"></span>
                     Edit: {{record.family_member_relation}}
                 </button>
             </div>
             
             <div class="col-xs-12">
-                    <button class="btn btn-primary" ng-click="delRecord()">
+                    <button class="btn btn-primary" ng-click="delRecord(record.id)">
                         <span class="glyphicon glyphicon-trash"></span>
                         Delete: {{record.family_member_relation}}
                     </button>

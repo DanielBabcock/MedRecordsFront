@@ -1,15 +1,4 @@
-<!-- api specific field info plus save button, goes the new record upon save -->
-<!-- form for::::::: -->
-<!-- Field: Vaccination:
-Columns: 
-
-patient_id
-vaccine_name : string
-vaccination_date : date
-vaccine_expiration : date -->
-
-
-<h2>Records</h2>
+<h2>Vaccination Records</h2>
 <div ng-controller="recordUpdateDeleteVaccinationsCtrl" class="col-xs-12">
 
     <div ng-repeat="record in records">
@@ -22,14 +11,14 @@ vaccine_expiration : date -->
 
             
             <div class="col-xs-12">
-                <button class="btn btn-primary" ng-click="edRecord()">
+                <button class="btn btn-primary" ng-click="edRecord(record.id)">
                     <span class="glyphicon glyphicon-pencil"></span>
                     Edit: {{record.vaccine_name}}
                 </button>
             </div>
             
             <div class="col-xs-12">
-                    <button class="btn btn-primary" ng-click="delRecord()">
+                    <button class="btn btn-primary" ng-click="delRecord(record.id)">
                         <span class="glyphicon glyphicon-trash"></span>
                         Delete: {{record.vaccine_name}}
                     </button>
