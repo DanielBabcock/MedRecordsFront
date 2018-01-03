@@ -29,12 +29,13 @@ app.controller("recordUpdateDeleteFamilyHistoryCtrl", function($scope, recordFac
     gRecord();
 
     vm.edRecord = function(recordId){
-        let tok = userFactory.tokentok();  
         let recordType = "family_histories";
+        let tok = userFactory.tokentok();  
         let recordID = recordId;
 
+        console.log("recordType in edRecord in ctrl: ", recordType);
         console.log("recordID in edRecord in ctrl: ", recordID);
-        recordFactory.editRecord(recordType, recordID, tok);
+        recordFactory.editRecord(vm.record, recordType, recordID, tok);
         $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
     };
 
