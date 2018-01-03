@@ -23,7 +23,7 @@ notes : string -->
 
     <div ng-repeat="record in records">
         <ul class="list-group" id="surgicalProcedures">
-            <li class="list-group-item"><strong>Patient ID:</strong> {{record.patient_id}}</li>
+            <!-- <li class="list-group-item"><strong>Patient ID:</strong> {{record.patient_id}}</li> -->
             <li class="list-group-item"><strong>Procedure Name:</strong> {{record.procedure_name}}</li>
             <li class="list-group-item">Care Giver Name: {{record.care_giver_name}}</li>
             <li class="list-group-item">Care Giver Title: {{record.care_giver_title}}</li>
@@ -41,14 +41,14 @@ notes : string -->
 
             
             <div class="col-xs-12">
-                <button class="btn btn-primary" ng-click="edRecord()">
+                <button class="btn btn-primary" ng-click="edRecord(record.id)">
                     <span class="glyphicon glyphicon-pencil"></span>
                     Edit: {{record.procedure_name}}
                 </button>
             </div>
             
             <div class="col-xs-12">
-                    <button class="btn btn-primary" ng-click="delRecord()">
+                    <button class="btn btn-primary" ng-click="delRecord(record.id)">
                         <span class="glyphicon glyphicon-trash"></span>
                         Delete: {{record.procedure_name}}
                     </button>

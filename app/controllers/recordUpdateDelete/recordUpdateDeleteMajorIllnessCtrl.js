@@ -38,14 +38,17 @@ app.controller("recordUpdateDeleteMajorIllnessCtrl", function($scope, recordFact
         $window.location.href = "#!/recordUpdateDeleteMajorIllness";
     };
 
-    vm.delRecord = function(){
-    let recordType = "major_illnesses";
-        
+    vm.delRecord = function(recordId){
+        let tok = userFactory.tokentok();  
+        let recordType = "major_illnesses";
+        let recordID = recordId;
 
 
-        recordFactory.deleteRecord(recordType, recordID);
+        console.log("recordID: ", recordID);
+        recordFactory.deleteRecord(recordType, recordID, tok);
         $window.location.href = "#!/recordUpdateDeleteMajorIllness";
     };
+
 });
 
 

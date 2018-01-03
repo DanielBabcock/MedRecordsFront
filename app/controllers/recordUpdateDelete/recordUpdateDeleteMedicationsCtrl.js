@@ -12,6 +12,7 @@ app.controller("recordUpdateDeleteMedicationsCtrl", function($scope, recordFacto
     let recordType = "medications";
     let recordID = vm.record.id;
 
+
     const gRecord = function(){
         let recordType = "medications";
 
@@ -29,7 +30,7 @@ app.controller("recordUpdateDeleteMedicationsCtrl", function($scope, recordFacto
 
     gRecord();
 
-    vm.edRecord = function(){
+    vm.edRecord = function(recordId){
         let recordType = "medications";
 
         let tok = userFactory.tokentok();  
@@ -38,11 +39,14 @@ app.controller("recordUpdateDeleteMedicationsCtrl", function($scope, recordFacto
         $window.location.href = "#!/recordUpdateDeleteMedications";
     };
 
-    vm.delRecord = function(){
+    vm.delRecord = function(recordId){
+        let tok = userFactory.tokentok();  
         let recordType = "medications";
+        let recordID = recordId;
 
 
-        recordFactory.deleteRecord(recordType, recordID);
+        console.log("recordID: ", recordID);
+        recordFactory.deleteRecord(recordType, recordID, tok);
         $window.location.href = "#!/recordUpdateDeleteMedications";
     };
 });

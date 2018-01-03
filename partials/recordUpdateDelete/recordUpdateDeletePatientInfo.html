@@ -29,7 +29,7 @@ eligible_blood_donor : boolean -->
 
             <li class="list-group-item"><strong>First Name:</strong> {{record.name_first}}</li>
             <li class="list-group-item">Last Name: {{record.name_last}}</li>
-            <li class="list-group-item">Patient ID: {{record.patient_id}}</li>
+            <!-- <li class="list-group-item">Patient ID: {{record.patient_id}}</li> -->
             <li class="list-group-item">Patient Sex: {{record.patient_sex}}</li>
             <li class="list-group-item">Race: {{record.race}}</li>
             <li class="list-group-item">Height: {{record.height}}</li>
@@ -49,14 +49,14 @@ eligible_blood_donor : boolean -->
 
             
             <div class="col-xs-12">
-                <button class="btn btn-primary" ng-click="edRecord()">
+                <button class="btn btn-primary" ng-click="edRecord(record.id)">
                     <span class="glyphicon glyphicon-pencil"></span>
                     Edit: {{record.name_first}}
                 </button>
             </div>
             
             <div class="col-xs-12">
-                    <button class="btn btn-primary" ng-click="delRecord()">
+                    <button class="btn btn-primary" ng-click="delRecord(record.id)">
                         <span class="glyphicon glyphicon-trash"></span>
                         Delete: {{record.record.name_first}}
                     </button>

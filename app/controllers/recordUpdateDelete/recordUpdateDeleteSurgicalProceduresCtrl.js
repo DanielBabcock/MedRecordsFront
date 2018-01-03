@@ -38,12 +38,14 @@ app.controller("recordUpdateDeleteSurgicalProceduresCtrl", function($scope, reco
         $window.location.href = "#!/recordUpdateDeleteSurgicalProcedures";
     };
 
-    vm.delRecord = function(){
+    vm.delRecord = function(recordId){
         let recordType = "surgical_procedures";
+        let tok = userFactory.tokentok();  
+        let recordID = recordId;
 
 
-
-        recordFactory.deleteRecord(recordType, recordID);
+        console.log("recordID: ", recordID);
+        recordFactory.deleteRecord(recordType, recordID, tok);
         $window.location.href = "#!/recordUpdateDeleteSurgicalProcedures";
     };
 });

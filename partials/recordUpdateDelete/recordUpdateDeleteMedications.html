@@ -16,7 +16,7 @@ medication_end_date: date
 care_giver : string
 care_giver_title : string -->
 
-            <li class="list-group-item"><strong>Patient ID:</strong> {{record.patient_id}}</li>
+            <!-- <li class="list-group-item"><strong>Patient ID:</strong> {{record.patient_id}}</li> -->
             <li class="list-group-item">Medication Name: {{record.medication_name}}</li>
             <li class="list-group-item">Current Use: {{record.current_use}}</li>
             <li class="list-group-item">Medication Purpose: {{record.mediation_purpose}}</li>
@@ -30,14 +30,14 @@ care_giver_title : string -->
 
             
             <div class="col-xs-12">
-                <button class="btn btn-primary" ng-click="edRecord()">
+                <button class="btn btn-primary" ng-click="edRecord(record.id)">
                     <span class="glyphicon glyphicon-pencil"></span>
                     Edit: {{record.medication_name}}
                 </button>
             </div>
             
             <div class="col-xs-12">
-                    <button class="btn btn-primary" ng-click="delRecord()">
+                    <button class="btn btn-primary" ng-click="delRecord(record.id)">
                         <span class="glyphicon glyphicon-trash"></span>
                         Delete: {{record.medication_name}}
                     </button>

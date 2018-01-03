@@ -18,96 +18,38 @@ app.controller("recordUpdateDeleteFamilyHistoryCtrl", function($scope, recordFac
        
         recordFactory.getRecord(recordType, tok)
         .then(data => {
-            console.log("data in getRecord: ", data);
+            // console.log("data in getRecord: ", data);
         vm.records = data;
        
-        console.log("data in recordFactory @ getRecord: ", data);
-       
-        console.log("record @ gRecord in recordUpdateFamiCtrl: ", vm.records);
         });
 
-        console.log("gRecord in recordUpdateDeleteFamilyHistoryCtrl fired: ");
         // $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
     };
 
     gRecord();
 
-    vm.edRecord = function(){
-        // console.log("editRecord button in recordUpdateDeleteFamilyHistoryCtrl fired: ");
+    vm.edRecord = function(recordId){
         let tok = userFactory.tokentok();  
         let recordType = "family_histories";
+        let recordID = recordId;
 
-        recordFactory.editRecord(recordType, recordID);
+        console.log("recordID in edRecord in ctrl: ", recordID);
+        recordFactory.editRecord(recordType, recordID, tok);
         $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
     };
 
-    vm.delRecord = function(){
-        // let tok = userFactory.tokentok();  
+    vm.delRecord = function(recordId){
         let recordType = "family_histories";
-        // let id = ;
+        let tok = userFactory.tokentok();  
+        let recordID = recordId;
 
-        // console.log("deleteRecord button in recordUpdateDeleteFamilyHistoryCtrl fired: ");
-        recordFactory.deleteRecord(recordType, recordID);
+
+        console.log("recordID: ", recordID);
+        recordFactory.deleteRecord(recordType, recordID, tok);
         $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
     };
 });
 
-    // display the details of a given task in form.html
-    // invoke from details view when the 'edit' button is clicked
-
-    // const showEditTask = function(){
-    //     todoFactory.getSingleTask($routeParams.itemId)
-    //         .then(data => {
-    //             console.log("data", data);
-    //             vm.task = data;
-    //             vm.task.id = $routeParams.itemId;
-    //         });
-    // };
-
-    // edit task
-    // using location to redirect
-    // vm.submitTask = function(){
-    //     todoFactory.editTask($routeParams.itemId, vm.task)
-    //         .then(data => $location.path('/task-list'));
-    // };
-
-    // showEditTask();
-    // vm.searchText = filterFactory;
-
-    // // initialize an array, bound to scope
-    // vm.tasks = [];
-
-    // // get all tasks from firebase, using the factory
-    // // and bind the returned array to scope (vm)
-    // const showAllTasks = function(){
-    //     let user = userFactory.getCurrentUser();
-    //     todoFactory.getAllTasks(user)
-    //         .then(tasks => vm.tasks = tasks);
-    // };
-
-
-    // // called from list.html gets the itemId from $routeParams
-    // // and passes this to the factory, where an $http.delete removes is from the database
-    // vm.deleteTask = function(id){
-    //     todoFactory.deleteTask(id)
-    //         .then(()=>showAllTasks());
-    // };
-
-
-    // // called by and ng-change on a checkbox in list.html
-    // // updates the isComplete property in the database and re-renders the todos
-    // // because it's ng-model, the checkbox gets the value 'true' when checked,
-    // // we put this in an object and pass it to a factory method,
-    // // which uses $http.patch to update that particular value on this object
-    
-    // vm.toggleDoneTask = function(thingy){
-    //     todoFactory.editTask(thingy.id, {isCompleted:thingy.isCompleted})
-    //         .then(()=>showAllTasks());
-    // };
-
-    // // when the controller is instantiated,
-    // // go ahead and show all tasks for the current user
-    // showAllTasks();
 
 
 

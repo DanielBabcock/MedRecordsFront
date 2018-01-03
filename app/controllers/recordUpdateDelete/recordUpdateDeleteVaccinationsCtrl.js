@@ -13,13 +13,12 @@ app.controller("recordUpdateDeleteVaccinationsCtrl", function($scope, recordFact
     let recordID = vm.record.id;
 
     const gRecord = function(){
+        let tok = userFactory.tokentok();  
         let recordType = "vaccinations";
 
-        let tok = userFactory.tokentok();  
-       
         recordFactory.getRecord(recordType, tok)
         .then(data => {
-            console.log("data in getRecord: ", data);
+            // console.log("data in getRecord: ", data);
         vm.records = data;
        
         });
@@ -29,21 +28,24 @@ app.controller("recordUpdateDeleteVaccinationsCtrl", function($scope, recordFact
 
     gRecord();
 
-    vm.edRecord = function(){
-        let recordType = "vaccinations";
-
+    vm.edRecord = function(recordId){
         let tok = userFactory.tokentok();  
+        let recordType = "vaccinations";
+        let recordID = recordId;
 
-        recordFactory.editRecord(recordType, recordID);
+        console.log("recordID edRecord in VaxCtrl: ", recordID);
+        recordFactory.editRecord(recordType, recordID, tok);
         $window.location.href = "#!/recordUpdateDeleteVaccinations";
     };
 
-    vm.delRecord = function(){
+    vm.delRecord = function(recordId){
         let recordType = "vaccinations";
+        let tok = userFactory.tokentok();  
+        let recordID = recordId;
 
 
-
-        recordFactory.deleteRecord(recordType, recordID);
+        console.log("recordID @ delRecord in vaxCtrl: ", recordID);
+        recordFactory.deleteRecord(recordType, recordID, tok);
         $window.location.href = "#!/recordUpdateDeleteVaccinations";
     };
 });
