@@ -2,48 +2,68 @@
 <div ng-controller="recordUpdateDeleteMedicationsCtrl" class="col-xs-12">
 
     <div ng-repeat="record in records">
-        <ul class="list-group" id="medicationHistory">
-            <!-- Field: Medications
-Columns: 
-patient_id
-medication_name : string
-current_use : bool
-mediation_purpose: string
-medication_dose_amount : string
-medication_dose_frequency : string
-medication_start_date: date
-medication_end_date: date
-care_giver : string
-care_giver_title : string -->
+        <form>
+            
+            <div class="form-group">
+                    <label>Medication Name: </label>
+                    <input type="text" class="form-control" ng-model="record.medication_name"/>
+                </div>
+                <!-- current_use : bool -->
+                <div class="form-group">
+                    <label>Current Use: </label>
+                    <input type="radio" name="currentUse" ng-model="record.current_use" ng-value="true"/> True
+                    <input type="radio" name="currentUse" ng-model="record.current_use" ng-value="false"/>  False
+                </div>
+                <!-- mediation_purpose: string -->
+                <div class="form-group">
+                    <label>Medication Purpose: </label>
+                    <input type="text" class="form-control" ng-model="record.mediation_purpose"/>
+                </div>
+                <!-- medication_dose_amount : string -->
+                <div class="form-group">
+                    <label>Medication Doseage: </label>
+                    <input type="text" class="form-control" ng-model="record.medication_dose_amount"/>
+                </div>
+                <!-- medication_dose_frequency : string -->
+                <div class="form-group">
+                    <label>Medication Dose Frequency: </label>
+                    <input type="text" class="form-control" ng-model="record.medication_dose_frequency"/>
+                </div>
+                <!-- medication_start_date: date -->
+                <div class="form-group">
+                        <label>Medication Start Date: </label>
+                        <input type="datetime-local" class="form-control" ng-model="record.medication_start_date"/>
+                </div>
+                <!-- medication_end_date: date -->
+                <div class="form-group">
+                    <label>Medication End Date: </label>
+                    <input type="datetime-local" class="form-control" ng-model="record.medication_end_date"/>
+                </div>
+                <!-- care_giver : string -->
+                <div class="form-group">
+                    <label>Care giver: </label>
+                    <input type="text" class="form-control" ng-model="record.care_giver"/>
+                </div>
+                <!-- care_giver_title : string -->
+                <div class="form-group">
+                    <label>Care Giver Title: </label>
+                    <input type="text" class="form-control" ng-model="record.care_giver_title"/>
+                </div>
 
-            <!-- <li class="list-group-item"><strong>Patient ID:</strong> {{record.patient_id}}</li> -->
-            <li class="list-group-item">Medication Name: {{record.medication_name}}</li>
-            <li class="list-group-item">Current Use: {{record.current_use}}</li>
-            <li class="list-group-item">Medication Purpose: {{record.mediation_purpose}}</li>
-            <li class="list-group-item">Medication Dose Amount: {{record.medication_dose_amount}}</li>
-            <li class="list-group-item">Medication Dose Frequency: {{record.medication_dose_frequency}}</li>
-            <li class="list-group-item">Medication Start Date: {{record.medication_start_date}}</li>
-            <li class="list-group-item">Care Giver: {{record.care_giver}}</li>
-            <li class="list-group-item">Care Giver Title: {{record.care_giver_title}}</li>
-            
-            <li class="list-group-item"> Record ID: {{record.id}}</li>
-
-            
-            <div class="col-xs-12">
-                <button class="btn btn-primary" ng-click="edRecord(record.id)">
-                    <span class="glyphicon glyphicon-pencil"></span>
-                    Edit: {{record.medication_name}}
-                </button>
-            </div>
-            
-            <div class="col-xs-12">
-                    <button class="btn btn-primary" ng-click="delRecord(record.id)">
-                        <span class="glyphicon glyphicon-trash"></span>
-                        Delete: {{record.medication_name}}
+                <div class="col-xs-12">
+                    <button class="btn btn-primary" ng-click="edRecord(record.id)">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        Edit: {{record.medication_name}}
                     </button>
+                </div>
+                
+                <div class="col-xs-12">
+                        <button class="btn btn-primary" ng-click="delRecord(record.id)">
+                            <span class="glyphicon glyphicon-trash"></span>
+                            Delete: {{record.medication_name}}
+                        </button>
+                </div>
             </div>
-            
-        </ul>
-        
+        </form>
     </div>
 </div>

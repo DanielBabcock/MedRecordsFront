@@ -2,123 +2,137 @@
 <div ng-controller="recordUpdateDeleteFamilyHistoryCtrl" class="col-xs-12">
 
     <div ng-repeat="record in records">
-        <ul class="list-group" id="familyHistory">
-            <li><div class="form-group">
-                <label>Family Member:</label>
-                <input type="text" class="form-control" ng-model="record.family_member_relation"/>
-            </div></li>
-            <!-- <li class="list-group-item"><strong>Family Member:</strong> {{record.family_member_relation}}</li> -->
-            <li><div>
-                <label>Prion Disease: </label>
-                <input type="text" class="form-control" ng-model="record.prion_disease"/>
-            </div></li>
-            <!-- class="list-group-item">Prion Disease: {{record.prion_disease}} -->
-            <li><div>
-                <label>Cardiac Disease: </label>
-                <input type="text" class="form-control" ng-model="record.cardiac_disease"/>
-            </div></li>
-            <!-- <li class="list-group-item">Cardiac Disease: {{record.cardiac_disease}}</li> -->
-            <li><div>
-                <label>Cardiac Event: </label>
-                <input type="text" class="form-control" ng-model="record.cardiac_event"/>
-            </div></li>
-            <!-- <li class="list-group-item">Cardiac Event: {{record.cardiac_event}}</li> -->
-            <li><div>
-                <label>Cardiac Event Age: </label>
-                <input type="text" class="form-control" ng-model="record.cardiac_event_ages"/>
-            </div></li>
-            <!-- <li class="list-group-item">Cardiac Event Age: {{record.cardiac_event_ages}}</li> -->
-            <li><div>
-                <label>Cardiac Death: </label>
-                <input type="text" class="form-control" ng-model="record.cardiac_death"/>
-            </div></li>
-            <!-- <li class="list-group-item">Cardiac Death: {{record.cardiac_death}}</li> -->
-            <li><div>
-                <label>Cardiac Death Age: </label>
-                <input type="text" class="form-control" ng-model="record.cardiac_death_age"/>
-            </div></li>
-            <!-- <li class="list-group-item">Cardiac Death Age: {{record.cardiac_death_age}}</li> -->
-            <li><div>
-                <label>Diabetes: </label>
-                <input type="text" class="form-control" ng-model="record.diabetes"/>
-            </div></li>
-            <!-- <li class="list-group-item">Diabetes: {{record.diabetes}}</li> -->
-            <li><div>
-                <label>Diabetes Type: </label>
-                <input type="text" class="form-control" ng-model="record.diabetes_type"/>
-            </div></li>
-            <!-- <li class="list-group-item">Diabetes Type: {{record.diabetes_type}}</li> -->
-            <li><div>
-                <label>Organ Diseases: </label>
-                <input type="text" class="form-control" ng-model="record.organ_diseases"/>
-            </div></li>
-            <!-- <li class="list-group-item">Organ Diseases: {{record.organ_diseases}}</li> -->
-            <li><div>
-                <label>Organ Disease Name: </label>
-                <input type="text" class="form-control" ng-model="record.organ_disease_name"/>
-            </div></li>
-            <!-- <li class="list-group-item">Organ Disease Name: {{record.organ_disease_name}}</li> -->
-            <li><div>
-                <label>Respiratory Disease: </label>
-                <input type="text" class="form-control" ng-model="record.respiratory_disease"/>
-            </div></li>
-            <!-- <li class="list-group-item">Respiratory Disease: {{record.respiratory_disease}}</li> -->
-            <li><div>
-                <label>Respiratory Disease Names: </label>
-                <input type="text" class="form-control" ng-model="record.respiratory_disease_names"/>
-            </div></li>
-            <!-- <li class="list-group-item">Respiratory Disease Names: {{record.respiratory_disease_names}}</li> -->
-            <li><div>
-                <label>Cancer: </label>
-                <input type="text" class="form-control" ng-model="record.cancer"/>
-            </div></li>
-            <!-- <li class="list-group-item">Cancer: {{record.cancer}}</li> -->
-            <li><div>
-                <label>Cancer Death: </label>
-                <input type="text" class="form-control" ng-model="record.cancer_death"/>
-            </div></li>
-            <!-- <li class="list-group-item">Cancer Death: {{record.cancer_death}}</li> -->
-            <li><div>
-                <label>Cancer Types: </label>
-                <input type="text" class="form-control" ng-model="record.cancer_types"/>
-            </div></li>
-            <!-- <li class="list-group-item">Cancer Types: {{record.cancer_types}}</li> -->
-            <li><div>
-                <label>Cancer Event Age: </label>
-                <input type="text" class="form-control" ng-model="record.cancer_event_age"/>
-            </div></li>
-            <!-- <li class="list-group-item">Cancer Event Age: {{record.cancer_event_age}}</li> -->
-            <li><div>
-                <label>High Blood Pressure: </label>
-                <input type="text" class="form-control" ng-model="record.high_blood_pressure"/>
-            </div></li>
-            <!-- <li class="list-group-item">High Blood Pressure: {{record.high_blood_pressure}}</li> -->
-            <li><div>
-                <label>Stroke: </label>
-                <input type="text" class="form-control" ng-model="record.stroke"/>
-            </div></li>
-            <!-- <li class="list-group-item">Stroke: {{record.stroke}}</li> -->
-            <li><div>
-                <label>Alzheimers or Dementia: </label>
-                <input type="text" class="form-control" ng-model="record.alzheimers_or_dementia"/>
-            </div></li>
-            <!-- <li class="list-group-item">Alzheimers or Dementia: {{record.alzheimers_or_dementia}}</li> -->
-            <li><div>
-                <label>Osteoporosis: </label>
-                <input type="text" class="form-control" ng-model="record.osteoporosis"/>
-            </div></li>
-            <!-- <li class="list-group-item">Osteoporosis: {{record.osteoporosis}}</li> -->
-            <li><div>
-                <label>Bleeding Disorder: </label>
-                <input type="text" class="form-control" ng-model="record.bleeding_disorder"/>
-            </div></li>
-            <!-- <li class="list-group-item">Bleeding Disorder: {{record.bleeding_disorder}}</li></li> -->
-            <li><div>
-                <label>Record ID: </label>
-                <input type="text" class="form-control" ng-model="record.id"/>
-            </div></li>
-            <!-- <li class="list-group-item"> Record ID: {{record.id}}</li> -->
-           
+        <!-- <ul class="list-group" id="familyHistory"> -->
+            
+            
+            <!-- **********TEST CODE************** -->
+
+            <form>
+                <div class="form-group">
+                    <strong><label>Family Member Relation: </label> 
+                    <!-- <li class="list-group-item">{{record.family_member_relation}}</li> -->
+                    <input type="text" class="form-control"  ng-model="record.family_member_relation"/>
+                </div>
+    
+                <div class="form-group">
+                    <label>Prion Diesease: </label>
+                    <input type="radio" name="prionDisease" ng-model="record.prion_disease" ng-value="true"/> True
+                    <input type="radio" name="prionDisease" ng-model="record.prion_disease" ng-value="false"/>  False
+                </div>
+
+                <div class="form-group">
+                    <label>Cardiac Disease: </label>
+                    <input type="radio" name="cardiacDisease" ng-model="record.cardiac_disease" ng-value="true"/> True
+                    <input type="radio" name="cardiacDisease" ng-model="record.cardiac_disease" ng-value="false"/>  False
+                </div>
+
+                <div class="form-group">
+                    <label>Cardiac Event: </label>
+                    <input type="radio" name="cardiacEvent" ng-model="record.cardiac_event" ng-value="true"/> True
+                    <input type="radio" name="cardiacEvent" ng-model="record.cardiac_event" ng-value="false"/>  False
+                </div>
+                <div class="form-group">
+                    <label>Cardiac Event Age: </label>
+                    <input type="text" class="form-control" ng-model="record.cardiac_event_ages"/>
+                </div>
+                <div class="form-group">
+                    <label>Cardiac Death: </label>
+                    <input type="radio" name="cardiacDeath" ng-model="record.cardiac_death" ng-value="true"/> True
+                    <input type="radio" name="cardiacDeath" ng-model="record.cardiac_death" ng-value="false"/>  False
+                </div>
+
+                <div class="form-group">
+                    <label>Cardiac Death Age: </label>
+                    <input type="text" class="form-control" ng-model="record.cardiac_death_age"/>
+                </div>
+
+                <div class="form-group">
+                    <label>Diabetes: </label>
+                    <input type="radio" name="diabetes" ng-model="record.diabetes" ng-value="true"/> True
+                    <input type="radio" name="diabetes" ng-model="record.diabetes" ng-value="false"/>  False
+                </div>
+
+                <div class="form-group">
+                    <label>Diabetes Type: </label>
+                    <input type="text" class="form-control" ng-model="record.diabetes_type"/>
+                </div>
+
+                <div class="form-group">
+                    <label>Organ Diseases: </label>
+                    <input type="radio" name="organDiseases" ng-model="record.organ_diseases" ng-value="true"/> True
+                    <input type="radio" name="organDiseases" ng-model="record.organ_diseases" ng-value="false"/>  False
+                </div>
+
+                <div class="form-group">
+                    <label>Organ Disease Name: </label>
+                    <input type="text" class="form-control" ng-model="record.organ_disease_name"/>
+                </div>
+    
+                <div class="form-group">
+                    <label>Respiratory Disease: </label>
+                    <input type="radio" name="respiratoryDisease" ng-model="record.respiratory_disease" ng-value="true"/> True
+                    <input type="radio" name="respiratoryDisease" ng-model="record.respiratory_disease" ng-value="false"/>  False
+                </div>
+
+                <div class="form-group">
+                    <label>Respiratory Disease Names: </label>
+                    <input type="text" class="form-control" ng-model="record.respiratory_disease_names"/>
+                </div>
+    
+                <div class="form-group">
+                    <label>Cancer: </label>
+                    <input type="radio" name="cancer" ng-model="record.cancer" ng-value="true"/> True
+                    <input type="radio" name="cancer" ng-model="record.cancer" ng-value="false"/>  False
+                </div>
+
+                <div class="form-group">
+                    <label>Cancer Death: </label>
+                    <input type="radio" name="cancerDeath" ng-model="record.cancer_death" ng-value="true"/> True
+                    <input type="radio" name="cancerDeath" ng-model="record.cancer_death" ng-value="false"/>  False
+                </div>
+
+                <div class="form-group">
+                    <label>Cancer Types: </label>
+                    <input type="text" class="form-control" ng-model="record.cancer_types"/>
+                </div>
+                <div class="form-group">
+                    <label>Cancer Event Age: </label>
+                    <input type="text" class="form-control" ng-model="record.cancer_event_age"/>
+                </div>
+
+                <div class="form-group">
+                    <label>High Blood Pressure: </label>
+                    <input type="radio" name="highBloodPressure" ng-model="record.high_blood_pressure" ng-value="true"/> True
+                    <input type="radio" name="highBloodPressure" ng-model="record.high_blood_pressure" ng-value="false"/>  False
+                </div>
+
+                <div class="form-group">
+                    <label>Stroke: </label>
+                    <input type="radio" name="stroke" ng-model="record.stroke" ng-value="true"/> True
+                    <input type="radio" name="stroke" ng-model="record.stroke" ng-value="false"/>  False
+                </div>
+
+                <div class="form-group">
+                    <label>Alzheimers or Dementia: </label>
+                    <input type="radio" name="alzheimersOrDementia" ng-model="record.alzheimers_or_dementia" ng-value="true"/> True
+                    <input type="radio" name="alzheimersOrDementia" ng-model="record.alzheimers_or_dementia" ng-value="false"/>  False
+                </div>
+
+                <div class="form-group">
+                    <label>Osteoporosis: </label>
+                    <input type="radio" name="osteoporosis" ng-model="record.osteoporosis" ng-value="true"/> True
+                    <input type="radio" name="osteoporosis" ng-model="record.osteoporosis" ng-value="false"/>  False
+                </div>
+                
+                <div class="form-group">
+                    <label>Bleeding Disorder: </label>
+                    <input type="radio" name="bleedingDisorder" ng-model="record.bleeding_disorder" ng-value="true"/> True
+                    <input type="radio" name="bleedingDisorder" ng-model="record.bleeding_disorder" ng-value="false"/>  False
+                </div>
+
+
+            <!-- **********TEST CODE************** -->
+
 
             
             <div class="col-xs-12">
@@ -134,8 +148,11 @@
                         Delete: {{record.family_member_relation}}
                     </button>
             </div>
-            
-        </ul>
+    <!-- **********TEST CODE************** -->
+            </form>
+    <!-- **********TEST CODE************** -->
+
+        <!-- </ul> -->
         
     </div>
 </div>

@@ -2,12 +2,21 @@
 <div ng-controller="recordUpdateDeleteVaccinationsCtrl" class="col-xs-12">
 
     <div ng-repeat="record in records">
-        <ul class="list-group" id="vaccineHistory">
 
-            <li class="list-group-item"><strong>Vaccine Name:</strong> {{record.vaccine_name}}</li>
-            <li class="list-group-item">Vaccination Date: {{record.vaccination_date}}</li>
-            <li class="list-group-item">Vaccine Expiration: {{record.vaccine_expiration}}</li>
-            <li class="list-group-item"> Record ID: {{record.id}}</li>
+    <form>
+
+            <div class="form-group">
+                <label>Vaccine Name: </label>
+                <input type="text" class="form-control" ng-model="record.vaccine_name"/>
+            </div>
+            <div class="form-group">
+                <label>Vaccination Date: </label>
+                <input type="date-time" class="form-control" ng-model="record.vaccination_date"/>
+            </div>
+            <div class="form-group">
+                <label>vaccine Expiration: </label>
+                <input type="date-time" class="form-control" ng-model="record.vaccine_expiration"/>
+            </div>
 
             
             <div class="col-xs-12">
@@ -24,7 +33,7 @@
                     </button>
             </div>
             
-        </ul>
+        </form>
         
     </div>
 </div>

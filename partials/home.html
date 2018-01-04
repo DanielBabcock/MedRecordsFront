@@ -7,20 +7,56 @@
 
     <!-- Search Bar here for record search function -->
     <!-- STRETCH GOAL, user can see all records in profile -->
+        <!-- VIEW ALL BUTTON HERE -->
     <!-- <label>Search for records:</label>
     <input type="text" placeholder="type keyword here:">
     <button ng-submit="searchRecs()">Search </button> -->
         <div class="form-group">
-            <label>Visit Records</label>
-                <ul>
-                    <li><button type="button" ng-click="famHistRecord()">Family History: </button></li> 
-                    <li><button type="button" ng-click="illRecord()">Major Illness: </button></li> 
-
-                    <li><button type="button" ng-click="medsRecord()">Medications: </button></li> 
-                    <li><button type="button" ng-click="patInfoRecord()">Patient Info: </button></li> 
-                    <li><button type="button" ng-click="surgRecord()">Surgical Procedures </button></li> 
-                    <li><button type="button" ng-click="vaxRecord()">Vaccinations: </button></li> 
-                </ul>
+            <label>Visit, Edit, and Delete Records</label>
+                <!-- <ul> -->
+                    <!-- <li><button type="button" ng-click="famHistRecord()">Family History: </button></li>  -->
+                    <form name="main.addForm" class="form" ng-submit="famHistRecord()">
+                        <div class="col-xs-6">
+                            <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-file"></span> Family History: </button>
+                        </div>
+                    </form>
+                    <br>
+                    <!-- <li><button type="button" ng-click="illRecord()">Major Illness: </button></li>  -->
+                    <form name="main.addForm" class="form" ng-submit="illRecord()">
+                        <div class="col-xs-6">
+                            <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-file"></span> Major Illness: </button>
+                        </div>
+                    </form>
+                    <br>
+                    <!-- <li><button type="button" ng-click="medsRecord()">Medications: </button></li>  -->
+                    <form name="main.addForm" class="form" ng-submit="medsRecord()">
+                        <div class="col-xs-6">
+                            <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-file"></span>Medications: </button>
+                        </div>
+                    </form>
+                    <br>
+                    <!-- <li><button type="button" ng-click="patInfoRecord()">Patient Info: </button></li>  -->
+                    <form name="main.addForm" class="form" ng-submit="patInfoRecord()">
+                        <div class="col-xs-6">
+                            <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-file"></span>Patient Info: </button>
+                        </div>
+                    </form>
+                    <br>
+                    <!-- <li><button type="button" ng-click="surgRecord()">Surgical Procedures: </button></li>  -->
+                    <form name="main.addForm" class="form" ng-submit="surgRecord()">
+                        <div class="col-xs-6">
+                            <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-file"></span> Surgical Procedures: </button>
+                        </div>
+                    </form>
+                    <br>
+                    <!-- <li><button type="button" ng-click="vaxRecord()">Vaccinations: </button></li>  -->
+                    <form name="main.addForm" class="form" ng-submit="vaxRecord()">
+                        <div class="col-xs-6">
+                            <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-file"></span>Vaccinations: </button>
+                        </div>
+                    </form>
+                    <br>
+                <!-- </ul> -->
         </div>    
 
     <!-- AFTER NEW FAMILY RECORD AND FAMILY RECORD WORKS,Profile page link Button here -->
@@ -29,7 +65,7 @@
         <button type="button" ng-submit="goToProfile()">Profile: </button> 
 
     </section> -->
-
+    <br>
     <br>
     <br>
 
@@ -82,9 +118,7 @@
         </form>
         <br>
     </div>
-        
-   
-    <br>
+
     <br>
     <br>
     
