@@ -1,68 +1,107 @@
-<!-- api specific field info plus save button, goes the new record upon save -->
-<!-- form for::::::: -->
-<!-- Field: Patient-Info:
-Columns: 
-
-name_first : string
-name_last : string
-patient_id : hash
-patient_sex : string
-race : string
-height : string
-height_in_inches : boolean
-weight : num
-weight_in_pounds : boolean
-date_birth : date
-address : string
-phone_number : num
-emergency_contact_name_first : string
-emergency_contact_name_last : string
-emergency_contact_phone_number : string
-emergency_contact_address : string
-eligible_blood_donor : boolean -->
-
 <h2>Patient Info Records</h2>
 <div ng-controller="recordUpdateDeletePatientInfoCtrl" class="col-xs-12">
 
     <div ng-repeat="record in records">
-        <ul class="list-group" id="patientInfo">
-
-            <li class="list-group-item"><strong>First Name:</strong> {{record.name_first}}</li>
-            <li class="list-group-item">Last Name: {{record.name_last}}</li>
-            <!-- <li class="list-group-item">Patient ID: {{record.patient_id}}</li> -->
-            <li class="list-group-item">Patient Sex: {{record.patient_sex}}</li>
-            <li class="list-group-item">Race: {{record.race}}</li>
-            <li class="list-group-item">Height: {{record.height}}</li>
-            <li class="list-group-item">height in Inches: {{record.height_in_inches}}</li>
-            <li class="list-group-item">Weight: {{record.weight}}</li>
-            <li class="list-group-item">Weight in Inches: {{record.weight_in_pounds}}</li>
-            <li class="list-group-item">Date of Birth: {{record.date_birth}}</li>
-            <li class="list-group-item">Address: {{record.address}}</li>
-            <li class="list-group-item">Phone Number: {{record.phone_number}}</li>
-            <li class="list-group-item">Emergency Contact First Name: {{record.emergency_contact_name_first}}</li>
-            <li class="list-group-item">Emergency Contact Last Name: {{record.emergency_contact_name_last}}</li>
-            <li class="list-group-item">Emergency Contact Phone Numeber: {{record.emergency_contact_phone_number}}</li>
-            <li class="list-group-item">Emergency Contact Address: {{record.emergency_contact_address}}</li>
-            <li class="list-group-item">Eligible Blood Donor: {{record.eligible_blood_donor}}</li>
-           
-            <li class="list-group-item"> Record ID: {{record.id}}</li>
-
+        <form>
+            <div class="form-group">
+                    <label>First Name: </label>
+                    <input type="text" class="form-control" ng-model="record.name_first"/>
+                </div>
+                        <!-- name_last : string -->
+                <div class="form-group">
+                    <label>Last Name: </label>
+                    <input type="text" class="form-control" ng-model="record.name_last"/>
+                </div>
+                
+                <!-- patient_sex : string -->
+                <div class="form-group">
+                    <label>Biological Sex: </label>
+                    <input type="text" class="form-control" ng-model="record.patient_sex"/>
+                </div>
+                <!-- race : string -->
+                <div class="form-group">
+                    <label>Race: </label>
+                    <input type="text" class="form-control" ng-model="record.race"/>
+                </div>
+                <!-- height : string -->
+                <div class="form-group">
+                    <label>Height: </label>
+                    <input type="text" class="form-control" ng-model="record.height"/>
+                </div>
+                <!-- height_in_inches : boolean -->
+                <div class="form-group">
+                    <label>Height in Inches: </label>
+                    <input type="radio" name="currentUse" ng-model="record.height_in_inches" ng-value="true"/> True
+                    <input type="radio" name="currentUse" ng-model="record.height_in_inches" ng-value="false"/>  False
+                </div>
+                <!-- weight : num -->
+                <div class="form-group">
+                    <label>Weight: </label>
+                    <input type="number" class="form-control" ng-model="record.weight"/>
+                </div>
+                <!-- weight_in_pounds : boolean -->
+                <div class="form-group">
+                    <label>Weight in Pounds: </label>
+                    <input type="radio" name="currentUse" ng-model="record.weight_in_pounds" ng-value="true"/> True
+                    <input type="radio" name="currentUse" ng-model="record.weight_in_pounds" ng-value="false"/>  False
+                </div>
+                <!-- date_birth : date -->
+                <div class="form-group">
+                    <label>Date of Birth: </label>
+                    <input type="datetime-local" class="form-control" ng-model="record.date_birth"/>
+                </div>
+                <!-- address : string -->
+                <div class="form-group">
+                    <label>Address: </label>
+                    <input type="text" class="form-control" ng-model="record.address"/>
+                </div>
+                <!-- phone_number : num -->
+                <div class="form-group">
+                    <label>Phone Number: </label>
+                    <input type="integer" class="form-control" ng-model="record.phone_number"/>
+                </div>
+                <!-- emergency_contact_name_first : string -->
+                <div class="form-group">
+                    <label>Emergency Contact First Name: </label>
+                    <input type="text" class="form-control" ng-model="record.emergency_contact_name_first"/>
+                </div>
+                <!-- emergency_contact_name_last : string -->
+                <div class="form-group">
+                    <label>Emergency Contact Last Name: </label>
+                    <input type="text" class="form-control" ng-model="record.emergency_contact_name_last"/>
+                </div>
+                <!-- emergency_contact_phone_number : string -->
+                <div class="form-group">
+                    <label>Emergency Contact Phone Number: </label>
+                    <input type="text" class="form-control" ng-model="record.emergency_contact_phone_number"/>
+                </div>
+                <!-- emergency_contact_address : string -->
+                <div class="form-group">
+                    <label>Emergency Contact Address: </label>
+                    <input type="text" class="form-control" ng-model="record.emergency_contact_address"/>
+                </div>
+                <!-- eligible_blood_donor : boolean  -->
+                <div class="form-group">
+                    <label>Eligible Blood Donor: </label>
+                    <input type="radio" name="currentUse" ng-model="record.eligible_blood_donor" ng-value="true"/> True
+                    <input type="radio" name="currentUse" ng-model="record.eligible_blood_donor" ng-value="false"/>  False
+                </div>
             
-            <div class="col-xs-12">
-                <button class="btn btn-primary" ng-click="edRecord(record.id)">
-                    <span class="glyphicon glyphicon-pencil"></span>
-                    Edit: {{record.name_first}}
-                </button>
-            </div>
-            
-            <div class="col-xs-12">
-                    <button class="btn btn-primary" ng-click="delRecord(record.id)">
-                        <span class="glyphicon glyphicon-trash"></span>
-                        Delete: {{record.record.name_first}}
+                <div class="col-xs-12">
+                    <button class="btn btn-primary" ng-click="edRecord(record.id, record)">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        Edit: {{record.name_first}}
                     </button>
-            </div>
+                </div>
+                
+                <div class="col-xs-12">
+                        <button class="btn btn-primary" ng-click="delRecord(record.id)">
+                            <span class="glyphicon glyphicon-trash"></span>
+                            Delete: {{record.record.name_first}}
+                        </button>
+                </div>
             
-        </ul>
-        
+            
+        </form>
     </div>
 </div>

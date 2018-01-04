@@ -21,18 +21,23 @@ const url = "http://localhost:3000";
     };
 
 
-    const editRecord = function(recordType, recordID, tokentok) {
+    const editRecord = function(recordType, recordID, tokentok, record) {
         // let newObj = record;
-        // console.log("editRecord in record factory: ");
 
         console.log("url in editRecord: ", url);
-        console.log("recordType in editRecord:", recordType); 
+        console.log("recordType in editRecord:", recordType);
+        console.log("recordID in editRecord: ", recordID);
+        console.log("toketok in editRecord: ", tokentok);
+        console.log("record in editRecord: ", record);
+        
+
         return $q((resolve, reject)=>{
             $http({
                 method: 'PATCH', 
                 url: `${url}/${recordType}/${recordID}`, 
-                headers: {'Authorization': tokentok}
-                // data: newObj
+                headers: {'Authorization': tokentok},
+                data: {family_history: record},
+                // data: {record},
                 });
 
             // let newObj = angular.toJson(obj);
@@ -55,11 +60,9 @@ const url = "http://localhost:3000";
             $http({
                 method: 'DELETE', 
                 url: `${url}/${recordType}/${recordID}`,
-                // ${id}, 
                 headers: {'Authorization': tokentok}
                 // data: newObj
                 })
-            // $http.delete(`${url}/${recordType}.json`);
                 .then((response) => {
                     resolve(response);
                 })
@@ -69,22 +72,6 @@ const url = "http://localhost:3000";
         });
     };
 
-    // const deleteBooks = function(id){
-    //     //console.log("item id", id);
-    //     return $q((resolve, reject) => {
-    //         $http.delete(`http://localhost:3000/user_books/${id}`, {headers:
-    //             {
-    //                 Authorization: `${userFactory.getTokenBack()}`,
-    //             },
-    //         })
-    //         .then((response) => {
-    //             resolve(response);
-    //         })
-    //         .catch((error) => {
-    //             reject(error);
-    //         });
-    //     });
-    // };
 
     const getRecord = function(recordType, tok){
         // let newObj = record;

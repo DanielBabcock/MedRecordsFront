@@ -8,86 +8,86 @@
                 <!-- name_first : string -->
             <div class="form-group">
                 <label>First Name: </label>
-                <input type="text" class="form-control" placeholder="Jane" ng-model="record.name_first"/>
+                <input type="text" class="form-control" placeholder="Jane" ng-model="record.patient_info.name_first"/>
             </div>
                     <!-- name_last : string -->
             <div class="form-group">
                 <label>Last Name: </label>
-                <input type="text" class="form-control" placeholder="Doe" ng-model="record.name_last"/>
+                <input type="text" class="form-control" placeholder="Doe" ng-model="record.patient_info.name_last"/>
             </div>
             
             <!-- patient_sex : string -->
             <div class="form-group">
                 <label>Biological Sex: </label>
-                <input type="text" class="form-control" placeholder="Male or Female" ng-model="record.patient_sex"/>
+                <input type="text" class="form-control" placeholder="Male or Female" ng-model="record.patient_info.patient_sex"/>
             </div>
             <!-- race : string -->
             <div class="form-group">
                 <label>Race: </label>
-                <input type="text" class="form-control" placeholder="Black , Caucasian, other" ng-model="record.race"/>
+                <input type="text" class="form-control" placeholder="Black , Caucasian, other" ng-model="record.patient_info.race"/>
             </div>
             <!-- height : string -->
             <div class="form-group">
                 <label>Height: </label>
-                <input type="text" class="form-control" placeholder="64" ng-model="record.height"/>
+                <input type="text" class="form-control" placeholder="64" ng-model="record.patient_info.height"/>
             </div>
             <!-- height_in_inches : boolean -->
-            <<div class="form-group">
+            <div class="form-group">
                 <label>Height in Inches: </label>
-                <input type="radio" name="currentUse" ng-model="record.height_in_inches" ng-value="true"/> True
-                <input type="radio" name="currentUse" ng-model="record.height_in_inches" ng-value="false"/>  False
+                <input type="radio" name="currentUse" ng-model="record.patient_info.height_in_inches" ng-value="true"/> True
+                <input type="radio" name="currentUse" ng-model="record.patient_info.height_in_inches" ng-value="false"/>  False
             </div>
             <!-- weight : num -->
             <div class="form-group">
                 <label>Weight: </label>
-                <input type="number" class="form-control" placeholder="176" ng-model="record.weight"/>
+                <input type="number" class="form-control" placeholder="176" ng-model="record.patient_info.weight"/>
             </div>
             <!-- weight_in_pounds : boolean -->
             <div class="form-group">
                 <label>Weight in Pounds: </label>
-                <input type="radio" name="currentUse" ng-model="record.weight_in_pounds" ng-value="true"/> True
-                <input type="radio" name="currentUse" ng-model="record.weight_in_pounds" ng-value="false"/>  False
+                <input type="radio" name="currentUse" ng-model="record.patient_info.weight_in_pounds" ng-value="true"/> True
+                <input type="radio" name="currentUse" ng-model="record.patient_info.weight_in_pounds" ng-value="false"/>  False
             </div>
             <!-- date_birth : date -->
             <div class="form-group">
                 <label>Date of Birth: </label>
-                <input type="datetime-local" class="form-control" placeholder="2000/Dec/25 - 0600" ng-model="record.date_birth"/>
+                <input type="datetime-local" class="form-control" placeholder="2000/Dec/25 - 0600" ng-model="record.patient_info.date_birth"/>
             </div>
             <!-- address : string -->
             <div class="form-group">
                 <label>Address: </label>
-                <input type="text" class="form-control" placeholder="12 Old Place Circle, Nashville, TN, 37211" ng-model="record.address"/>
+                <input type="text" class="form-control" placeholder="12 Old Place Circle, Nashville, TN, 37211" ng-model="record.patient_info.address"/>
             </div>
             <!-- phone_number : num -->
             <div class="form-group">
                 <label>Phone Number: </label>
-                <input type="integer" class="form-control" placeholder="615-000-0000" ng-model="record.phone_number"/>
+                <input type="integer" class="form-control" placeholder="615-000-0000" ng-model="record.patient_info.phone_number"/>
             </div>
             <!-- emergency_contact_name_first : string -->
             <div class="form-group">
                 <label>Emergency Contact First Name: </label>
-                <input type="text" class="form-control" placeholder="George" ng-model="record.emergency_contact_name_first"/>
+                <input type="text" class="form-control" placeholder="George" ng-model="record.patient_info.emergency_contact_name_first"/>
             </div>
             <!-- emergency_contact_name_last : string -->
             <div class="form-group">
                 <label>Emergency Contact Last Name: </label>
-                <input type="text" class="form-control" placeholder="Doe" ng-model="record.emergency_contact_name_last"/>
+                <input type="text" class="form-control" placeholder="Doe" ng-model="record.patient_info.emergency_contact_name_last"/>
             </div>
             <!-- emergency_contact_phone_number : string -->
             <div class="form-group">
                 <label>Emergency Contact Phone Number: </label>
-                <input type="text" class="form-control" placeholder="616-000-0001" ng-model="record.emergency_contact_phone_number"/>
+                <input type="text" class="form-control" placeholder="616-000-0001" ng-model="record.patient_info.emergency_contact_phone_number"/>
             </div>
             <!-- emergency_contact_address : string -->
             <div class="form-group">
                 <label>Emergency Contact Address: </label>
-                <input type="text" class="form-control" placeholder="13 Old Place Circle, Nashville, TN, 37211" ng-model="record.emergency_contact_address"/>
+                <input type="text" class="form-control" placeholder="13 Old Place Circle, Nashville, TN, 37211" ng-model="record.patient_info.emergency_contact_address"/>
             </div>
             <!-- eligible_blood_donor : boolean  -->
             <div class="form-group">
                 <label>Eligible Blood Donor: </label>
-                <input type="radio" name="currentUse" ng-model="record.eligible_blood_donor" ng-value="true"/> True
-                <input type="radio" name="currentUse" ng-model="record.eligible_blood_donor" ng-value="false"/>  False
+                <input type="radio" name="currentUse" ng-model="record.patient_info.eligible_blood_donor" ng-value="true"/> True
+                <input type="radio" name="currentUse" ng-model="record.patient_info.eligible_blood_donor" ng-value="false"/>  False
             </div>
 
             <div class="col-xs-6">

@@ -30,12 +30,18 @@ app.controller("recordUpdateDeleteMedicationsCtrl", function($scope, recordFacto
 
     gRecord();
 
-    vm.edRecord = function(recordId){
+    vm.edRecord = function(recordId, record){
         let recordType = "medications";
-
         let tok = userFactory.tokentok();  
+        let recordID = recordId;
 
-        recordFactory.editRecord(recordType, recordID);
+
+        console.log("recordType in edRecord in ctrl: ", recordType);
+        console.log("recordID in edRecord in ctrl: ", recordID);
+        console.log("tok in edRecord in ctrl: ", tok);
+        console.log("record in edRecord in ctrl: ", record);
+
+        recordFactory.editRecord(recordType, recordID, tok, record);
         $window.location.href = "#!/recordUpdateDeleteMedications";
     };
 
