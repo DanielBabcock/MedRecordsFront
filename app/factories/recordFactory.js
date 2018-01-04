@@ -21,20 +21,23 @@ const url = "http://localhost:3000";
     };
 
 
-    const editRecord = function(record, recordType, recordID, tokentok) {
-        let newObj = record;
-        // console.log("editRecord in record factory: ");
-
-        console.log("recordID in editRecord: ", recordID);
+    const editRecord = function(recordType, recordID, tokentok, record) {
+        // let newObj = record;
 
         console.log("url in editRecord: ", url);
-        console.log("recordType in editRecord:", recordType); 
+        console.log("recordType in editRecord:", recordType);
+        console.log("recordID in editRecord: ", recordID);
+        console.log("toketok in editRecord: ", tokentok);
+        console.log("record in editRecord: ", record);
+        
+
         return $q((resolve, reject)=>{
             $http({
                 method: 'PATCH', 
                 url: `${url}/${recordType}/${recordID}`, 
                 headers: {'Authorization': tokentok},
-                data: {family_history: newObj},
+                data: {family_history: record},
+                // data: {record},
                 });
 
             // let newObj = angular.toJson(obj);

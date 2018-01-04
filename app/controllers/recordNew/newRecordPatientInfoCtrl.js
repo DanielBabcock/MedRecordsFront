@@ -11,15 +11,15 @@ app.controller("newRecordPatientInfoCtrl", function($scope, recordFactory, userF
 
     // HOLDS DATA FROM THE FORM:
     vm.record = {};
-
+    
     // SUBMITS NEW DATA TO DB FROM NEW RECORD FORM
         vm.submitNewRecordPatientInfo = function(record){
             let tok = userFactory.tokentok();
 
             // console.log("tok in familyCtr; ", tok);
-            recordFactory.addRecord(vm.record, recordType,tok);
+            recordFactory.addRecord(vm.record, recordType, tok);
             
-                $window.location.href = "#!/recordUpdateDeletePatientInfo";
+                // $window.location.href = "#!/recordUpdateDeletePatientInfo";
                 // console.log("submitNewRecordFamilyHistory fired at newRecordFamilyHistoryCtrl");
         };
 });

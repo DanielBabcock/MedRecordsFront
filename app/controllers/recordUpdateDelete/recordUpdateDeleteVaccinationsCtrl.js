@@ -28,13 +28,17 @@ app.controller("recordUpdateDeleteVaccinationsCtrl", function($scope, recordFact
 
     gRecord();
 
-    vm.edRecord = function(recordId){
+    vm.edRecord = function(recordId, record){
         let tok = userFactory.tokentok();  
         let recordType = "vaccinations";
         let recordID = recordId;
 
-        console.log("recordID edRecord in VaxCtrl: ", recordID);
-        recordFactory.editRecord(recordType, recordID, tok);
+        console.log("recordType in edRecord in ctrl: ", recordType);
+        console.log("recordID in edRecord in ctrl: ", recordID);
+        console.log("tok in edRecord in ctrl: ", tok);
+        console.log("record in edRecord in ctrl: ", record);        
+        
+        recordFactory.editRecord(recordType, recordID, tok, record);
         $window.location.href = "#!/recordUpdateDeleteVaccinations";
     };
 
