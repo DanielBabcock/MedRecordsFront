@@ -21,14 +21,15 @@ const url = "http://localhost:3000";
     };
 
 
-    const editRecord = function(recordType, recordID, tokentok, record) {
+    const editRecord = function(recordType, recordID, tokentok, patchKey) {
         // let newObj = record;
 
         console.log("url in editRecord: ", url);
         console.log("recordType in editRecord:", recordType);
         console.log("recordID in editRecord: ", recordID);
         console.log("toketok in editRecord: ", tokentok);
-        console.log("record in editRecord: ", record);
+        console.log("patchKey @editRecord in factory: ", patchKey);
+        // console.log("record in editRecord: ", record);
         
 
         return $q((resolve, reject)=>{
@@ -36,8 +37,9 @@ const url = "http://localhost:3000";
                 method: 'PATCH', 
                 url: `${url}/${recordType}/${recordID}`, 
                 headers: {'Authorization': tokentok},
-                data: {family_history: record},
-                // data: {record},
+                // data: {patchKey, record},
+                // data: {family_history: record},
+                data: patchKey,
                 });
 
             // let newObj = angular.toJson(obj);
