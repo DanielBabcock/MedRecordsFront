@@ -32,7 +32,8 @@ app.controller("recordUpdateDeleteFamilyHistoryCtrl", function($scope, recordFac
         let recordType = "family_histories";
         let tok = userFactory.tokentok();  
         let recordID = recordId;
-        // let record = record;
+        let patchKey = record;
+
 
         console.log("recordType in edRecord in ctrl: ", recordType);
         console.log("recordID in edRecord in ctrl: ", recordID);
@@ -40,7 +41,7 @@ app.controller("recordUpdateDeleteFamilyHistoryCtrl", function($scope, recordFac
         console.log("record in edRecord in ctrl: ", record);
         // console.log("vm.record in edRecord in ctrl: ", vm.record);
 
-        recordFactory.editRecord(recordType, recordID, tok, record);
+        recordFactory.editRecord(recordType, recordID, tok, patchKey);
         $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
     };
 

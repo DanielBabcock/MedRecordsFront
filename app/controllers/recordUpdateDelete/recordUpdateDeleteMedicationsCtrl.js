@@ -7,11 +7,10 @@ app.controller("recordUpdateDeleteMedicationsCtrl", function($scope, recordFacto
     
     // ************HOLDS DATA FROM THE FORM:************
     vm.record = {};
-    // ************HOLDS DATA FROM THE FORM:************
 
+    // ************HOLDS DATA FROM THE FORM:************
     let recordType = "medications";
     let recordID = vm.record.id;
-
 
     const gRecord = function(){
         let recordType = "medications";
@@ -34,14 +33,16 @@ app.controller("recordUpdateDeleteMedicationsCtrl", function($scope, recordFacto
         let recordType = "medications";
         let tok = userFactory.tokentok();  
         let recordID = recordId;
+        let patchKey = record;
 
 
-        console.log("recordType in edRecord in ctrl: ", recordType);
-        console.log("recordID in edRecord in ctrl: ", recordID);
-        console.log("tok in edRecord in ctrl: ", tok);
-        console.log("record in edRecord in ctrl: ", record);
+            // console.log("medication @edRecord in medCtrl: ", medication);
+            console.log("recordType in edRecord in ctrl: ", recordType);
+            console.log("recordID in edRecord in ctrl: ", recordID);
+            console.log("tok in edRecord in ctrl: ", tok);
+            console.log("patchKey in edRecord in ctrl: ", patchKey);
 
-        recordFactory.editRecord(recordType, recordID, tok, record);
+        recordFactory.editRecord(recordType, recordID, tok, patchKey);
         $window.location.href = "#!/recordUpdateDeleteMedications";
     };
 
