@@ -17,6 +17,10 @@ app.config($routeProvider => {
             templateUrl: 'partials/home.html',
             controller: 'homeCtrl'
         })
+        .when('/viewAllDocs', {
+            templateUrl: 'partials/viewAllDocs.html',
+            controller: 'homeCtrl'
+        })
         .when('/newRecordFamilyHistory', {
             templateUrl: 'partials/recordNew/newRecordFamilyHistory.html',
             controller: 'newRecordFamilyHistoryCtrl'
@@ -70,7 +74,6 @@ app.config($routeProvider => {
             controller: 'recordUpdateDeleteVaccinationsCtrl'
         })
         
-
         // 
         .when('/logout', {
             templateUrl: 'partials/welcomePage.html',

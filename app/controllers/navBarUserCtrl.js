@@ -16,6 +16,8 @@ app.controller("navBarUserCtrl", function($scope, $window, $rootScope, userFacto
 
     vm.searchText = filterFactory;
 
+    vm.isLoggedIn = false;
+
               
         // userFactory.isAuthenticated();
 

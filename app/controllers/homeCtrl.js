@@ -19,6 +19,14 @@ app.controller("homeCtrl", function($scope, $window, homeFactory, recordFactory,
     //     $window.location.href = "#!/";
     // };
 
+        // **********VIEW ALL**********
+
+        vm.viewAll = function(){
+            $window.location.href = "#!/viewAllDocs";
+
+        };
+
+
         // **********recordUpdateDeleteFamilyHistory()**********
 
         vm.famHistRecord = function(){
