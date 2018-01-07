@@ -42,7 +42,7 @@ app.controller("recordUpdateDeleteFamilyHistoryCtrl", function($scope, recordFac
         // console.log("vm.record in edRecord in ctrl: ", vm.record);
 
         recordFactory.editRecord(recordType, recordID, tok, patchKey);
-        $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
+        $window.location.href = "#!/home";
     };
 
     vm.delRecord = function(recordId){
@@ -53,7 +53,7 @@ app.controller("recordUpdateDeleteFamilyHistoryCtrl", function($scope, recordFac
 
         console.log("recordID: ", recordID);
         recordFactory.deleteRecord(recordType, recordID, tok);
-        $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
+        $window.location.href = "#!/home";
     };
 });
 
