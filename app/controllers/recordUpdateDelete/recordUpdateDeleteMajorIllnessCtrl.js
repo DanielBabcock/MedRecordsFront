@@ -41,7 +41,9 @@ app.controller("recordUpdateDeleteMajorIllnessCtrl", function($scope, recordFact
         console.log("record in edRecord in ctrl: ", record);
 
         recordFactory.editRecord(recordType, recordID, tok, patchKey);
-        $window.location.href = "#!/recordUpdateDeleteMajorIllness";
+        // $window.location.href = "#!/recordUpdateDeleteMajorIllness";
+        $window.location.href = "#!/home";
+
     };
 
     vm.delRecord = function(recordId){
@@ -52,7 +54,8 @@ app.controller("recordUpdateDeleteMajorIllnessCtrl", function($scope, recordFact
 
         console.log("recordID: ", recordID);
         recordFactory.deleteRecord(recordType, recordID, tok);
-        $window.location.href = "#!/recordUpdateDeleteMajorIllness";
+        $window.location.href = "#!/home";
+        // $window.location.href = "#!/recordUpdateDeleteMajorIllness";
     };
 
 });

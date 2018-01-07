@@ -40,7 +40,8 @@ app.controller("recordUpdateDeleteVaccinationsCtrl", function($scope, recordFact
         console.log("record in edRecord in ctrl: ", record);        
         
         recordFactory.editRecord(recordType, recordID, tok, patchKey);
-        $window.location.href = "#!/recordUpdateDeleteVaccinations";
+        $window.location.href = "#!/home";
+        // $window.location.href = "#!/recordUpdateDeleteVaccinations";
     };
 
     vm.delRecord = function(recordId){
@@ -51,7 +52,8 @@ app.controller("recordUpdateDeleteVaccinationsCtrl", function($scope, recordFact
 
         console.log("recordID @ delRecord in vaxCtrl: ", recordID);
         recordFactory.deleteRecord(recordType, recordID, tok);
-        $window.location.href = "#!/recordUpdateDeleteVaccinations";
+        $window.location.href = "#!/home";
+        // $window.location.href = "#!/recordUpdateDeleteVaccinations";
     };
 });
 

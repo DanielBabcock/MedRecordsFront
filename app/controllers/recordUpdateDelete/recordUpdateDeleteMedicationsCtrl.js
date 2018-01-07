@@ -43,7 +43,8 @@ app.controller("recordUpdateDeleteMedicationsCtrl", function($scope, recordFacto
             console.log("patchKey in edRecord in ctrl: ", patchKey);
 
         recordFactory.editRecord(recordType, recordID, tok, patchKey);
-        $window.location.href = "#!/recordUpdateDeleteMedications";
+        $window.location.href = "#!/home";
+        // $window.location.href = "#!/recordUpdateDeleteMedications";
     };
 
     vm.delRecord = function(recordId){
@@ -54,7 +55,8 @@ app.controller("recordUpdateDeleteMedicationsCtrl", function($scope, recordFacto
 
         console.log("recordID: ", recordID);
         recordFactory.deleteRecord(recordType, recordID, tok);
-        $window.location.href = "#!/recordUpdateDeleteMedications";
+        $window.location.href = "#!/home";
+        // $window.location.href = "#!/recordUpdateDeleteMedications";
     };
 });
 

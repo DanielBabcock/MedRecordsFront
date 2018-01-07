@@ -6,7 +6,8 @@
 
 <!-- <div ng-repeat="record in records"> -->
 <!-- VIEW  VACCINATIONS-->
-<h2>Vaccination Record</h2>
+<br>
+<h2>Vaccinations</h2>
         <div ng-controller="recordUpdateDeleteVaccinationsCtrl" class="col-xs-12">
                 <div ng-repeat="record in records">
                         <ul class="list-group" id="vaccineHistory">
@@ -24,10 +25,17 @@
                 </div>
         </form>
         <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 <!-- ******Btn here***** -->
-
+<br>
 <!-- VIEW SURGICAL PROCEDURE-->
-<h2>Surgery and Surgical Procedure Records</h2>
+<h2>Surgical Procedures</h2>
         <div ng-controller="recordUpdateDeleteSurgicalProceduresCtrl" class="col-xs-12">
                 <div ng-repeat="record in records">
                         <ul class="list-group" id="surgicalProcedures">
@@ -53,10 +61,17 @@
                 </div>
         </form>
         <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 <!-- ******Btn here***** -->
-
+<br>
 <!-- VIEW  MAJOR ILLNESS-->
-<h2>Illness Records</h2>
+<h2>Major Illness</h2>
         <div ng-controller="recordUpdateDeleteMajorIllnessCtrl" class="col-xs-12">
                 <div ng-repeat="record in records">
                         <ul class="list-group" id="majorIllness">
@@ -82,10 +97,17 @@
                 </div>
         </form>
         <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 <!-- ******Btn here***** -->
-
+<br>
 <!-- VIEW FAMILY HISTORY -->
-<h2>Family Records</h2>
+<h2>Family History</h2>
         <div ng-controller="recordUpdateDeleteFamilyHistoryCtrl" class="col-xs-12">
                 <div ng-repeat="record in records">
                         <ul class="list-group" id="familyHistory">
@@ -114,6 +136,8 @@
                         </ul>
                 </div>
         </div> 
+        <br>
+        
 <!-- ******Btn here***** -->
 <!-- <li><button type="button" ng-click="famHistRecord()">Family History: </button></li>  -->
         <form name="main.addForm" class="form" ng-submit="famHistRecord()">
@@ -122,11 +146,18 @@
                 </div>
         </form>
         <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 <!-- ******Btn here***** -->
 
-
+<br>
 <!-- VIEW PATIENT INFO -->
-<h2>Patient Info Records</h2>
+<h2>Patient Information</h2>
         <div ng-controller="recordUpdateDeletePatientInfoCtrl" class="col-xs-12">
                 <div ng-repeat="record in records">
                         <ul class="list-group" id="patientInfo">
@@ -136,8 +167,8 @@
                                 <li class="list-group-item" ng-hide="!record.race">Race: {{record.race}}</li>
                                 <li class="list-group-item" ng-hide="!record.height">Height: {{record.height}}</li>
                                 <li class="list-group-item" ng-hide="!record.height_in_inches">height in Inches: {{record.height_in_inches}}</li>
-                                <li class="list-group-item" ng-hide="!record.">Weight: {{record.weight}}</li>
-                                <li class="list-group-item" ng-hide="!record.weight">Weight in Inches: {{record.weight_in_pounds}}</li>
+                                <li class="list-group-item" ng-hide="!record.weight">Weight: {{record.weight}}</li>
+                                <li class="list-group-item" ng-hide="!record.weight_in_pounds">Weight in Inches: {{record.weight_in_pounds}}</li>
                                 <li class="list-group-item" ng-hide="!record.date_birth">Date of Birth: {{record.date_birth}}</li>
                                 <li class="list-group-item" ng-hide="!record.address">Address: {{record.address}}</li>
                                 <li class="list-group-item" ng-hide="!record.phone_number">Phone Number: {{record.phone_number}}</li>
@@ -149,6 +180,7 @@
                         </ul>
                 </div>
         </div>
+        <br>
 <!-- ******Btn here***** -->
         <form name="main.addForm" class="form" ng-submit="patInfoRecord()">
                 <div class="col-xs-6">
@@ -156,9 +188,16 @@
                 </div>
         </form>
         <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 <!-- ******Btn here***** -->
 
-
+<br>
 <!-- VIEW MEDICATIONS -->
 <h2>Medication Record</h2>
 <div ng-controller="recordUpdateDeleteMedicationsCtrl" class="col-xs-12">
@@ -174,12 +213,20 @@
                         <li class="list-group-item" ng-hide="!record.care_giver_title">Care Giver Title: {{record.care_giver_title}}</li>
                 </ul>
         </div>
+        <br>
 <!-- ******Btn here***** -->
         <form name="main.addForm" class="form" ng-submit="medsRecord()">
                 <div class="col-xs-6">
                     <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-file"></span>Medications: </button>
                 </div>
         </form>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <br>
 <!-- ******Btn here***** -->
 
