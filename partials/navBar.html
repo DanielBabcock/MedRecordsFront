@@ -4,17 +4,17 @@
         <form 
             <li><img class="logo-icon" src="images/logo.png"></li>    
 
-            <div class="form-group" ng-show="!isLoggedIn">
+            <div class="form-group" ng-hide="isLoggedIn">
                 <label for="usr">E-Mail: example@mail.com</label>
                 <input type="email" class="form-control" id="usr" ng-model="authentication.email">
             </div>
-            <div class="form-group" ng-show="!isLoggedIn">
+            <div class="form-group" ng-hide="isLoggedIn">
                 <label for="pwd">Password: 123123123</label>
                 <input type="password" class="form-control" id="pwd" ng-model="authentication.password">
             </div> 
                 <ul>
-                    <li><button ng-show="!isLoggedIn" ng-click="submitUser()" class="btn btn-info">Login</button></li>
-                    <li><button ng-show="isLoggedIn" ng-click="logoutUser()" class="btn btn-info">Logout</button></li>
+                    <li><button ng-show="isLoggedIn" ng-click="submitUser()" class="btn btn-info">Login</button></li>
+                    <li><button ng-show="!isLoggedIn" ng-click="logoutUser()" class="btn btn-info">Logout</button></li>
                 </ul>
                 <!-- demonstration of two controllers sharing a factory -->
             <!-- <div class="navbar-form navbar-left input-group" ng-show="isLoggedIn">

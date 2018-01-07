@@ -10,6 +10,38 @@ app.controller("viewAllDocsCtrl", function($scope, recordFactory, userFactory, $
     // ************HOLDS DATA FROM THE FORM:************
     vm.record = {};
     // ************HOLDS DATA FROM THE FORM:************
+       // vax
+     
+       // **********recordUpdateDeleteFamilyHistory()**********
+     vm.famHistRecord = function(){
+        $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
+    };
+    // **********recordUpdateDeleteFamilyHistory()**********
+
+    vm.illRecord = function(){
+        $window.location.href = "#!/recordUpdateDeleteMajorIllness";
+    };
+    // **********recordUpdateDeleteFamilyHistory()**********
+
+    vm.medsRecord = function(){
+        $window.location.href = "#!/recordUpdateDeleteMedications";
+    };
+    // **********recordUpdateDeleteFamilyHistory()**********
+
+    vm.patInfoRecord = function(){
+        $window.location.href = "#!/recordUpdateDeletePatientInfo";
+    };
+    // **********recordUpdateDeleteFamilyHistory()**********
+
+    vm.surgRecord = function(){
+        $window.location.href = "#!/recordUpdateDeleteSurgicalProcedures";
+    };
+    // **********recordUpdateDeleteFamilyHistory()**********
+
+    vm.vaxRecord = function(){
+        $window.location.href = "#!/recordUpdateDeleteVaccinations";
+    };
+   
     // vax
     const getAllVaccinationRecord = function(){
         let tok = userFactory.tokentok();  
@@ -86,28 +118,5 @@ app.controller("viewAllDocsCtrl", function($scope, recordFactory, userFactory, $
     // ***************************************************************
     // ************BUTTONS BELOW HERE*********************************
     // ***************************************************************
-    // vax
-    vm.editDelVax = function(){
-        $window.location.href = "#!/recordUpdateDeleteVaccinations";
-    };
-    // surg
-    vm.editDelSurg = function(){
-        $window.location.href = "#!/recordUpdateDeleteSurgicalProcedures";
-    };
-    // ill
-    vm.editDelIll = function(){
-        $window.location.href = "#!/recordUpdateDeleteMajorIllness";
-    };
-    // fam
-    vm.editDelFam = function(){
-        $window.location.href = "#!/recordUpdateDeleteFamilyHistory";
-    };
-    // pat
-    vm.editDelPatInfo = function(){
-        $window.location.href = "#!/recordUpdateDeletePatientInfo";
-    };
-    // meds
-    vm.editDelMed = function(){
-        $window.location.href = "#!/recordUpdateDeleteMedications";
-    };
+
 });
