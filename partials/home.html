@@ -4,6 +4,13 @@
 <!-- - -->
 <div ng-app="MedRecordApp" ng-controller="homeCtrl">
     <h3>Welcome to your Home Page</h3>
+        <div class="form group">
+            <form name="main.addForm" class="form" ng-submit="viewAll()">
+                <div class="col-xs-6">
+                    <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-file"></span>View All Records: </button>
+                </div>
+            </form>
+        </div>
 
     <!-- Search Bar here for record search function -->
     <!-- STRETCH GOAL, user can see all records in profile -->
@@ -13,6 +20,7 @@
     <button ng-submit="searchRecs()">Search </button> -->
         <div class="form-group">
             <label>Visit, Edit, and Delete Records</label>
+            <h6>Do not input real personal information, this app is currently in test phase.</h6>
                 <!-- <ul> -->
                     <!-- <li><button type="button" ng-click="famHistRecord()">Family History: </button></li>  -->
                     <form name="main.addForm" class="form" ng-submit="famHistRecord()">
@@ -72,6 +80,8 @@
     <!-- STRETCH GOAL, get this working and then, Upgrade to drop down menu -->
     <div class="form-group">
         <label>Create a new record: </label>
+        <h6>Do not input real personal information, this app is currently in test phase.</h6>
+
 
         <!-- NEW FAMILY RECORD -->
         

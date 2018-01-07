@@ -1,122 +1,187 @@
+<!-- <div ng-app="MedRecordApp" ng-controller="viewAllDocsCtrl"> -->
 
+<h6>Do not input real personal information, this app is currently in test phase.</h6>
+<!-- ng-hide="record.vaccine_name = """ -->
 <!-- <div ng-repeat="record in records"> -->
 
+<!-- <div ng-repeat="record in records"> -->
 <!-- VIEW  VACCINATIONS-->
-        <!-- <h2>Vaccination Records</h2>
-                <div ng-controller="recordUpdateDeleteVaccinationsCtrl" class="col-xs-12"> -->
-                        <!-- <ul class="list-group" id="vaccineHistory">
+<h2>Vaccination Record</h2>
+        <div ng-controller="recordUpdateDeleteVaccinationsCtrl" class="col-xs-12">
+                <div ng-repeat="record in records">
+                        <ul class="list-group" id="vaccineHistory">
+                                <li class="list-group-item" ng-hide="!record.vaccine_name"><strong>Vaccine Name:</strong> {{record.vaccine_name}}</li>
+                                <li class="list-group-item" ng-hide="!record.vaccination_date">Vaccination Date: {{record.vaccination_date}}</li>
+                                <li class="list-group-item" ng-hide="!record.vaccine_expiration">Vaccine Expiration: {{record.vaccine_expiration}}</li>
+                        </ul>
+                </div>
+        </div>
 
-                                <li class="list-group-item"><strong>Vaccine Name:</strong> {{record.vaccine_name}}</li>
-                                <li class="list-group-item">Vaccination Date: {{record.vaccination_date}}</li>
-                                <li class="list-group-item">Vaccine Expiration: {{record.vaccine_expiration}}</li>
-                                <li class="list-group-item"> Record ID: {{record.id}}</li>
-                        </ul> -->
-
-<!-- ***************BUTTON HERES  ***************-->
-<!--  *************** edit and delete button that takes you to respective 
-                        recordUpdateDelete page*************** -->
-                <!-- </div> -->
-        <!-- </h2> -->
+<!-- ******Btn here***** -->
+        <form name="main.addForm" class="form" ng-submit="vaxRecord()">
+                <div class="col-xs-6">
+                    <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-file"></span>Vaccinations: </button>
+                </div>
+        </form>
+        <br>
+<!-- ******Btn here***** -->
 
 <!-- VIEW SURGICAL PROCEDURE-->
-                <!-- <ul class="list-group" id="surgicalProcedures">
-                                <li class="list-group-item"><strong>Procedure Name:</strong> {{record.procedure_name}}</li>
-                                <li class="list-group-item">Care Giver Name: {{record.care_giver_name}}</li>
-                                <li class="list-group-item">Care Giver Title: {{record.care_giver_title}}</li>
-                                <li class="list-group-item">Hospital: {{record.hospital}}</li>
-                                <li class="list-group-item">Hospital Phone: {{record.hospital_phone}}</li>
-                                <li class="list-group-item">Hospital Address: {{record.hospital_address}}</li>
-                                <li class="list-group-item">Medication Name: {{record.medication_name}}</li>
-                                <li class="list-group-item">Medicaction Purpose: {{record.medication_purpose}}</li>
-                                <li class="list-group-item">Medication Dose: {{record.medication_dose}}</li>
-                                <li class="list-group-item">Medication Frequency: {{record.medication_frequency}}</li>
-                                <li class="list-group-item">Medication Start Date: {{record.medication_start_date}}</li>
-                                <li class="list-group-item">Medication End Date: {{record.medication_end_date}}</li>
-                                
-                <li class="list-group-item"> Record ID: {{record.id}}</li>
-                </ul> -->
-
-
+<h2>Surgery and Surgical Procedure Records</h2>
+        <div ng-controller="recordUpdateDeleteSurgicalProceduresCtrl" class="col-xs-12">
+                <div ng-repeat="record in records">
+                        <ul class="list-group" id="surgicalProcedures">
+                                <li class="list-group-item" ng-hide="!record.procedure_name"><strong>Procedure Name:</strong> {{record.procedure_name}}</li>
+                                <li class="list-group-item" ng-hide="!record.care_giver_name">Care Giver Name: {{record.care_giver_name}}</li>
+                                <li class="list-group-item" ng-hide="!record.care_giver_title">Care Giver Title: {{record.care_giver_title}}</li>
+                                <li class="list-group-item" ng-hide="!record.hospital">Hospital: {{record.hospital}}</li>
+                                <li class="list-group-item" ng-hide="!record.hospital_phone">Hospital Phone: {{record.hospital_phone}}</li>
+                                <li class="list-group-item" ng-hide="!record.hospital_address">Hospital Address: {{record.hospital_address}}</li>
+                                <li class="list-group-item" ng-hide="!record.medication_name">Medication Name: {{record.medication_name}}</li>
+                                <li class="list-group-item" ng-hide="!record.medication_purpose">Medicaction Purpose: {{record.medication_purpose}}</li>
+                                <li class="list-group-item" ng-hide="!record.medication_dose">Medication Dose: {{record.medication_dose}}</li>
+                                <li class="list-group-item" ng-hide="!record.medication_frequency">Medication Frequency: {{record.medication_frequency}}</li>
+                                <li class="list-group-item" ng-hide="!record.medication_start_date">Medication Start Date: {{record.medication_start_date}}</li>
+                                <li class="list-group-item" ng-hide="!record.medication_end_date">Medication End Date: {{record.medication_end_date}}</li>                                <li class="list-group-item" ng-hide="!record."> Record ID: {{record.id}}</li>
+                        </ul>
+                </div>
+        </div>
+<!-- ******Btn here***** -->
+        <form name="main.addForm" class="form" ng-submit="surgRecord()">
+                <div class="col-xs-6">
+                    <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-file"></span> Surgical Procedures: </button>
+                </div>
+        </form>
+        <br>
+<!-- ******Btn here***** -->
 
 <!-- VIEW  MAJOR ILLNESS-->
-                <!-- <ul class="list-group" id="majorIllness">
-
-                        <li class="list-group-item"><strong>Illness Name:</strong> {{record.illness_name}}</li>
-                        <li class="list-group-item">Illness Start Date: {{record.illness_start_date}}</li>
-                        <li class="list-group-item">Illness End Date: {{record.illness_end_date}}</li>
-                        <li class="list-group-item">Care Giver Name: {{record.care_giver_name}}</li>
-                        <li class="list-group-item">Illness Notes: {{record.illness_notes}}</li>
-                        <li class="list-group-item">Medication Name: {{record.medication_name}}</li>
-                        <li class="list-group-item">Medication Purpose: {{record.illness_notes}}</li>
-                        <li class="list-group-item">Medication Dose: {{record.medication_dose}}</li>
-                        <li class="list-group-item">Medication Frequency: {{record.medication_frequency}}</li>
-                        <li class="list-group-item">Medication Start Date: {{record.medication_start_date}}</li>
-                        <li class="list-group-item">Medication End Date: {{record.medication_end_date}}</li>
-                        <li class="list-group-item">Treatment Notes: {{record.treatment_notes}}</li>
-                        <li class="list-group-item"> Record ID: {{record.id}}</li>
-                </ul> -->
-
-
+<h2>Illness Records</h2>
+        <div ng-controller="recordUpdateDeleteMajorIllnessCtrl" class="col-xs-12">
+                <div ng-repeat="record in records">
+                        <ul class="list-group" id="majorIllness">
+                                <li class="list-group-item" ng-hide="!record.illness_name"><strong>Illness Name:</strong> {{record.illness_name}}</li>
+                                <li class="list-group-item" ng-hide="!record.illness_start_date">Illness Start Date: {{record.illness_start_date}}</li>
+                                <li class="list-group-item" ng-hide="!record.illness_end_date">Illness End Date: {{record.illness_end_date}}</li>
+                                <li class="list-group-item" ng-hide="!record.care_giver_name">Care Giver Name: {{record.care_giver_name}}</li>
+                                <li class="list-group-item" ng-hide="!record.illness_notes">Illness Notes: {{record.illness_notes}}</li>
+                                <li class="list-group-item" ng-hide="!record.medication_name">Medication Name: {{record.medication_name}}</li>
+                                <li class="list-group-item" ng-hide="!record.illness_notes">Medication Purpose: {{record.illness_notes}}</li>
+                                <li class="list-group-item" ng-hide="!record.medication_dose">Medication Dose: {{record.medication_dose}}</li>
+                                <li class="list-group-item" ng-hide="!record.medication_frequency">Medication Frequency: {{record.medication_frequency}}</li>
+                                <li class="list-group-item" ng-hide="!record.medication_start_date">Medication Start Date: {{record.medication_start_date}}</li>
+                                <li class="list-group-item" ng-hide="!record.medication_end_date">Medication End Date: {{record.medication_end_date}}</li>
+                                <li class="list-group-item" ng-hide="!record.treatment_notes">Treatment Notes: {{record.treatment_notes}}</li>
+                        </ul>
+                </div>
+        </div>
+<!-- ******Btn here***** -->
+        <form name="main.addForm" class="form" ng-submit="illRecord()">
+                <div class="col-xs-6">
+                    <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-file"></span> Major Illness: </button>
+                </div>
+        </form>
+        <br>
+<!-- ******Btn here***** -->
 
 <!-- VIEW FAMILY HISTORY -->
-        <!-- <ul class="list-group" id="familyHistory">
+<h2>Family Records</h2>
+        <div ng-controller="recordUpdateDeleteFamilyHistoryCtrl" class="col-xs-12">
+                <div ng-repeat="record in records">
+                        <ul class="list-group" id="familyHistory">
+                                <li class="list-group-item" ng-hide="!record.family_member_relation"><strong>Family Member:</strong> {{record.family_member_relation}}</li>
+                                <li class="list-group-item" ng-hide="!record.prion_disease">Prion Disease: {{record.prion_disease}}</li>
+                                <li class="list-group-item" ng-hide="!record.cardiac_disease">Cardiac Disease: {{record.cardiac_disease}}</li>
+                                <li class="list-group-item" ng-hide="!record.cardiac_event">Cardiac Event: {{record.cardiac_event}}</li>
+                                <li class="list-group-item" ng-hide="!record.cardiac_event_ages">Cardiac Event Age: {{record.cardiac_event_ages}}</li>
+                                <li class="list-group-item" ng-hide="!record.cardiac_death">Cardiac Death: {{record.cardiac_death}}</li>
+                                <li class="list-group-item" ng-hide="!record.cardiac_death_age">Cardiac Death Age: {{record.cardiac_death_age}}</li>
+                                <li class="list-group-item" ng-hide="!record.diabetes">Diabetes: {{record.diabetes}}</li>
+                                <li class="list-group-item" ng-hide="!record.diabetes_type">Diabetes Type: {{record.diabetes_type}}</li>
+                                <li class="list-group-item" ng-hide="!record.organ_diseases">Organ Diseases: {{record.organ_diseases}}</li>
+                                <li class="list-group-item" ng-hide="!record.organ_disease_name">Organ Disease Name: {{record.organ_disease_name}}</li>
+                                <li class="list-group-item" ng-hide="!record.respiratory_disease">Respiratory Disease: {{record.respiratory_disease}}</li>
+                                <li class="list-group-item" ng-hide="!record.respiratory_disease_names">Respiratory Disease Names: {{record.respiratory_disease_names}}</li>
+                                <li class="list-group-item" ng-hide="!record.cancer">Cancer: {{record.cancer}}</li>
+                                <li class="list-group-item" ng-hide="!record.cancer_death">Cancer Death: {{record.cancer_death}}</li>
+                                <li class="list-group-item" ng-hide="!record.cancer_types">Cancer Types: {{record.cancer_types}}</li>
+                                <li class="list-group-item" ng-hide="!record.cancer_event_age">Cancer Event Age: {{record.cancer_event_age}}</li>
+                                <li class="list-group-item" ng-hide="!record.high_blood_pressure">High Blood Pressure: {{record.high_blood_pressure}}</li>
+                                <li class="list-group-item" ng-hide="!record.stroke">Stroke: {{record.stroke}}</li>
+                                <li class="list-group-item" ng-hide="!record.alzheimers_or_dementia">Alzheimers or Dementia: {{record.alzheimers_or_dementia}}</li>
+                                <li class="list-group-item" ng-hide="!record.osteoporosis">Osteoporosis: {{record.osteoporosis}}</li>
+                                <li class="list-group-item" ng-hide="!record.bleeding_disorder">Bleeding Disorder: {{record.bleeding_disorder}}</li></li>
+                        </ul>
+                </div>
+        </div> 
+<!-- ******Btn here***** -->
+<!-- <li><button type="button" ng-click="famHistRecord()">Family History: </button></li>  -->
+        <form name="main.addForm" class="form" ng-submit="famHistRecord()">
+                <div class="col-xs-6">
+                        <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-file"></span> Family History: </button>
+                </div>
+        </form>
+        <br>
+<!-- ******Btn here***** -->
 
-                <li class="list-group-item"><strong>Family Member:</strong> {{record.family_member_relation}}</li>
-                <li class="list-group-item">Prion Disease: {{record.prion_disease}}</li>
-                <li class="list-group-item">Cardiac Disease: {{record.cardiac_disease}}</li>
-                <li class="list-group-item">Cardiac Event: {{record.cardiac_event}}</li>
-                <li class="list-group-item">Cardiac Event Age: {{record.cardiac_event_ages}}</li>
-                <li class="list-group-item">Cardiac Death: {{record.cardiac_death}}</li>
-                <li class="list-group-item">Cardiac Death Age: {{record.cardiac_death_age}}</li>
-                <li class="list-group-item">Diabetes: {{record.diabetes}}</li>
-                <li class="list-group-item">Diabetes Type: {{record.diabetes_type}}</li>
-                <li class="list-group-item">Organ Diseases: {{record.organ_diseases}}</li>
-                <li class="list-group-item">Organ Disease Name: {{record.organ_disease_name}}</li>
-                <li class="list-group-item">Respiratory Disease: {{record.respiratory_disease}}</li>
-                <li class="list-group-item">Respiratory Disease Names: {{record.respiratory_disease_names}}</li>
-                <li class="list-group-item">Cancer: {{record.cancer}}</li>
-                <li class="list-group-item">Cancer Death: {{record.cancer_death}}</li>
-                <li class="list-group-item">Cancer Types: {{record.cancer_types}}</li>
-                <li class="list-group-item">Cancer Event Age: {{record.cancer_event_age}}</li>
-                <li class="list-group-item">High Blood Pressure: {{record.high_blood_pressure}}</li>
-                <li class="list-group-item">Stroke: {{record.stroke}}</li>
-                <li class="list-group-item">Alzheimers or Dementia: {{record.alzheimers_or_dementia}}</li>
-                <li class="list-group-item">Osteoporosis: {{record.osteoporosis}}</li>
-                <li class="list-group-item">Bleeding Disorder: {{record.bleeding_disorder}}</li></li>
-                <li class="list-group-item"> Record ID: {{record.id}}</li>
-        </ul> -->
 
 <!-- VIEW PATIENT INFO -->
-        <!-- <ul class="list-group" id="patientInfo">
+<h2>Patient Info Records</h2>
+        <div ng-controller="recordUpdateDeletePatientInfoCtrl" class="col-xs-12">
+                <div ng-repeat="record in records">
+                        <ul class="list-group" id="patientInfo">
+                                <li class="list-group-item" ng-hide="!record.name_first"><strong>First Name:</strong> {{record.name_first}}</li>
+                                <li class="list-group-item" ng-hide="!record.name_last">Last Name: {{record.name_last}}</li>       
+                                <li class="list-group-item" ng-hide="!record.patient_sex">Patient Sex: {{record.patient_sex}}</li>
+                                <li class="list-group-item" ng-hide="!record.race">Race: {{record.race}}</li>
+                                <li class="list-group-item" ng-hide="!record.height">Height: {{record.height}}</li>
+                                <li class="list-group-item" ng-hide="!record.height_in_inches">height in Inches: {{record.height_in_inches}}</li>
+                                <li class="list-group-item" ng-hide="!record.">Weight: {{record.weight}}</li>
+                                <li class="list-group-item" ng-hide="!record.weight">Weight in Inches: {{record.weight_in_pounds}}</li>
+                                <li class="list-group-item" ng-hide="!record.date_birth">Date of Birth: {{record.date_birth}}</li>
+                                <li class="list-group-item" ng-hide="!record.address">Address: {{record.address}}</li>
+                                <li class="list-group-item" ng-hide="!record.phone_number">Phone Number: {{record.phone_number}}</li>
+                                <li class="list-group-item" ng-hide="!record.emergency_contact_name_first">Emergency Contact First Name: {{record.emergency_contact_name_first}}</li>
+                                <li class="list-group-item" ng-hide="!record.emergency_contact_name_last">Emergency Contact Last Name: {{record.emergency_contact_name_last}}</li>
+                                <li class="list-group-item" ng-hide="!record.emergency_contact_phone_number">Emergency Contact Phone Numeber: {{record.emergency_contact_phone_number}}</li>
+                                <li class="list-group-item" ng-hide="!record.emergency_contact_address">Emergency Contact Address: {{record.emergency_contact_address}}</li>
+                                <li class="list-group-item" ng-hide="!record.eligible_blood_donor">Eligible Blood Donor: {{record.eligible_blood_donor}}</li>
+                        </ul>
+                </div>
+        </div>
+<!-- ******Btn here***** -->
+        <form name="main.addForm" class="form" ng-submit="patInfoRecord()">
+                <div class="col-xs-6">
+                    <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-file"></span>Patient Info: </button>
+                </div>
+        </form>
+        <br>
+<!-- ******Btn here***** -->
 
-                <li class="list-group-item"><strong>First Name:</strong> {{record.name_first}}</li>
-                <li class="list-group-item">Last Name: {{record.name_last}}</li>       
-                <li class="list-group-item">Patient Sex: {{record.patient_sex}}</li>
-                <li class="list-group-item">Race: {{record.race}}</li>
-                <li class="list-group-item">Height: {{record.height}}</li>
-                <li class="list-group-item">height in Inches: {{record.height_in_inches}}</li>
-                <li class="list-group-item">Weight: {{record.weight}}</li>
-                <li class="list-group-item">Weight in Inches: {{record.weight_in_pounds}}</li>
-                <li class="list-group-item">Date of Birth: {{record.date_birth}}</li>
-                <li class="list-group-item">Address: {{record.address}}</li>
-                <li class="list-group-item">Phone Number: {{record.phone_number}}</li>
-                <li class="list-group-item">Emergency Contact First Name: {{record.emergency_contact_name_first}}</li>
-                <li class="list-group-item">Emergency Contact Last Name: {{record.emergency_contact_name_last}}</li>
-                <li class="list-group-item">Emergency Contact Phone Numeber: {{record.emergency_contact_phone_number}}</li>
-                <li class="list-group-item">Emergency Contact Address: {{record.emergency_contact_address}}</li>
-                <li class="list-group-item">Eligible Blood Donor: {{record.eligible_blood_donor}}</li>
-                <li class="list-group-item"> Record ID: {{record.id}}</li>  
-        </ul> -->
 
 <!-- VIEW MEDICATIONS -->
-            <!-- <li class="list-group-item">Medication Name: {{record.medication_name}}</li>
-            <li class="list-group-item">Current Use: {{record.current_use}}</li>
-            <li class="list-group-item">Medication Purpose: {{record.mediation_purpose}}</li>
-            <li class="list-group-item">Medication Dose Amount: {{record.medication_dose_amount}}</li>
-            <li class="list-group-item">Medication Dose Frequency: {{record.medication_dose_frequency}}</li>
-            <li class="list-group-item">Medication Start Date: {{record.medication_start_date}}</li>
-            <li class="list-group-item">Care Giver: {{record.care_giver}}</li>
-            <li class="list-group-item">Care Giver Title: {{record.care_giver_title}}</li>
-            <li class="list-group-item"> Record ID: {{record.id}}</li> -->
+<h2>Medication Record</h2>
+<div ng-controller="recordUpdateDeleteMedicationsCtrl" class="col-xs-12">
+        <div ng-repeat="record in records">
+                <ul class="list-group" id="medicationInfo">
+                        <li class="list-group-item" ng-hide="!record.medication_name">Medication Name: {{record.medication_name}}</li>
+                        <li class="list-group-item" ng-hide="!record.current_use">Current Use: {{record.current_use}}</li>
+                        <li class="list-group-item" ng-hide="!record.mediation_purpose">Medication Purpose: {{record.mediation_purpose}}</li>
+                        <li class="list-group-item" ng-hide="!record.medication_dose_amount">Medication Dose Amount: {{record.medication_dose_amount}}</li>
+                        <li class="list-group-item" ng-hide="!record.medication_dose_frequency">Medication Dose Frequency: {{record.medication_dose_frequency}}</li>
+                        <li class="list-group-item" ng-hide="!record.medication_start_date">Medication Start Date: {{record.medication_start_date}}</li>
+                        <li class="list-group-item" ng-hide="!record.care_giver">Care Giver: {{record.care_giver}}</li>
+                        <li class="list-group-item" ng-hide="!record.care_giver_title">Care Giver Title: {{record.care_giver_title}}</li>
+                </ul>
+        </div>
+<!-- ******Btn here***** -->
+        <form name="main.addForm" class="form" ng-submit="medsRecord()">
+                <div class="col-xs-6">
+                    <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-file"></span>Medications: </button>
+                </div>
+        </form>
+        <br>
+<!-- ******Btn here***** -->
 
+</div>
 <!-- </div> -->

@@ -16,6 +16,8 @@ app.controller("navBarUserCtrl", function($scope, $window, $rootScope, userFacto
 
     vm.searchText = filterFactory;
 
+    vm.isLoggedIn = false;
+
               
         // userFactory.isAuthenticated();
 
@@ -46,13 +48,13 @@ app.controller("navBarUserCtrl", function($scope, $window, $rootScope, userFacto
                 vm.$apply();
               } else {
                 vm.isLoggedIn = false;
-                $window.location.href = "#!/login";
+                $window.location.href = "#!/partials/welcome";
               }
         });
 
-        // scope.login = function() {
+        // vm.login = function() {
         //     // configuration object
-        //     var config = { /* ... */ }
+        //     var config = { /* ... */ };
           
         //     $http(config)
         //     .success(function(data, status, headers, config) {
